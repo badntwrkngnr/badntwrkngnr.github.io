@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "30c4a161114f4266",
+        "id": "640f0dd67443791b",
         "type": "tabs",
         "children": [
           {
-            "id": "ee369dd561a4aab4",
+            "id": "9277203ba26a4aa9",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "rascunhos/Fundamentos de Redes de Computadores.md",
+                "file": "rascunhos/A Camada de Enlace.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "rascunhos/Fundamentos de Redes de Computadores.md",
+                "file": "rascunhos/A Camada de Enlace.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "rascunhos/Fundamentos de Redes de Computadores.md",
+                "file": "rascunhos/A Camada de Enlace.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "rascunhos/Fundamentos de Redes de Computadores.md"
+                "file": "rascunhos/A Camada de Enlace.md"
               }
             }
           }
@@ -144,12 +144,15 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "obsidian-excalidraw-plugin:Create new drawing": false,
-      "templater-obsidian:Templater": false
+      "templater-obsidian:Templater": false,
+      "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "efbe9109c632246e",
+  "active": "9277203ba26a4aa9",
   "lastOpenFiles": [
+    "rascunhos/A Camada de Enlace.md",
+    "rascunhos/Afinal, como o Traceroute funciona?.md",
+    "rascunhos/Fundamentos de Redes de Computadores.md",
     "posts/introducao-ao-protocolo-ipv4.md",
     "notas-rapidas/Tipos de Redes.md",
     "notas-rapidas/Tipos de Dispositivos.md",
@@ -187,9 +190,6 @@
     "_site/ORGANIZAR/REFINAR/Segurança de Redes de Computadores/Técnicas de Gerenciamento de Projetos - Introdução e Metodologias/Gerenciamento de Escopo, Tempo, Custos e Risco em Projeto/Gestão de tempo do projeto/Sequenciar as atividades.md",
     "_site/ORGANIZAR/REFINAR/Segurança de Redes de Computadores/Técnicas de Gerenciamento de Projetos - Introdução e Metodologias/Gerenciamento de Escopo, Tempo, Custos e Risco em Projeto/Gestão de tempo do projeto/Introdução da Aula.md",
     "_site/ORGANIZAR/REFINAR/Segurança de Redes de Computadores/Técnicas de Gerenciamento de Projetos - Introdução e Metodologias/Gerenciamento de Escopo, Tempo, Custos e Risco em Projeto/Gestão de tempo do projeto/Gestão de tempo do projeto.md",
-    "_site/ORGANIZAR/REFINAR/Segurança de Redes de Computadores/Técnicas de Gerenciamento de Projetos - Introdução e Metodologias/Gerenciamento de Escopo, Tempo, Custos e Risco em Projeto/Gestão de tempo do projeto/Estimativa de recursos e duração da atividade.md",
-    "_site/ORGANIZAR/REFINAR/Segurança de Redes de Computadores/Técnicas de Gerenciamento de Projetos - Introdução e Metodologias/Gerenciamento de Escopo, Tempo, Custos e Risco em Projeto/Gestão de tempo do projeto/Desenvolvimento e controle do cronograma.md",
-    "_site/ORGANIZAR/REFINAR/Segurança de Redes de Computadores/Técnicas de Gerenciamento de Projetos - Introdução e Metodologias/Gerenciamento de Escopo, Tempo, Custos e Risco em Projeto/Gestão de tempo do projeto/Definição e sequenciamento de atividades.md",
     "_site/ORGANIZAR/REFINAR/Apple Notes Attachments/Scan Page.jpg",
     "_site/ORGANIZAR/REFINAR/Apple Notes Attachments/FFE91D54-6A4F-455F-8C59-2C82729AD7D4.jpg",
     "_site/ORGANIZAR/REFINAR/Apple Notes Attachments/FF1F1C3E-3D7F-4C6C-B82C-178240EEAEE7.jpg",
