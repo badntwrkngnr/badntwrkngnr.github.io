@@ -1,1 +1,0 @@
-[**Routers and Switches and Hubs, Oh My! An Introduction to Network Devices and Their Functions | Network Device Functions and Application**](https://www.ciscopress.com/articles/printerfriendly/2434666)

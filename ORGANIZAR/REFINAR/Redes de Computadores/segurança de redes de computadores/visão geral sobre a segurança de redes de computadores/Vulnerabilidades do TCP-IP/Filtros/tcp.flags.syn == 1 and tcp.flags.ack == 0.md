@@ -1,3 +1,0 @@
----
-Explicação: Detecta SYN Floods
----

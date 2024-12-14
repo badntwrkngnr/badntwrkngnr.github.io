@@ -1,4 +1,0 @@
----
-Abreviatura: C
-Valor: NL
----

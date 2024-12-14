@@ -1,3 +1,0 @@
-[![](https://ampli-images.s3.amazonaws.com/production/ac3a6f1e-f0d0-4fff-80d8-bf39b864ea63/original)](https://ampli-images.s3.amazonaws.com/production/ac3a6f1e-f0d0-4fff-80d8-bf39b864ea63/original)
-
-No bairro onde você mora há um centro comunitário que recebeu alguns livros usados de todos os tipos: romances, pesquisas científicas, escolares, infantis, etc. Então, surgiu a ideia de criar uma pequena biblioteca para disponibilizar os livros. Logo as crianças do bairro começaram a querer pegá-los emprestados, causando uma certa preocupação pela falta de controle. Em paralelo, novas doações de livros chegaram ao centro comunitário, juntamente com um computador para ser utilizado na biblioteca do centro. O que você poderá fazer para ajudar nessa situação?

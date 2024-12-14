@@ -1,4 +1,0 @@
----
-Abreviatura: L
-Valor: Amsterdam
----

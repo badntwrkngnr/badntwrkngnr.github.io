@@ -1,3 +1,0 @@
----
-Descrição: Redefine conexão mail.
----

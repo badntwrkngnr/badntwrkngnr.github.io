@@ -4,6 +4,7 @@ _site
 .jekyll-metadata
 vendor
 .obsidian/*
-rascunhos/
-notas-rapidas/
-ORGANIZAR/
+drafts/
+notes/
+templates/
+.DS_Store

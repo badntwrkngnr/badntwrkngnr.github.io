@@ -1,5 +1,0 @@
-[![](https://ampli-images.s3.amazonaws.com/production/cedf959d-8fc2-4c04-9bf9-9fdee2e11550/original)](https://ampli-images.s3.amazonaws.com/production/cedf959d-8fc2-4c04-9bf9-9fdee2e11550/original)
-
-Fonte: Sorbis
-
-Durante a modelagem de dados de uma loja de conveniências, o programador percebeu que dois atributos, nome e endereço, começaram a aparecer em quase todas as tabelas que ele estava modelando. A loja precisará criar uma separação entre os tipos de clientes (pessoa física e pessoa jurídica) para poder aplicar uma política de descontos. Além disso, será necessário classificar os empregados como horistas e mensalistas, pois, além de receber de forma diferenciada, os mensalistas recebem alguns benefícios extras. Como ficará a estrutura de entidades utilizando o relacionamento generalização e especialização?

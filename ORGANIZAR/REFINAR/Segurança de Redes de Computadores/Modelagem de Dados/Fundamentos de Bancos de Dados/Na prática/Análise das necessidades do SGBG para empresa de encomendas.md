@@ -1,7 +1,0 @@
-[![](https://ampli-images.s3.amazonaws.com/production/ea849809-0372-4be7-94bc-7d7dc1a93fc3/original)](https://ampli-images.s3.amazonaws.com/production/ea849809-0372-4be7-94bc-7d7dc1a93fc3/original)
-
-Dona Catarina, proprietária de uma empresa de bolos, docinhos e salgados, está com problemas de gerenciamento de seu negócio e quer informatizar sua rotina de trabalho, porém está receosa quanto ao valor de investimento. No último final de ano ela deixou de atender vários clientes, causando prejuízos. A empresa precisa sair do processo manual e informatizar todo o processo da empresa (da encomenda até a entrega e cobrança). Como ela não está mais conseguindo gerenciar as encomendas e precisa de um software, procurou a nossa empresa pedindo ajuda e conselhos e querendo saber no que terá que investir. De uma coisa ela tem certeza: quer que todas as informações fiquem na empresa e de forma bem segura. Você como analista de sistemas deverá auxiliar a Dona Catarina.
-
-Através dos estudos sobre os SGBDs, qual seria o mais indicado para a empresa dessa cliente? Como poderemos determinar o tipo de SGBD ideal para uma pequena, média ou grande base de dados? Verifique os conceitos, caso haja dúvidas.
-
-Após estudar sobre os SGBDs você poderá compreender que, como analistas, devemos tomar cuidado ao indicar um sistema desnecessário às necessidades do cliente, é responsabilidade de nossa profissão ajudá-lo com ideias claras e corretas.

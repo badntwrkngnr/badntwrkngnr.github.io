@@ -1,3 +1,0 @@
----
-Significado: Identificador exclusivo
----

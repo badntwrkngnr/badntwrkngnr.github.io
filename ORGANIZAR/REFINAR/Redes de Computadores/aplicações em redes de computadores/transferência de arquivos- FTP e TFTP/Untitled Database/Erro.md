@@ -1,3 +1,0 @@
----
-Descrição: Indicação de erro.
----
