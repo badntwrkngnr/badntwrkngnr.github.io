@@ -3,8 +3,9 @@ _site
 .jekyll-cache
 .jekyll-metadata
 vendor
-.obsidian/*
+.obsidian
 drafts/
 notes/
 templates/
+Excalidraw/
 .DS_Store
