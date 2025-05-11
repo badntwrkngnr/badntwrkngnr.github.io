@@ -3,8 +3,7 @@ _site
 .jekyll-cache
 .jekyll-metadata
 vendor
-.obsidian
-drafts/
+.obsidian/
 notes/
 templates/
 Excalidraw/

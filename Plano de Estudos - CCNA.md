@@ -1,0 +1,65 @@
+- [ ] Volume 1
+	- [ ] Part 1 - Introduction to Networking
+		- [x] Chapter 1 - Introduction to TCP/IP Networking 
+		- [ ] Chapter 2 - Fundamentals of Ethernet LANs
+		- [ ] Chapter 3 - Fundamentals of WANs and IP Routing
+	- [ ] Part 2 - Implementing Ethernet LANs
+		- [ ] Chapter 4 - Using the Command-Line Interface
+		- [ ] Chapter 5 - Analyzing Ethernet LAN Switching 
+		- [ ] Chapter 6 - Configuring Basic Switch Management
+		- [ ] Chapter 7 - Configuring and Verifying Switch Interfaces
+	- [ ] Part 3 - Implementing VLANs and STP
+		- [ ] Chapter 8 - Implementing Ethernet Virtual LANs
+		- [ ] Chapter 9 - Spanning Tree Protocol Concepts
+		- [ ] Chapter 10 - RSTP and EtherChannel Configuration
+	- [ ] Part 4 - IPv4 Addressing
+		- [ ] Chapter 11 - Perspectives on IPv4 Subnetting
+		- [ ] Chapter 12 - Analyzing Classful IPv4 Networks
+		- [ ] Chapter 13 - Analyzing Subnet Masks
+		- [ ] Chapter 14 - Analyzing Existing Subnets
+	- [ ] Part 5 - IPv4 Routing
+		- [ ] Chapter 15 - Operating Cisco Routers
+		- [ ] Chapter 16 - Configuring IPv4 Addresses and Static Routes
+		- [ ] Chapter 17 - IP Routing in the LAN
+		- [ ] Chapter 18 - Troubleshooting IPv4 Routing
+	- [ ] Part 6 - OSPF
+		- [ ] Chapter 19 - Understanding OSPF Concepts
+		- [ ] Chapter 20 - Implementing OSPF
+		- [ ] Chapter 21 - OSPF Network Types and Neighbors
+	- [ ] Part 7 - IPv6
+		- [ ] Chapter 22 - Fundamentals of IPv6
+		- [ ] Chapter 23 - IPv6 Addressing and Subnetting
+		- [ ] Chapter 24 - Implementing IPv6 Addressing on Routers
+		- [ ] Chapter 25 - Implementing IPv6 Routing
+	- [ ] Part 8 - Wireless LANS
+		- [ ] Chapter 26 - Fundamentals of Wireless Networks
+		- [ ] Chapter 27 - Analyzing Cisco Wireless Architectures
+		- [ ] Chapter 28 - Securing Wireless Networks
+		- [ ] Chapter 29 - Building a Wireless LAN
+- [ ] Volume 2
+	- [ ] Part 1 - IP Access Control Lists
+		- [ ] Chapter 1 - Introduction to TCP/IP Transport and Applications
+		- [ ] Chapter 2 - Basic IPv4 Access Control Lists
+		- [ ] Chapter 3 - Advanced IPv4 Access Control Lists
+	- [ ] Part 2 - Security Services
+		- [ ] Chapter 4 - Security Architectures
+		- [ ] Chapter 5 - Securing Network Devices
+		- [ ] Chapter 6 - Implementing Switch Port Security
+		- [ ] Chapter 7 - Implementing DHCP
+		- [ ] Chapter 8 - DHCP Snooping and ARP Inspection
+	- [ ] Part 3 - IP Services
+		- [ ] Chapter 9 - Device Management Protocols
+		- [ ] Chapter 10 - Network Address Translation
+		- [ ] Chapter 11 - Quality of Service
+		- [ ] Chapter 12 - Miscellaneous IP Services
+	- [ ] Part 4 - Network Architecture
+		- [ ] Chapter 13 - LAN Architecture
+		- [ ] Chapter 14 - WAN Architecture
+		- [ ] Chapter 15 - Cloud Architecture
+	- [ ] Part 5 - Network Automation
+		- [ ] Chapter 16 - Introduction to Controller-Based Networking
+		- [ ] Chapter 17 - Cisco Software-Defined Access - SDA
+		- [ ] Chapter 18 - Understanding REST and JSON
+		- [ ] Chapter 19 - Understanding Ansible, Puppet and Chef
+	- [ ] Part 6 - Final Review
+		- [ ] Chapter 20 - Final Review

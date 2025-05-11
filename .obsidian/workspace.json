@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "7984b82ecdb92110",
+        "id": "b42f7124fde7de63",
         "type": "tabs",
         "children": [
           {
-            "id": "9bf01d8fe2dba487",
+            "id": "e5623950656c943e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/2025-01-12-fundamentos-de-redes-de-computadores.md",
+                "file": "drafts/Visão Geral da Camada de Enlace de Dados - Teoria e Prática.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-01-12-fundamentos-de-redes-de-computadores"
+              "title": "Visão Geral da Camada de Enlace de Dados - Teoria e Prática"
             }
           }
         ]
@@ -40,7 +40,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -77,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 474.5
+    "width": 372.5
   },
   "right": {
     "id": "53db1b35e6c6c5ee",
@@ -93,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "templates/Nota Permanente.md",
+                "file": "notes/Redes de Computadores/Cisco - CCNA 200-301/CADERNO/2025-02-06_ospfv2.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Nota Permanente"
+              "title": "Backlinks for 2025-02-06_ospfv2"
             }
           },
           {
@@ -161,56 +162,56 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "templater-obsidian:Templater": false,
-      "obsidian-excalidraw-plugin:Create new drawing": false
+      "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "9bf01d8fe2dba487",
+  "active": "efbe9109c632246e",
   "lastOpenFiles": [
-    "_posts/2024-09-29-introducao-ao-protocolo-ipv4.md",
+    "Excalidraw/ETH-HEADER-TRAILER.svg",
+    "Excalidraw/ETH-HEADER-TRAILER.md",
+    "drafts/Visão Geral da Camada de Enlace de Dados - Teoria e Prática.md",
+    "drafts/Protocolo IPv4.md",
+    "drafts/Afinal, como o Traceroute funciona?.md",
+    "drafts/A Camada de Enlace.md",
     "_posts/2025-01-12-fundamentos-de-redes-de-computadores.md",
+    "_posts/2024-09-29-introducao-ao-protocolo-ipv4.md",
+    "Pasted image 20250420134628.png",
+    "Excalidraw/Drawing 2025-04-20 13.44.17.excalidraw.md",
+    "Pasted image 20250420134518.png",
+    "Pasted image 20250420134358.png",
+    "Excalidraw/bus-network.md",
+    "Excalidraw/M1-P2-TCP-HEADER.md",
+    "Excalidraw/M1-P2-TCP-HEADER.png",
+    "Excalidraw/M1-P3-TCP-VS-UDP-HEADER.md",
+    "Excalidraw/M1-P3-TCP-VS-UDP-HEADER.png",
+    "Excalidraw/M1-P3-UDP-HEADER.md",
+    "Excalidraw/M1-P3-UDP-HEADER.png",
+    "Excalidraw/Drawing 2025-04-20 13.32.27.excalidraw.md",
+    "Plano de Estudos - CCNA.md",
+    "notes/Redes de Computadores/Cisco - CCNA 200-301/Cisco CCNA 200-301 - Official Cert Guide/Volume 1/Part 1 - Introduction to Networking/Chapter 2 - Fundamentals of Ethernet LANs/01 - 10BASE-T and 100BASE-T Pin Pairs Used.md",
+    "notes/Redes de Computadores/Cisco - CCNA 200-301/Cisco CCNA 200-301 - Official Cert Guide/Volume 1/Part 1 - Introduction to Networking/Chapter 1 - Introduction to TCP-IP Networking/09 - TCP-IP Data-Link and Physical Layers.md",
+    "notes/Redes de Computadores/Cisco - CCNA 200-301/Cisco CCNA 200-301 - Official Cert Guide/Volume 1/Part 1 - Introduction to Networking/Chapter 1 - Introduction to TCP-IP Networking/08 - TCP-IP Network Layer.md",
+    "notes/Redes de Computadores/Cisco - CCNA 200-301/Cisco CCNA 200-301 - Official Cert Guide/Volume 1/Part 1 - Introduction to Networking/Chapter 1 - Introduction to TCP-IP Networking/07 - Summary - Same-Layer and Adjacent-Layer Interactions.md",
+    "notes/Redes de Computadores/Cisco - CCNA 200-301/Cisco CCNA 200-301 - Official Cert Guide/Volume 1/Part 1 - Introduction to Networking/Chapter 1 - Introduction to TCP-IP Networking/06 - Same-Layer and Adjacent-Layer Interactions.md",
+    "notes/Redes de Computadores/Cisco - CCNA 200-301/CADERNO/2025-02-10_estados-dos-vizinhos-ospf.md",
+    "notes/Redes de Computadores/Cisco - CCNA 200-301/CADERNO/2025-02-10_dhcp.md",
+    "notes/Redes de Computadores/Cisco - CCNA 200-301/CADERNO/2025-02-10_ospfv2-pt2.md",
+    "notes/Redes de Computadores/Cisco - CCNA 200-301/CADERNO/2025-02-10_ospfv2-pt3.md",
+    "notes/Redes de Computadores/Cisco - CCNA 200-301/CADERNO/2025-02-10_verificando-a-operacao-do-ospf.md",
+    "notes/Redes de Computadores/Cisco - CCNA 200-301/CADERNO/2025-02-06_funcoes-basicas-de-um-switch.md",
+    "Untitled",
+    "notes/Redes de Computadores/Cisco - CCNA 200-301/CADERNO",
+    "notes/Redes de Computadores/Cisco - CCNA 200-301/CISCO - ENSA",
+    "notes/Redes de Computadores/Cisco - CCNA 200-301/CISCO - SRWE",
+    "notes/Redes de Computadores/Cisco - CCNA 200-301/CISCO - ITN",
     "_site/2024/09/29/introducao-ao-protocolo-ipv4.html",
     "_site/2024/09/29",
     "_site/2024/09",
     "_site/2024",
-    "_site/README.md",
     "_site/assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/mesh-network.svg",
     "_site/2025/01/12/fundamentos-de-redes-de-computadores.html",
-    "_site/2025/01/12",
-    "_site/2025/01",
-    "_site/2025",
-    "_site/templates/Nota de Literatura.md",
-    "_site/templates/Nota Permanente.md",
-    "_site/notes/XXX ORGANIZAR XXX/Tipos de Redes.md",
-    "_site/notes/XXX ORGANIZAR XXX/Tipos de Dispositivos.md",
-    "_site/notes/XXX ORGANIZAR XXX/Serviços e Aplicações de Rede.md",
-    "_site/notes/XXX ORGANIZAR XXX/ORGANIZAR/REFINAR/Segurança de Redes de Computadores/Técnicas de Gerenciamento de Projetos - Introdução e Metodologias/Técnicas de Gerenciamento de Projetos - Introdução e Metodologias.md",
-    "_site/notes/XXX ORGANIZAR XXX/ORGANIZAR/REFINAR/Segurança de Redes de Computadores/Técnicas de Gerenciamento de Projetos - Introdução e Metodologias/Gerenciamento de Escopo, Tempo, Custos e Risco em Projeto/Gestão do escopo do produto e do projeto/O escopo do produto e do projeto.md",
-    "_site/notes/XXX ORGANIZAR XXX/ORGANIZAR/REFINAR/Segurança de Redes de Computadores/Técnicas de Gerenciamento de Projetos - Introdução e Metodologias/Gerenciamento de Escopo, Tempo, Custos e Risco em Projeto/Gestão do escopo do produto e do projeto/Introdução da Unidade.md",
-    "_site/notes/XXX ORGANIZAR XXX/ORGANIZAR/REFINAR/Segurança de Redes de Computadores/Técnicas de Gerenciamento de Projetos - Introdução e Metodologias/Gerenciamento de Escopo, Tempo, Custos e Risco em Projeto/Gestão do escopo do produto e do projeto/Introdução da Aula.md",
-    "_site/notes/XXX ORGANIZAR XXX/ORGANIZAR/REFINAR/Segurança de Redes de Computadores/Técnicas de Gerenciamento de Projetos - Introdução e Metodologias/Gerenciamento de Escopo, Tempo, Custos e Risco em Projeto/Gestão do escopo do produto e do projeto/Gestão do escopo do produto e do projeto.md",
-    "_site/notes/XXX ORGANIZAR XXX/ORGANIZAR/REFINAR/Segurança de Redes de Computadores/Técnicas de Gerenciamento de Projetos - Introdução e Metodologias/Gerenciamento de Escopo, Tempo, Custos e Risco em Projeto/Gestão do escopo do produto e do projeto/Declaração de escopo e Requisitos.md",
-    "_site/notes/XXX ORGANIZAR XXX/ORGANIZAR/REFINAR/Segurança de Redes de Computadores/Técnicas de Gerenciamento de Projetos - Introdução e Metodologias/Gerenciamento de Escopo, Tempo, Custos e Risco em Projeto/Gestão do escopo do produto e do projeto/Conclusão.md",
-    "_site/notes/XXX ORGANIZAR XXX/ORGANIZAR/REFINAR/Segurança de Redes de Computadores/Técnicas de Gerenciamento de Projetos - Introdução e Metodologias/Gerenciamento de Escopo, Tempo, Custos e Risco em Projeto/Gestão do escopo do produto e do projeto/A ferramenta EAP.md",
-    "_site/notes/XXX ORGANIZAR XXX/ORGANIZAR/REFINAR/Segurança de Redes de Computadores/Técnicas de Gerenciamento de Projetos - Introdução e Metodologias/Gerenciamento de Escopo, Tempo, Custos e Risco em Projeto/Gestão de tempo do projeto/Sequenciar as atividades.md",
-    "_site/notes/XXX ORGANIZAR XXX/ORGANIZAR/REFINAR/Segurança de Redes de Computadores/Técnicas de Gerenciamento de Projetos - Introdução e Metodologias/Gerenciamento de Escopo, Tempo, Custos e Risco em Projeto/Gestão de tempo do projeto/Introdução da Aula.md",
-    "_site/notes/XXX ORGANIZAR XXX/ORGANIZAR/REFINAR/Segurança de Redes de Computadores/Técnicas de Gerenciamento de Projetos - Introdução e Metodologias/Gerenciamento de Escopo, Tempo, Custos e Risco em Projeto/Gestão de tempo do projeto/Gestão de tempo do projeto.md",
-    "_site/notes/XXX ORGANIZAR XXX/ORGANIZAR/REFINAR/Segurança de Redes de Computadores/Técnicas de Gerenciamento de Projetos - Introdução e Metodologias/Gerenciamento de Escopo, Tempo, Custos e Risco em Projeto/Gestão de tempo do projeto/Estimativa de recursos e duração da atividade.md",
-    "_site/notes/XXX ORGANIZAR XXX/ORGANIZAR/REFINAR/Segurança de Redes de Computadores/Técnicas de Gerenciamento de Projetos - Introdução e Metodologias/Gerenciamento de Escopo, Tempo, Custos e Risco em Projeto/Gestão de tempo do projeto/Desenvolvimento e controle do cronograma.md",
-    "_site/notes/XXX ORGANIZAR XXX/ORGANIZAR/REFINAR/Segurança de Redes de Computadores/Técnicas de Gerenciamento de Projetos - Introdução e Metodologias/Gerenciamento de Escopo, Tempo, Custos e Risco em Projeto/Gestão de tempo do projeto/Definição e sequenciamento de atividades.md",
-    "_site/notes/XXX ORGANIZAR XXX/ORGANIZAR/REFINAR/Segurança de Redes de Computadores/Técnicas de Gerenciamento de Projetos - Introdução e Metodologias/Gerenciamento de Escopo, Tempo, Custos e Risco em Projeto/Gestão de tempo do projeto/Conclusão.md",
-    "_site/notes/XXX ORGANIZAR XXX/ORGANIZAR/REFINAR/Segurança de Redes de Computadores/Técnicas de Gerenciamento de Projetos - Introdução e Metodologias/Gerenciamento de Escopo, Tempo, Custos e Risco em Projeto/Gestão de custos do projeto/Valor agregado.md",
-    "_site/notes/XXX ORGANIZAR XXX/ORGANIZAR/REFINAR/Segurança de Redes de Computadores/Técnicas de Gerenciamento de Projetos - Introdução e Metodologias/Gerenciamento de Escopo, Tempo, Custos e Risco em Projeto/Gestão de custos do projeto/Técnicas de estimação de custos de um projeto.md",
     "_site/notes/XXX ORGANIZAR XXX/ORGANIZAR/REFINAR/Apple Notes Attachments/Scan Page.jpg",
     "_site/notes/XXX ORGANIZAR XXX/ORGANIZAR/REFINAR/Apple Notes Attachments/FFE91D54-6A4F-455F-8C59-2C82729AD7D4.jpg",
-    "_site/notes/XXX ORGANIZAR XXX/ORGANIZAR/REFINAR/Apple Notes Attachments/FF1F1C3E-3D7F-4C6C-B82C-178240EEAEE7.jpg",
-    "_site/notes/XXX ORGANIZAR XXX/ORGANIZAR/REFINAR/Apple Notes Attachments/FEE093C6-B92E-4D45-A5E6-558DEC642E2C.jpg",
-    "_site/notes/XXX ORGANIZAR XXX/ORGANIZAR/REFINAR/Apple Notes Attachments/FE3A7C14-1687-4348-9BA9-FF6E8BAB883B.jpg",
-    "_site/notes/XXX ORGANIZAR XXX/ORGANIZAR/REFINAR/Apple Notes Attachments/FC62AC62-1274-459C-A8D6-64BC5E1D3E22.jpg",
-    "_site/notes/XXX ORGANIZAR XXX/ORGANIZAR/REFINAR/Apple Notes Attachments/FB7545CF-D19D-48BA-AABF-EDCFA287D8E0.jpg",
-    "_site/notes/XXX ORGANIZAR XXX/ORGANIZAR/REFINAR/Apple Notes Attachments/FB04CD63-EF2C-440A-89A3-0C2F2FADC4CC.jpg",
-    "_site/notes/XXX ORGANIZAR XXX/ORGANIZAR/REFINAR/Apple Notes Attachments/FA09F2E5-6333-4E15-940F-1D900052628F.jpg",
-    "_site/notes/XXX ORGANIZAR XXX/ORGANIZAR/REFINAR/Apple Notes Attachments",
-    "_site/notes/XXX ORGANIZAR XXX/ORGANIZAR/Anexos/uninove1.pdf",
     "quick-notes/Redes de Computadores/Cisco - CCNA 200-301/GK - CCNA/Untitled.canvas"
   ]
 }
