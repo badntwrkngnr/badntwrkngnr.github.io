@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "b42f7124fde7de63",
+        "id": "4e54284a172cdb3f",
         "type": "tabs",
         "children": [
           {
-            "id": "e5623950656c943e",
+            "id": "8e24d8efc178d937",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "drafts/Visão Geral da Camada de Enlace de Dados - Teoria e Prática.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Visão Geral da Camada de Enlace de Dados - Teoria e Prática"
+              "title": "New tab"
             }
           }
         ]
@@ -78,80 +74,112 @@
       }
     ],
     "direction": "horizontal",
-    "width": 372.5
+    "width": 288.5
   },
   "right": {
     "id": "53db1b35e6c6c5ee",
     "type": "split",
     "children": [
       {
-        "id": "708b0426a4742f58",
-        "type": "tabs",
+        "id": "2f81ea22b531e2ba",
+        "type": "split",
         "children": [
           {
-            "id": "0b28e33c5f74e308",
-            "type": "leaf",
-            "state": {
-              "type": "backlink",
-              "state": {
-                "file": "notes/Redes de Computadores/Cisco - CCNA 200-301/CADERNO/2025-02-06_ospfv2.md",
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
+            "id": "708b0426a4742f58",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "0b28e33c5f74e308",
+                "type": "leaf",
+                "state": {
+                  "type": "backlink",
+                  "state": {
+                    "collapseAll": false,
+                    "extraContext": false,
+                    "sortOrder": "alphabetical",
+                    "showSearch": false,
+                    "searchQuery": "",
+                    "backlinkCollapsed": false,
+                    "unlinkedCollapsed": true
+                  },
+                  "icon": "links-coming-in",
+                  "title": "Backlinks"
+                }
               },
-              "icon": "links-coming-in",
-              "title": "Backlinks for 2025-02-06_ospfv2"
-            }
+              {
+                "id": "d411869a8a69bdab",
+                "type": "leaf",
+                "state": {
+                  "type": "outgoing-link",
+                  "state": {
+                    "file": "templates/Nota Permanente.md",
+                    "linksCollapsed": false,
+                    "unlinkedCollapsed": true
+                  },
+                  "icon": "links-going-out",
+                  "title": "Outgoing links from Nota Permanente"
+                }
+              },
+              {
+                "id": "e96be699fe470c91",
+                "type": "leaf",
+                "state": {
+                  "type": "tag",
+                  "state": {
+                    "sortOrder": "frequency",
+                    "useHierarchy": true
+                  },
+                  "icon": "lucide-tags",
+                  "title": "Tags"
+                }
+              },
+              {
+                "id": "a5bcecaecb3b79d8",
+                "type": "leaf",
+                "state": {
+                  "type": "outline",
+                  "state": {
+                    "file": "templates/Nota Permanente.md"
+                  },
+                  "icon": "lucide-list",
+                  "title": "Outline of Nota Permanente"
+                }
+              },
+              {
+                "id": "703e9cff99d0619a",
+                "type": "leaf",
+                "state": {
+                  "type": "smart-connections-view",
+                  "state": {},
+                  "icon": "smart-connections",
+                  "title": "Smart Connections"
+                }
+              }
+            ],
+            "currentTab": 4
           },
           {
-            "id": "d411869a8a69bdab",
-            "type": "leaf",
-            "state": {
-              "type": "outgoing-link",
-              "state": {
-                "file": "templates/Nota Permanente.md",
-                "linksCollapsed": false,
-                "unlinkedCollapsed": true
-              },
-              "icon": "links-going-out",
-              "title": "Outgoing links from Nota Permanente"
-            }
-          },
-          {
-            "id": "e96be699fe470c91",
-            "type": "leaf",
-            "state": {
-              "type": "tag",
-              "state": {
-                "sortOrder": "frequency",
-                "useHierarchy": true
-              },
-              "icon": "lucide-tags",
-              "title": "Tags"
-            }
-          },
-          {
-            "id": "a5bcecaecb3b79d8",
-            "type": "leaf",
-            "state": {
-              "type": "outline",
-              "state": {
-                "file": "templates/Nota Permanente.md"
-              },
-              "icon": "lucide-list",
-              "title": "Outline of Nota Permanente"
-            }
+            "id": "5724b4117cf08a90",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "4cb6558648f070dc",
+                "type": "leaf",
+                "state": {
+                  "type": "smart-chat-view",
+                  "state": {},
+                  "icon": "smart-chat",
+                  "title": "Smart Chat"
+                }
+              }
+            ]
           }
-        ]
+        ],
+        "direction": "vertical"
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 595.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -162,54 +190,57 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "templater-obsidian:Templater": false,
-      "obsidian-excalidraw-plugin:New drawing": false
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "smart-connections:Open: Smart Chat": false,
+      "smart-connections:Open: View Smart Connections": false
     }
   },
   "active": "efbe9109c632246e",
   "lastOpenFiles": [
+    "notes/Redes de Computadores/Cisco - CCNA 200-301/Cisco CCNA 200-301 - Official Cert Guide/Volume 1/Part 1 - Introduction to Networking/Part_1_Review.md",
+    "notes/Redes de Computadores/Cisco - CCNA 200-301/Cisco CCNA 200-301 - Official Cert Guide/Volume 1/Part 1 - Introduction to Networking/Network_Components.md",
+    "notes/Redes de Computadores/Cisco - CCNA 200-301/Cisco CCNA 200-301 - Official Cert Guide/Volume 1/Part 1 - Introduction to Networking/Ethernet_LANs.md",
+    "notes/Redes de Computadores/Cisco - CCNA 200-301/Cisco CCNA 200-301 - Official Cert Guide/Volume 1/Part 1 - Introduction to Networking/TCP-IP_Model.md",
+    "notes/Redes de Computadores/Cisco - CCNA 200-301/Cisco CCNA 200-301 - Official Cert Guide/Volume 1/Part 2 -  Implementing Ethernet LANs/Cisco_IOS.md",
+    "notes/Redes de Computadores/Cisco - CCNA 200-301/Cisco CCNA 200-301 - Official Cert Guide/Volume 1/Part 3 - Implementing VLANs and STP/VLANs.md",
+    "notes/Redes de Computadores/Cisco - CCNA 200-301/Cisco CCNA 200-301 - Official Cert Guide/Volume 1/Part 6 - OSPF/2025-02-10_verificando-a-operacao-do-ospf.md",
+    "notes/Redes de Computadores/Cisco - CCNA 200-301/Cisco CCNA 200-301 - Official Cert Guide/Volume 1/Part 6 - OSPF/2025-02-10_estados-dos-vizinhos-ospf.md",
+    "notes/Redes de Computadores/Cisco - CCNA 200-301/Cisco CCNA 200-301 - Official Cert Guide/Volume 1/Part 6 - OSPF/OSPFv2.md",
+    "notes/Redes de Computadores/Cisco - CCNA 200-301/Cisco CCNA 200-301 - Official Cert Guide/Volume 1/Part 5 -  IPv4 Routing/2025-02-06_fundamentos-de-roteamento.md",
+    "notes/Redes de Computadores/Cisco - CCNA 200-301/Cisco CCNA 200-301 - Official Cert Guide/Volume 1/Part 4 - IPv4 Addressing/2025-02-10_dhcp.md",
+    "notes/Redes de Computadores/Cisco - CCNA 200-301/Cisco CCNA 200-301 - Official Cert Guide/Volume 1/Part 3 - Implementing VLANs and STP/2025-02-06_agregacao-de-links.md",
+    "notes/Redes de Computadores/Cisco - CCNA 200-301/Cisco CCNA 200-301 - Official Cert Guide/Volume 1/Part 3 - Implementing VLANs and STP/STP.md",
+    "notes/Redes de Computadores/Cisco - CCNA 200-301/Cisco CCNA 200-301 - Official Cert Guide/Volume 1/Part 3 - Implementing VLANs and STP/2025-02-06_voice-vlan.md",
+    "notes/Redes de Computadores/Cisco - CCNA 200-301/Cisco CCNA 200-301 - Official Cert Guide/Volume 1/Part 2 -  Implementing Ethernet LANs/LANs_e_Switches.md",
+    "notes/Redes de Computadores/Cisco - CCNA 200-301/Cisco CCNA 200-301 - Official Cert Guide/Volume 1/Part 2 -  Implementing Ethernet LANs/2025-02-06_principais-modos-do-cisco-ios.md",
+    "notes/Redes de Computadores/Cisco - CCNA 200-301/Cisco CCNA 200-301 - Official Cert Guide/Volume 1/Part 2 -  Implementing Ethernet LANs/2025-02-06_tipos-de-memorias-cisco-ios.md",
+    "notes/Redes de Computadores/Cisco - CCNA 200-301/Cisco CCNA 200-301 - Official Cert Guide/Volume 1/Part 1 - Introduction to Networking/2025-06-17-componentes-de-rede.md",
+    "notes/Redes de Computadores/Cisco - CCNA 200-301/CADERNO/LANs_e_Switches.md",
+    "notes/Redes de Computadores/Cisco - CCNA 200-301/CADERNO/STP.md",
+    "notes/Redes de Computadores/Cisco - CCNA 200-301/CADERNO/OSPFv2.md",
+    "notes/Redes de Computadores/Cisco - CCNA 200-301/CADERNO/2025-06-17-componentes-de-rede.md",
+    "notes/Redes de Computadores/Cisco - CCNA 200-301/CADERNO/M1-1.2-componentes-de-rede.md",
+    "notes/Redes de Computadores - Graduação/Fundamentos de Redes/UTCAL/UTCAL.md",
+    "notes/Redes de Computadores - Graduação/Fundamentos de Redes/UTCAL",
+    "notes/Redes de Computadores - Graduação/Fundamentos de Redes/Tweets/Tweets.md",
+    "notes/Redes de Computadores - Graduação/Fundamentos de Redes/Tweets/50+ Linux networking commands and their explanation 🧵↓ 2.md",
+    "notes/Redes de Computadores - Graduação/Fundamentos de Redes/Tweets",
+    "notes/Redes de Computadores - Graduação/Fundamentos de Redes/RESUMOS/Linux/Bash/Curso Básico de Programação em Bash",
+    "notes/Redes de Computadores - Graduação/Fundamentos de Redes/RESUMOS/Linux/Bash",
+    "notes/Redes de Computadores - Graduação/Fundamentos de Redes/RESUMOS/Linux",
+    "notes/Redes de Computadores - Graduação/Fundamentos de Redes/RESUMOS/Redes de Computadores +",
+    "notes/Redes de Computadores - Graduação/Fundamentos de Redes/RESUMOS/CISCO",
+    "notes/Redes de Computadores - Graduação/Fundamentos de Redes/RESUMOS",
+    "notes/Redes de Computadores - Graduação/Fundamentos de Redes",
+    "notes/Segurança de Redes - Pós-Graduação/Tecnologias Aplicadas ao Sistema de Segurança/Tecnologias aplicadas na segurança pública/TIC nos processos criminais e na identificação dos infratores",
     "Excalidraw/ETH-HEADER-TRAILER.svg",
-    "Excalidraw/ETH-HEADER-TRAILER.md",
-    "drafts/Visão Geral da Camada de Enlace de Dados - Teoria e Prática.md",
-    "drafts/Protocolo IPv4.md",
-    "drafts/Afinal, como o Traceroute funciona?.md",
-    "drafts/A Camada de Enlace.md",
-    "_posts/2025-01-12-fundamentos-de-redes-de-computadores.md",
-    "_posts/2024-09-29-introducao-ao-protocolo-ipv4.md",
     "Pasted image 20250420134628.png",
-    "Excalidraw/Drawing 2025-04-20 13.44.17.excalidraw.md",
     "Pasted image 20250420134518.png",
     "Pasted image 20250420134358.png",
-    "Excalidraw/bus-network.md",
-    "Excalidraw/M1-P2-TCP-HEADER.md",
-    "Excalidraw/M1-P2-TCP-HEADER.png",
-    "Excalidraw/M1-P3-TCP-VS-UDP-HEADER.md",
-    "Excalidraw/M1-P3-TCP-VS-UDP-HEADER.png",
-    "Excalidraw/M1-P3-UDP-HEADER.md",
     "Excalidraw/M1-P3-UDP-HEADER.png",
-    "Excalidraw/Drawing 2025-04-20 13.32.27.excalidraw.md",
-    "Plano de Estudos - CCNA.md",
-    "notes/Redes de Computadores/Cisco - CCNA 200-301/Cisco CCNA 200-301 - Official Cert Guide/Volume 1/Part 1 - Introduction to Networking/Chapter 2 - Fundamentals of Ethernet LANs/01 - 10BASE-T and 100BASE-T Pin Pairs Used.md",
-    "notes/Redes de Computadores/Cisco - CCNA 200-301/Cisco CCNA 200-301 - Official Cert Guide/Volume 1/Part 1 - Introduction to Networking/Chapter 1 - Introduction to TCP-IP Networking/09 - TCP-IP Data-Link and Physical Layers.md",
-    "notes/Redes de Computadores/Cisco - CCNA 200-301/Cisco CCNA 200-301 - Official Cert Guide/Volume 1/Part 1 - Introduction to Networking/Chapter 1 - Introduction to TCP-IP Networking/08 - TCP-IP Network Layer.md",
-    "notes/Redes de Computadores/Cisco - CCNA 200-301/Cisco CCNA 200-301 - Official Cert Guide/Volume 1/Part 1 - Introduction to Networking/Chapter 1 - Introduction to TCP-IP Networking/07 - Summary - Same-Layer and Adjacent-Layer Interactions.md",
-    "notes/Redes de Computadores/Cisco - CCNA 200-301/Cisco CCNA 200-301 - Official Cert Guide/Volume 1/Part 1 - Introduction to Networking/Chapter 1 - Introduction to TCP-IP Networking/06 - Same-Layer and Adjacent-Layer Interactions.md",
-    "notes/Redes de Computadores/Cisco - CCNA 200-301/CADERNO/2025-02-10_estados-dos-vizinhos-ospf.md",
-    "notes/Redes de Computadores/Cisco - CCNA 200-301/CADERNO/2025-02-10_dhcp.md",
-    "notes/Redes de Computadores/Cisco - CCNA 200-301/CADERNO/2025-02-10_ospfv2-pt2.md",
-    "notes/Redes de Computadores/Cisco - CCNA 200-301/CADERNO/2025-02-10_ospfv2-pt3.md",
-    "notes/Redes de Computadores/Cisco - CCNA 200-301/CADERNO/2025-02-10_verificando-a-operacao-do-ospf.md",
-    "notes/Redes de Computadores/Cisco - CCNA 200-301/CADERNO/2025-02-06_funcoes-basicas-de-um-switch.md",
-    "Untitled",
-    "notes/Redes de Computadores/Cisco - CCNA 200-301/CADERNO",
-    "notes/Redes de Computadores/Cisco - CCNA 200-301/CISCO - ENSA",
-    "notes/Redes de Computadores/Cisco - CCNA 200-301/CISCO - SRWE",
-    "notes/Redes de Computadores/Cisco - CCNA 200-301/CISCO - ITN",
-    "_site/2024/09/29/introducao-ao-protocolo-ipv4.html",
-    "_site/2024/09/29",
-    "_site/2024/09",
-    "_site/2024",
+    "Excalidraw/M1-P3-TCP-VS-UDP-HEADER.png",
+    "Excalidraw/M1-P2-TCP-HEADER.png",
     "_site/assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/mesh-network.svg",
-    "_site/2025/01/12/fundamentos-de-redes-de-computadores.html",
     "_site/notes/XXX ORGANIZAR XXX/ORGANIZAR/REFINAR/Apple Notes Attachments/Scan Page.jpg",
     "_site/notes/XXX ORGANIZAR XXX/ORGANIZAR/REFINAR/Apple Notes Attachments/FFE91D54-6A4F-455F-8C59-2C82729AD7D4.jpg",
     "quick-notes/Redes de Computadores/Cisco - CCNA 200-301/GK - CCNA/Untitled.canvas"
