@@ -74,7 +74,7 @@ Para que múltiplas aplicações em um mesmo host possam se comunicar simultanea
 
 O TCP é um protocolo **confiável e orientado à conexão**. Ele oferece uma abstração de um canal de comunicação perfeito, mesmo sobre uma rede não confiável como a Internet.
 
-<img src="/assets/images/drafts/M1-P2-TCP-HEADER.png" />
+<img src="/assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/M1-P2-TCP-HEADER.png" />
 
 Suas principais características são:
 - **Entrega Ordenada e Confiável**: Garante que os dados cheguem na ordem correta e sem perdas, usando números de sequência e confirmações (acknowledgments - ACKs).
@@ -86,12 +86,12 @@ Suas principais características são:
 
 O UDP é um protocolo **simples, rápido e não orientado à conexão**. Sua principal vantagem é a ausência de sobrecarga.
 
-<img src="/assets/images/drafts/M1-P3-UDP-HEADER.png" />
+<img src="/assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/M1-P3-UDP-HEADER.png" />
 
 - **Sem Garantias**: Não há garantia de entrega, ordem ou controle de fluxo. É um serviço "best-effort".
 - **Ideal para**: Aplicações em tempo real como streaming, jogos online e VoIP, onde a velocidade é mais crítica que a confiabilidade.
 
-<img src="/assets/images/drafts/M1-P3-TCP-VS-UDP-HEADER.png" />
+<img src="/assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/M1-P3-TCP-VS-UDP-HEADER.png" />
 
 ### Camada de Rede (ou Internet)
 

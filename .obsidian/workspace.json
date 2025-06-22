@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "c0dda5fb660f5168",
+        "id": "96328a514bcca0d6",
         "type": "tabs",
         "children": [
           {
-            "id": "c88304d901b837e4",
+            "id": "fd4c66afc9ee1dbf",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -168,9 +168,15 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "c88304d901b837e4",
+  "active": "fd4c66afc9ee1dbf",
   "lastOpenFiles": [
     "_posts/2025-01-12-fundamentos-de-redes-de-computadores.md",
+    "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/M1-P3-UDP-HEADER.png",
+    "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/M1-P3-UDP-HEADER.md",
+    "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/M1-P3-TCP-VS-UDP-HEADER.png",
+    "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/M1-P3-TCP-VS-UDP-HEADER.md",
+    "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/M1-P2-TCP-HEADER.png",
+    "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/M1-P2-TCP-HEADER.md",
     "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/part-1-review.md",
     "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/chapter-3-fundamentals-of-wans-and-ip-routing.md",
     "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/chapter-2-fundamentals-of-ethernet-lans.md",
@@ -186,11 +192,8 @@
     "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/mesh-network.png",
     "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/Drawing 2025-06-22 19.56.42.excalidraw.md",
     "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/bus-network.svg",
-    "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/bus-network.png",
     "drafts/2024-03-20-redes-de-computadores-uma-introducao-para-quem-deseja-se-aventura-no-ccna.md",
     "_posts/2024-09-29-introducao-ao-protocolo-ipv4.md",
-    "assets/images/networking/2024-09-29-introducao-ao-protocolo-ipv4/comparacao-entre-modelos-de-camadas.png",
-    "assets/images/networking/2024-09-29-introducao-ao-protocolo-ipv4/camadas-modelo-tcp-ip.png",
     "notes/redes-de-computadores/cisco-ccna-200-301/gk-ccna/modulo-1-introduction-to-networking.md",
     "notes/redes-de-computadores/cisco-ccna-200-301/gk-ccna/modulo-2-fundamentals-of-ethernet-lans.md",
     "notes/redes-de-computadores/cisco-ccna-200-301/gk-ccna/modulo-3-implementing-ethernet-lans.md",
@@ -202,10 +205,6 @@
     "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-6-network-automation/chapter-21-introduction-to-controller-based-networking.md",
     "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-5-network-architecture/chapter-20-cloud-architecture.md",
     "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-5-network-architecture/chapter-19-wan-architecture.md",
-    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-5-network-architecture/chapter-18-lan-architecture.md",
-    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-4-ip-services/chapter-17-snmp-ftp-and-tftp.md",
-    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-4-ip-services/chapter-16-first-hop-redundancy-protocols.md",
-    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-4-ip-services/chapter-15-quality-of-service-qos.md",
     "notes/redes-de-computadores/redes-de-computadores-e-a-internet-kurose-ross",
     "notes/redes-de-computadores/redes-de-computadores-tanenbaum",
     "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-7-final-review/chapter-26-final-review",
