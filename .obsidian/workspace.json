@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "a93bc2e5316e02c7",
+        "id": "c0dda5fb660f5168",
         "type": "tabs",
         "children": [
           {
-            "id": "b6861e442317a497",
+            "id": "c88304d901b837e4",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -168,9 +168,13 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "b6861e442317a497",
+  "active": "c88304d901b837e4",
   "lastOpenFiles": [
     "_posts/2025-01-12-fundamentos-de-redes-de-computadores.md",
+    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/part-1-review.md",
+    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/chapter-3-fundamentals-of-wans-and-ip-routing.md",
+    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/chapter-2-fundamentals-of-ethernet-lans.md",
+    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/chapter-1-introduction-to-tcp-ip-networking.md",
     "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/star-network.svg",
     "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/ring-network.svg",
     "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/mesh-network.svg",
@@ -188,9 +192,6 @@
     "assets/images/networking/2024-09-29-introducao-ao-protocolo-ipv4/comparacao-entre-modelos-de-camadas.png",
     "assets/images/networking/2024-09-29-introducao-ao-protocolo-ipv4/camadas-modelo-tcp-ip.png",
     "notes/redes-de-computadores/cisco-ccna-200-301/gk-ccna/modulo-1-introduction-to-networking.md",
-    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/chapter-3-fundamentals-of-wans-and-ip-routing.md",
-    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/chapter-2-fundamentals-of-ethernet-lans.md",
-    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/chapter-1-introduction-to-tcp-ip-networking.md",
     "notes/redes-de-computadores/cisco-ccna-200-301/gk-ccna/modulo-2-fundamentals-of-ethernet-lans.md",
     "notes/redes-de-computadores/cisco-ccna-200-301/gk-ccna/modulo-3-implementing-ethernet-lans.md",
     "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-7-final-review/chapter-26-final-review.md",
