@@ -4,17 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "b9e4b8cef50f8e6b",
+        "id": "8dee6ae10a8693ae",
         "type": "tabs",
         "children": [
           {
-            "id": "9ffc2e33cc6bc62e",
+            "id": "48c749bd36fb5455",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "_posts/2025-01-12-fundamentos-de-redes-de-computadores.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "2025-01-12-fundamentos-de-redes-de-computadores"
             }
           }
         ]
@@ -74,112 +79,86 @@
       }
     ],
     "direction": "horizontal",
-    "width": 579.5
+    "width": 480.51103591918945
   },
   "right": {
     "id": "53db1b35e6c6c5ee",
     "type": "split",
     "children": [
       {
-        "id": "2f81ea22b531e2ba",
-        "type": "split",
+        "id": "708b0426a4742f58",
+        "type": "tabs",
         "children": [
           {
-            "id": "708b0426a4742f58",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "0b28e33c5f74e308",
-                "type": "leaf",
-                "state": {
-                  "type": "backlink",
-                  "state": {
-                    "collapseAll": false,
-                    "extraContext": false,
-                    "sortOrder": "alphabetical",
-                    "showSearch": false,
-                    "searchQuery": "",
-                    "backlinkCollapsed": false,
-                    "unlinkedCollapsed": true
-                  },
-                  "icon": "links-coming-in",
-                  "title": "Backlinks"
-                }
+            "id": "0b28e33c5f74e308",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/chapter-3-fundamentals-of-wans-and-ip-routing.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
               },
-              {
-                "id": "d411869a8a69bdab",
-                "type": "leaf",
-                "state": {
-                  "type": "outgoing-link",
-                  "state": {
-                    "file": "templates/Nota Permanente.md",
-                    "linksCollapsed": false,
-                    "unlinkedCollapsed": true
-                  },
-                  "icon": "links-going-out",
-                  "title": "Outgoing links from Nota Permanente"
-                }
-              },
-              {
-                "id": "e96be699fe470c91",
-                "type": "leaf",
-                "state": {
-                  "type": "tag",
-                  "state": {
-                    "sortOrder": "frequency",
-                    "useHierarchy": true
-                  },
-                  "icon": "lucide-tags",
-                  "title": "Tags"
-                }
-              },
-              {
-                "id": "a5bcecaecb3b79d8",
-                "type": "leaf",
-                "state": {
-                  "type": "outline",
-                  "state": {
-                    "file": "templates/Nota Permanente.md"
-                  },
-                  "icon": "lucide-list",
-                  "title": "Outline of Nota Permanente"
-                }
-              },
-              {
-                "id": "703e9cff99d0619a",
-                "type": "leaf",
-                "state": {
-                  "type": "smart-connections-view",
-                  "state": {},
-                  "icon": "smart-connections",
-                  "title": "Smart Connections"
-                }
-              }
-            ],
-            "currentTab": 4
+              "icon": "links-coming-in",
+              "title": "Backlinks for chapter-3-fundamentals-of-wans-and-ip-routing"
+            }
           },
           {
-            "id": "5724b4117cf08a90",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "4cb6558648f070dc",
-                "type": "leaf",
-                "state": {
-                  "type": "smart-chat-view",
-                  "state": {},
-                  "icon": "smart-chat",
-                  "title": "Smart Chat"
-                }
-              }
-            ]
+            "id": "d411869a8a69bdab",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/chapter-3-fundamentals-of-wans-and-ip-routing.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from chapter-3-fundamentals-of-wans-and-ip-routing"
+            }
+          },
+          {
+            "id": "e96be699fe470c91",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "a5bcecaecb3b79d8",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "_posts/2025-01-12-fundamentos-de-redes-de-computadores.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 2025-01-12-fundamentos-de-redes-de-computadores"
+            }
           }
         ],
-        "direction": "vertical"
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 991.5
+    "width": 385.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -189,60 +168,60 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "templater-obsidian:Templater": false,
       "obsidian-excalidraw-plugin:New drawing": false,
       "smart-connections:Open: Smart Chat": false,
-      "smart-connections:Open: View Smart Connections": false
+      "smart-connections:Open: View Smart Connections": false,
+      "templater-obsidian:Templater": false
     }
   },
-  "active": "efbe9109c632246e",
+  "active": "48c749bd36fb5455",
   "lastOpenFiles": [
-    "notes/seguranca-de-redes-de-computadores-pos-graduacao/redes-e-sistemas-distribuidos/sistemas-distribuidos/conceitos-de-sistemas-distribuidos/Middleware, computação em cluster e computação em grid.md",
-    "notes/seguranca-de-redes-de-computadores-pos-graduacao/redes-e-sistemas-distribuidos/sistemas-distribuidos/conceitos-de-sistemas-distribuidos/Introdução da aula.md",
-    "notes/seguranca-de-redes-de-computadores-pos-graduacao/redes-e-sistemas-distribuidos/sistemas-distribuidos/conceitos-de-sistemas-distribuidos/Sincronização de relógios.md",
-    "notes/seguranca-de-redes-de-computadores-pos-graduacao/redes-e-sistemas-distribuidos/sistemas-distribuidos/conceitos-de-sistemas-distribuidos/Introdução da Unidade.md",
-    "notes/seguranca-de-redes-de-computadores-pos-graduacao/redes-e-sistemas-distribuidos/sistemas-distribuidos/conceitos-de-sistemas-distribuidos/Definição e exemplos de sistemas distribuídos.md",
-    "notes/seguranca-de-redes-de-computadores-pos-graduacao/redes-e-sistemas-distribuidos/sistemas-distribuidos/conceitos-de-sistemas-distribuidos/Conceitos de Sistemas Distribuídos.md",
-    "notes/seguranca-de-redes-de-computadores-pos-graduacao/redes-e-sistemas-distribuidos/sistemas-distribuidos/conceitos-de-sistemas-distribuidos/Conclusão.md",
-    "notes/seguranca-de-redes-de-computadores-pos-graduacao/redes-e-sistemas-distribuidos/sistemas-distribuidos/conceitos-de-sistemas-distribuidos/Computação em nuvem e o papel da virtualização em sistemas distribuídos.md",
-    "notes/seguranca-de-redes-de-computadores-pos-graduacao/redes-e-sistemas-distribuidos/sistemas-distribuidos/conceitos-de-sistemas-distribuidos/Compartilhamento de recursos, confiabilidade e desempenho.md",
-    "notes/seguranca-de-redes-de-computadores-pos-graduacao/redes-e-sistemas-distribuidos/sistemas-distribuidos/conceitos-de-sistemas-distribuidos/Arquitetura descentralizada.md",
-    "notes/seguranca-de-redes-de-computadores-pos-graduacao/redes-e-sistemas-distribuidos/sistemas-distribuidos/conceitos-de-sistemas-distribuidos",
-    "notes/seguranca-de-redes-de-computadores-pos-graduacao/redes-e-sistemas-distribuidos/sistemas-distribuidos/aspectos-de-projetos-dos-sistemas-distribuidos/Referências Bibliográficas.md",
-    "notes/seguranca-de-redes-de-computadores-pos-graduacao/redes-e-sistemas-distribuidos/sistemas-distribuidos/aspectos-de-projetos-dos-sistemas-distribuidos/Aspectos de Projetos dos Sistemas Distribuídos.md",
-    "notes/seguranca-de-redes-de-computadores-pos-graduacao/redes-e-sistemas-distribuidos/sistemas-distribuidos/aspectos-de-projetos-dos-sistemas-distribuidos/Tolerâncias a falhas e Transparência.md",
-    "notes/seguranca-de-redes-de-computadores-pos-graduacao/redes-e-sistemas-distribuidos/sistemas-distribuidos/aspectos-de-projetos-dos-sistemas-distribuidos/Heterogeneidade e Segurança.md",
-    "notes/seguranca-de-redes-de-computadores-pos-graduacao/redes-e-sistemas-distribuidos/sistemas-distribuidos/aspectos-de-projetos-dos-sistemas-distribuidos/Objetivos dos sistemas distribuídos, Abertura e Concorrência.md",
-    "notes/seguranca-de-redes-de-computadores-pos-graduacao/redes-e-sistemas-distribuidos/sistemas-distribuidos/aspectos-de-projetos-dos-sistemas-distribuidos/Conclusão.md",
-    "notes/seguranca-de-redes-de-computadores-pos-graduacao/redes-e-sistemas-distribuidos/sistemas-distribuidos/aspectos-de-projetos-dos-sistemas-distribuidos/Introdução da aula.md",
-    "notes/seguranca-de-redes-de-computadores-pos-graduacao/redes-e-sistemas-distribuidos/sistemas-distribuidos/aspectos-de-projetos-dos-sistemas-distribuidos/Escalabilidade.md",
-    "notes/seguranca-de-redes-de-computadores-pos-graduacao/redes-e-sistemas-distribuidos/sistemas-distribuidos/aspectos-de-projetos-dos-sistemas-distribuidos",
-    "notes/seguranca-de-redes-de-computadores-pos-graduacao/redes-e-sistemas-distribuidos/sistemas-distribuidos/sistemas-distribuidos.md",
-    "notes/seguranca-de-redes-de-computadores-pos-graduacao/redes-e-sistemas-distribuidos/sistemas-distribuidos/processos-e-comunicacao-em-sistemas-distribuidos/Processos e Comunicação em Sistemas Distribuídos.md",
-    "notes/seguranca-de-redes-de-computadores-pos-graduacao/redes-e-sistemas-distribuidos/sistemas-distribuidos/processos-e-comunicacao-em-sistemas-distribuidos/Conclusão.md",
-    "notes/seguranca-de-redes-de-computadores-pos-graduacao/redes-e-sistemas-distribuidos/sistemas-distribuidos/processos-e-comunicacao-em-sistemas-distribuidos/Processos cliente-servidor.md",
-    "notes/seguranca-de-redes-de-computadores-pos-graduacao/redes-e-sistemas-distribuidos/sistemas-distribuidos/processos-e-comunicacao-em-sistemas-distribuidos/Processos e threads.md",
-    "notes/seguranca-de-redes-de-computadores-pos-graduacao/redes-e-sistemas-distribuidos/sistemas-distribuidos/processos-e-comunicacao-em-sistemas-distribuidos/Introdução da aula.md",
-    "notes/seguranca-de-redes-de-computadores-pos-graduacao/redes-e-sistemas-distribuidos/sistemas-distribuidos/processos-e-comunicacao-em-sistemas-distribuidos/Comunicação entre processos e em um grupo.md",
-    "notes/seguranca-de-redes-de-computadores-pos-graduacao/redes-e-sistemas-distribuidos/sistemas-distribuidos/processos-e-comunicacao-em-sistemas-distribuidos/Conceitos de sockets.md",
-    "notes/seguranca-de-redes-de-computadores-pos-graduacao/redes-e-sistemas-distribuidos/sistemas-distribuidos/processos-e-comunicacao-em-sistemas-distribuidos",
-    "notes/seguranca-de-redes-de-computadores-pos-graduacao/redes-e-sistemas-distribuidos/arquitetura-e-tecnologia-de-redes/redes-e-sub-redes",
-    "notes/seguranca-de-redes-de-computadores-pos-graduacao/redes-e-sistemas-distribuidos/arquitetura-e-tecnologia-de-redes/ethernet-e-ipv6",
-    "notes/seguranca-de-redes-de-computadores-pos-graduacao/redes-e-sistemas-distribuidos/arquitetura-e-tecnologia-de-redes/gerencia-de-desempenho,-configuracao-e-contabilizacao",
-    "notes/seguranca-de-redes-de-computadores-pos-graduacao/redes-e-sistemas-distribuidos/a-virtualizacao-e-a-conteinerizacao/conteinerizacao",
-    "notes/seguranca-de-redes-de-computadores-pos-graduacao/redes-e-sistemas-distribuidos/a-virtualizacao-e-a-conteinerizacao/virtualizacao",
-    "notes/seguranca-de-redes-de-computadores-pos-graduacao/redes-e-sistemas-distribuidos/a-virtualizacao-e-a-conteinerizacao/simulando-sistemas-distribuidos-com-docker",
-    "notes/seguranca-de-redes-de-computadores-pos-graduacao/redes-e-sistemas-distribuidos/redes-de-computadores-e-seus-protocolos/redes-de-computadores-e-a-internet",
-    "assets/images/drafts/M1-P3-UDP-HEADER.png",
-    "assets/images/drafts/M1-P3-TCP-VS-UDP-HEADER.png",
-    "assets/images/drafts/M1-P2-TCP-HEADER.png",
-    "assets/images/drafts/ETH-HEADER-TRAILER.svg",
-    "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/bus-network.svg",
-    "assets/images/networking/2024-09-29-introducao-ao-protocolo-ipv4/relacionamento-camadas-tcp-ip.png",
-    "assets/images/networking/2024-09-29-introducao-ao-protocolo-ipv4/datagrama-ip.png",
+    "drafts/2024-03-20-redes-de-computadores-uma-introducao-para-quem-deseja-se-aventura-no-ccna.md",
+    "_posts/2024-09-29-introducao-ao-protocolo-ipv4.md",
+    "_posts/2025-01-12-fundamentos-de-redes-de-computadores.md",
     "assets/images/networking/2024-09-29-introducao-ao-protocolo-ipv4/comparacao-entre-modelos-de-camadas.png",
     "assets/images/networking/2024-09-29-introducao-ao-protocolo-ipv4/camadas-modelo-tcp-ip.png",
     "assets/images/networking/2024-09-29-introducao-ao-protocolo-ipv4/camadas-modelo-osi.png",
+    "assets/images/networking/2024-09-29-introducao-ao-protocolo-ipv4/camadas-modelo-hibrido.png",
+    "assets/images/networking/2024-09-29-introducao-ao-protocolo-ipv4/relacionamento-camadas-tcp-ip.png",
+    "assets/images/networking/2024-09-29-introducao-ao-protocolo-ipv4/datagrama-ip.png",
+    "notes/redes-de-computadores/cisco-ccna-200-301/gk-ccna/modulo-1-introduction-to-networking.md",
+    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/chapter-3-fundamentals-of-wans-and-ip-routing.md",
+    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/chapter-2-fundamentals-of-ethernet-lans.md",
+    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/chapter-1-introduction-to-tcp-ip-networking.md",
+    "notes/redes-de-computadores/cisco-ccna-200-301/gk-ccna/modulo-2-fundamentals-of-ethernet-lans.md",
+    "notes/redes-de-computadores/cisco-ccna-200-301/gk-ccna/modulo-3-implementing-ethernet-lans.md",
+    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-7-final-review/chapter-26-final-review.md",
+    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-7-final-review/chapter-25-exam-updates.md",
+    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-6-network-automation/chapter-24-understanding-ansible-and-terraform.md",
+    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-6-network-automation/chapter-23-understanding-rest-and-json.md",
+    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-6-network-automation/chapter-22-cisco-software-defined-access-cisco-sd-access.md",
+    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-6-network-automation/chapter-21-introduction-to-controller-based-networking.md",
+    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-5-network-architecture/chapter-20-cloud-architecture.md",
+    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-5-network-architecture/chapter-19-wan-architecture.md",
+    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-5-network-architecture/chapter-18-lan-architecture.md",
+    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-4-ip-services/chapter-17-snmp-ftp-and-tftp.md",
+    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-4-ip-services/chapter-16-first-hop-redundancy-protocols.md",
+    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-4-ip-services/chapter-15-quality-of-service-qos.md",
+    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-4-ip-services/chapter-14-network-address-translation.md",
+    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-4-ip-services/chapter-13-device-management-protocols.md",
+    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-3-security-services/chapter-12-dhcp-snooping-and-arp-inspection.md",
+    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-3-security-services/chapter-11-implementing-switch-port-security.md",
+    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-3-security-services/chapter-10-securing-network-devices.md",
+    "notes/redes-de-computadores/redes-de-computadores-e-a-internet-kurose-ross",
+    "notes/redes-de-computadores/redes-de-computadores-tanenbaum",
+    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-7-final-review/chapter-26-final-review",
+    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-4-ip-services/chapter-17-snmp-ftp-and-tftp",
+    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-2-ip-access-control-lists/chapter-8-applied-acls",
+    "Excalidraw",
+    "assets/images/drafts/ETH-HEADER-TRAILER.svg",
+    "assets/images/drafts/M1-P3-TCP-VS-UDP-HEADER.png",
+    "assets/images/drafts/M1-P2-TCP-HEADER.png",
+    "assets/images/drafts/M1-P3-UDP-HEADER.png",
+    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/chapter-2-fundamentals-of-ethernet-lans/chapter-2-notes",
+    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/part-1-review",
+    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/chapter-3-fundamentals-of-wans-and-ip-routing",
+    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/chapter-2-fundamentals-of-ethernet-lans",
     "quick-notes/Redes de Computadores/Cisco - CCNA 200-301/GK - CCNA/Untitled.canvas"
   ]
 }
