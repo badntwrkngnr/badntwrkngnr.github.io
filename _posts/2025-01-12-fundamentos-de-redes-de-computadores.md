@@ -152,25 +152,25 @@ Topologias de rede descrevem como os dispositivos (computadores, roteadores, etc
 
 Na topologia de barramento, todos os dispositivos estão conectados a um único cabo principal, chamado de "barramento".
 
-<img src="/assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/bus-network.svg" height="300px"/>
+<img src="/assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/bus-network.png" height="300px"/>
 
 ### Anel
 
 Na topologia de anel, os dispositivos estão conectados em círculo, formando um laço fechado. Os dados circulam em uma única direção (ou às vezes em ambas).
 
-<img src="/assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/ring-network.svg" height="300px"/>
+<img src="/assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/ring-network.png" height="300px"/>
 
 ### Estrela
 
 Na topologia em estrela, todos os dispositivos estão conectados a um dispositivo central, como um switch ou roteador.
 
-<img src="/assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/star-network.svg" height="300px"/>
+<img src="/assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/star-network.png" height="300px"/>
 
 ### Mesh
 
 Na topologia mesh, cada dispositivo está conectado a vários outros dispositivos, criando múltiplos caminhos para os dados.
 
-<img src="/assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/mesh-network.svg" height="300px"/>
+<img src="/assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/mesh-network.png" height="300px"/>
 
 *Isso não é um pentagrama, ok?*
 
