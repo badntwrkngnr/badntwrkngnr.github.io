@@ -1,4 +1,4 @@
-## Introdução
+## Introdução e Base Teórica
 
 A **camada de enlace de dados** é fundamental no modelo OSI e TCP/IP, sendo a segunda camada no processo de comunicação entre dispositivos em rede. Ela é responsável por garantir que as unidades de informação, chamadas **quadros**, sejam transferidas de maneira confiável entre dispositivos fisicamente conectados por meio de um canal de comunicação, como cabos, linhas telefônicas ou canais sem fio.
 
@@ -13,8 +13,6 @@ A camada de enlace de dados utiliza os serviços da camada física para a transm
 4. **Controle de Fluxo**: Regular a taxa de transmissão de dados para evitar sobrecarregar receptores mais lentos.
 
 Além das funções citadas, a camada de enlace também é responsável pelo **endereçamento físico**, utilizando endereços MAC (Media Access Control) para identificar dispositivos em uma rede local (LAN), esse conceito é fundamental para entender como switches encaminham quadros.
-
-O
 #### Serviços
 
 Os serviços da camada de enlace de dados variam de acordo com o protocolo, mas podemos categorizá-los em três tipos principais:
@@ -23,7 +21,7 @@ Os serviços da camada de enlace de dados variam de acordo com o protocolo, mas 
 - **Serviço não orientado a conexões com confirmação**: Cada quadro enviado é confirmado individualmente, o que permite o retransmissão de quadros perdidos. O padrão **802.11 (WiFi)** adota essa abordagem para garantir confiabilidade em redes sem fio.
 - **Serviço orientado a conexões com confirmação**: Neste serviço, uma conexão lógica é estabelecida entre as máquinas antes do envio dos dados. Cada quadro é numerado e a confirmação garante a entrega.
 
-Nas certificações de fabricantes de equipamentos, o foco geralmente recai sobre o **Ethernet (IEEE 802.3)**, que utiliza um serviço não orientado a conexão sem confirmação. Já o **WiFi (IEEE 802.11)** usa confirmações devido à natureza propensa a erros das redes sem fio.
+Nas certificações de fabricantes de equipamentos, sobretudo o CCNA, o foco geralmente recai sobre o **Ethernet (IEEE 802.3)**, que utiliza um serviço não orientado a conexão sem confirmação. Já o **WiFi (IEEE 802.11)** usa confirmações devido à natureza propensa a erros das redes sem fio.
 #### Enquadramento
 
 Para garantir que os quadros sejam transmitidos de forma correta, a camada de enlace de dados deve organizar o fluxo de bits brutos provenientes da camada física em quadros. Esse processo é chamado de **enquadramento** e envolve:
@@ -41,7 +39,7 @@ Existem várias estratégias de enquadramento, como:
 
 A Ethernet, por exemplo, utiliza um preâmbulo (sequência de bits de sincronização) seguido de um campo de comprimento para marcar o início e o final dos quadros.
 
-![[Pasted image 20250420134628.png]]
+![[ETH-HEADER-TRAILER.png]]
 Campos do Cabeçalho Ethernet e Trailer (IEEE 802.3)
 
 | Campo                       | Bytes   | Descrição                                                                                                                                                                                              |
@@ -76,5 +74,23 @@ Abaixo segue uma tabela que faz uma comparação entre os modos de encaminhament
 | Cut-Through       | Mínima   | Nenhuma              | Data Centers / Low-Latency      |
 | Fragment-Free     | Moderada | Primeiros 64 bytes   | Redes com histórico de colisões |
 
-Ao estudar para o CCNA, o padrão para redes locais (LANs) é o Ethernet, que nada mais é que um conjunto de padrões e regras a serem seguidas para que os dispositivos possam se comunicar.
-Comecei a escrever esse texto com a intenção de criar um guia para revisar rapidamente o conteúdo que já estudei.
+## Vamos para a parte prática?
+
+Agora que vimos o básico da teoria, vamos praticar e ver a camada de enlace funcionando, a princípio a ideia é bem simples, será um único conteúdo abordando os principais assuntos relacionados à Ethernet, LAN e Spanning-Tree, posso te adiantar que a tendência é que o texto fique um pouco cansativo, fique à vontade para ler aos poucos e praticar com o lab disponibilizado.
+
+### Vamos falar sobre o switch...
+
+O switch, ou comutador, em tese é um dispositivo que opera na camada 2, conforme você vai ver em muitas literaturas, mas eu não levo isso como uma verdade absoluta, eu prefiro seguir a linha de que o switch é um dispositivo que desempenha diversas funções, uma delas é fazer o encaminhamento de quadros, portanto essa função está localizada na camada 2.
+
+Esse dispositivo encaminha os quadros baseado no endereço MAC de destino e somente isso, ele não faz o encaminhamento baseado em endereçamento IP.
+
+Uma coisa que passou batida e eu quase ia me esquecendo, é que a camada 2 (camada de enlace) é refere a um enlace (sic), por mais óbvio que seja, acho importante falar que o encaminhamento de quadros tem escopo local, dentro da mesma LAN, rede ou VLAN.
+
+Ao receber um quadro, o switch observa a sua tabela MAC e verifica se conhece o endereço de destino, se ele não conhece, vai fazer a utilização protocolo ARP, que é um protocolo 
+#### Referências
+
+* Gustavo Kalau
+
+* https://community.cisco.com/t5/artigos-routing-switching/spanning-tree-protocolo-stp/ta-p/5209086
+
+* https://www.howtonetwork.com.br/forum/switching/etherchannel-e-os-seus-metodos-de-load-balancing
