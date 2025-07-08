@@ -86,7 +86,7 @@ Esse dispositivo encaminha os quadros baseado no endereço MAC de destino e some
 
 Uma coisa que passou batida e eu quase ia me esquecendo, é que a camada 2 (camada de enlace) é refere a um enlace (sic), por mais óbvio que seja, acho importante falar que o encaminhamento de quadros tem escopo local, dentro da mesma LAN, rede ou VLAN.
 
-Ao receber um quadro, o switch observa a sua tabela MAC e verifica se conhece o endereço de destino, se ele não conhece, vai fazer a utilização protocolo ARP, que é um protocolo 
+Ao receber um quadro, o switch observa a sua tabela MAC e verifica se conhece o endereço de destino, se ele não conhece, vai fazer a utilização protocolo ARP, que é um protocolo auxiliar do protocolo IP.
 #### Referências
 
 * Gustavo Kalau
