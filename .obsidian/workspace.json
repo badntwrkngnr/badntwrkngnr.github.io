@@ -11,13 +11,31 @@
             "id": "7f021b9d761f060d",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "drafts/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica"
+            }
+          },
+          {
+            "id": "ffcfa8cc0ef40e24",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/arp-request-imagine.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "arp-request-imagine"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -138,12 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "Excalidraw/arp-request-imagine.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline"
+              "title": "Outline of arp-request-imagine"
             }
           }
         ],
@@ -168,30 +187,36 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "7f021b9d761f060d",
+  "active": "ffcfa8cc0ef40e24",
   "lastOpenFiles": [
+    "Excalidraw/arp-request-imagine.md",
+    "Excalidraw/arp-request-reply.md",
+    "Excalidraw/arp-request-flooding.md",
+    "Excalidraw/arp-request-flooding 1.md",
+    "Excalidraw/arp-request.md",
+    "Excalidraw/Drawing 2025-07-17 18.16.00.excalidraw.md",
     "drafts/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica.md",
-    "assets/images/drafts/ETH-HEADER-TRAILER.png",
+    "Pasted Image 20250717181005_870.png",
+    "Pasted image 20250717170644.png",
+    "Pasted image 20250717170557.png",
+    "Pasted image 20250717170532.png",
+    "Pasted image 20250717170455.png",
+    "Pasted image 20250717170402.png",
+    "Pasted image 20250717165823.png",
+    "Pasted image 20250717165802.png",
+    "Pasted image 20250717165705.png",
+    "Pasted image 20250717165634.png",
     "assets/images/drafts/ETH-HEADER-TRAILER.md",
-    "assets/images/drafts/ETH-HEADER-TRAILER.svg",
     "_posts/2025-01-12-fundamentos-de-redes-de-computadores.md",
-    "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/M1-P3-UDP-HEADER.png",
     "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/M1-P3-UDP-HEADER.md",
-    "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/M1-P3-TCP-VS-UDP-HEADER.png",
     "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/M1-P3-TCP-VS-UDP-HEADER.md",
-    "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/M1-P2-TCP-HEADER.png",
     "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/M1-P2-TCP-HEADER.md",
     "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/part-1-review.md",
     "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/chapter-3-fundamentals-of-wans-and-ip-routing.md",
     "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/chapter-2-fundamentals-of-ethernet-lans.md",
     "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/chapter-1-introduction-to-tcp-ip-networking.md",
-    "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/star-network.svg",
-    "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/ring-network.svg",
-    "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/mesh-network.svg",
     "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/Drawing 2025-06-22 19.58.32.excalidraw.md",
-    "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/star-network.png",
     "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/Drawing 2025-06-22 19.59.41.excalidraw.md",
-    "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/ring-network.png",
     "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/Drawing 2025-06-22 19.59.10.excalidraw.md",
     "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/Drawing 2025-06-22 19.56.42.excalidraw.md",
     "drafts/2024-03-20-redes-de-computadores-uma-introducao-para-quem-deseja-se-aventura-no-ccna.md",
@@ -200,11 +225,6 @@
     "notes/redes-de-computadores/cisco-ccna-200-301/gk-ccna/modulo-2-fundamentals-of-ethernet-lans.md",
     "notes/redes-de-computadores/cisco-ccna-200-301/gk-ccna/modulo-3-implementing-ethernet-lans.md",
     "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-7-final-review/chapter-26-final-review.md",
-    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-7-final-review/chapter-25-exam-updates.md",
-    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-6-network-automation/chapter-24-understanding-ansible-and-terraform.md",
-    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-6-network-automation/chapter-23-understanding-rest-and-json.md",
-    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-6-network-automation/chapter-22-cisco-software-defined-access-cisco-sd-access.md",
-    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-6-network-automation/chapter-21-introduction-to-controller-based-networking.md",
     "notes/redes-de-computadores/redes-de-computadores-e-a-internet-kurose-ross",
     "notes/redes-de-computadores/redes-de-computadores-tanenbaum",
     "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-7-final-review/chapter-26-final-review",

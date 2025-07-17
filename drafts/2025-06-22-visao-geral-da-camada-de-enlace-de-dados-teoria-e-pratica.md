@@ -1,8 +1,8 @@
 ## Introdução e Base Teórica
 
-A **camada de enlace de dados** é fundamental no modelo OSI e TCP/IP, sendo a segunda camada no processo de comunicação entre dispositivos em rede. Ela é responsável por garantir que as unidades de informação, chamadas **quadros**, sejam transferidas de maneira confiável entre dispositivos fisicamente conectados por meio de um canal de comunicação, como cabos, linhas telefônicas ou canais sem fio.
+A **camada de enlace de dados** é fundamental no modelo OSI e TCP/IP, sendo a segunda camada no processo de comunicação entre dispositivos em rede. Ela é responsável por garantir que as unidades de informação, chamadas **quadros**, sejam transferidas de maneira confiável entre dispositivos fisicamente conectados por meio de um canal de comunicação, sejam eles guiados, como cabos de rede e fibras ópticas, ou não-guiados, como as redes sem fio.
 
-Para profissionais de redes de computadores, para termos uma base sólida é fundamental conhecer a Camada de Enlace, pois ela é essencial para entender como switches, endereços MAC e VLANs funcionam na prática. Neste artigo, exploraremos os conceitos teóricos e depois aplicaremos esse conhecimento em cenários reais de configuração.
+Em todo canto, você vai ver que para profissionais de redes de computadores é necessário ter uma base sólida, por isso, uma das coisas fundamentais é conhecer a camada de enlace, pois ela é essencial para entender como switches, endereços MAC e VLANs funcionam na prática. Neste artigo, exploraremos alguns dos conceitos teóricos e depois aplicaremos esse conhecimento em cenários reais de configuração.
 ### Funções Básicas da Camada de Enlace de Dados
 
 A camada de enlace de dados utiliza os serviços da camada física para a transmissão de bits, garantindo que os dados cheguem à máquina de destino. Entre as funções principais desta camada estão:
@@ -21,7 +21,7 @@ Os serviços da camada de enlace de dados variam de acordo com o protocolo, mas 
 - **Serviço não orientado a conexões com confirmação**: Cada quadro enviado é confirmado individualmente, o que permite o retransmissão de quadros perdidos. O padrão **802.11 (WiFi)** adota essa abordagem para garantir confiabilidade em redes sem fio.
 - **Serviço orientado a conexões com confirmação**: Neste serviço, uma conexão lógica é estabelecida entre as máquinas antes do envio dos dados. Cada quadro é numerado e a confirmação garante a entrega.
 
-Nas certificações de fabricantes de equipamentos, sobretudo o CCNA, o foco geralmente recai sobre o **Ethernet (IEEE 802.3)**, que utiliza um serviço não orientado a conexão sem confirmação. Já o **WiFi (IEEE 802.11)** usa confirmações devido à natureza propensa a erros das redes sem fio.
+Nas certificações de fabricantes de equipamentos, sobretudo o CCNA 200-301, o foco geralmente recai sobre o **Ethernet (IEEE 802.3)**, que utiliza um serviço não orientado a conexão sem confirmação. A título de curiosidade, podemos falar que o **WiFi (IEEE 802.11)** usa confirmações devido à natureza propensa a erros das redes sem fio, esse padrão também é cobrado no blueprint do CCNA 220-301, mas não será abordado nesse artigo.
 #### Enquadramento
 
 Para garantir que os quadros sejam transmitidos de forma correta, a camada de enlace de dados deve organizar o fluxo de bits brutos provenientes da camada física em quadros. Esse processo é chamado de **enquadramento** e envolve:
@@ -76,17 +76,86 @@ Abaixo segue uma tabela que faz uma comparação entre os modos de encaminhament
 
 ## Vamos para a parte prática?
 
-Agora que vimos o básico da teoria, vamos praticar e ver a camada de enlace funcionando, a princípio a ideia é bem simples, será um único conteúdo abordando os principais assuntos relacionados à Ethernet, LAN e Spanning-Tree, posso te adiantar que a tendência é que o texto fique um pouco cansativo, fique à vontade para ler aos poucos e praticar com o lab disponibilizado.
+Agora que vimos o básico da teoria, vamos praticar e ver a camada de enlace funcionando, a princípio a ideia é bem simples, será um único conteúdo abordando os principais assuntos relacionados à Ethernet, LAN e Spanning-Tree, posso te adiantar que a tendência é que o texto fique um pouco cansativo, fique à vontade para ler aos poucos e praticar com o lab disponibilizado. Por uma preferência pessoal, utilizei o PNETLAB, mas o lab é compatível com o EVE-NG.
 
-### Vamos falar sobre o switch...
+![[Pasted image 20250717162105.png]]
+### Antes de começarmos, precisamos falar sobre o switch...
 
-O switch, ou comutador, em tese é um dispositivo que opera na camada 2, conforme você vai ver em muitas literaturas, mas eu não levo isso como uma verdade absoluta, eu prefiro seguir a linha de que o switch é um dispositivo que desempenha diversas funções, uma delas é fazer o encaminhamento de quadros, portanto essa função está localizada na camada 2.
+O switch, ou comutador, em tese é um dispositivo que opera na camada 2, conforme você vai ver em muitas literaturas, mas eu não levo isso como uma verdade absoluta e escrita em pedra, eu prefiro seguir a linha de que o switch é um dispositivo que desempenha diversas funções, uma delas é fazer o encaminhamento de quadros, portanto essa função está localizada na camada 2.
 
-Esse dispositivo encaminha os quadros baseado no endereço MAC de destino e somente isso, ele não faz o encaminhamento baseado em endereçamento IP.
+Esse dispositivo, quando executando as funções previstas na camada 2, encaminha os quadros baseado no endereço MAC de destino e somente isso, ele não faz o encaminhamento baseado em endereçamento IP.
 
-Uma coisa que passou batida e eu quase ia me esquecendo, é que a camada 2 (camada de enlace) é refere a um enlace (sic), por mais óbvio que seja, acho importante falar que o encaminhamento de quadros tem escopo local, dentro da mesma LAN, rede ou VLAN.
+> Uma coisa que passou batida e eu quase ia me esquecendo, é que a camada 2 (camada de enlace) se refere a um enlace, por mais óbvio que seja, acho importante falar que o encaminhamento de quadros tem escopo local, dentro da mesma LAN, rede ou VLAN, nesse momento não vamos dos tipos de virtualização para a camada 2, mas saiba que existem formas de enganar os equipamentos.
 
-Ao receber um quadro, o switch observa a sua tabela MAC e verifica se conhece o endereço de destino, se ele não conhece, vai fazer a utilização protocolo ARP, que é um protocolo auxiliar do protocolo IP.
+Prosseguindo, ao receber um quadro, o switch observa a sua tabela MAC e verifica se conhece o endereço de destino, se ele não conhece, vai fazer a utilização protocolo ARP, que é um protocolo auxiliar do protocolo IP.
+
+### O início...
+
+Bom, eu fiz uma pequena alteração na topologia, igual pode ser observado na imagem abaixo, e liguei todos os dispositivos do lab e para se ter uma noção de como o encaminhamento de quadros funciona:
+* ![[Pasted image 20250717163153.png]]
+
+Podemos observar que o PC1 não sabe o endereço físico do PC2, e vice-versa, mas sabemos o endereço IP do PC1 (10.0.0.1/30) e do PC2 (10.0.0.2/30), porque é o endereço que foi configurado:
+
+* ![[Pasted image 20250717165041.png]]
+* ![[Pasted image 20250717165203.png]]
+
+Para observarmos o comportamento do protocolo *ARP*, foi aplicado o comando de ping no PC1 em direção ao endereço IP do PC2, para isso, abri o wireshark em todas as interfaces do SWT-ACC1:
+
+* Interface 1/3:
+	*  Apesar de estar escrito "Broadcast", o comportamento é conhecido como "Unknown Unicast":
+		* ![[Pasted image 20250717165602.png]]
+	* Aqui podemos ver no detalhe do quadro de unknown unicast:
+		* ![[Pasted image 20250717170402.png]]
+	* Aqui podemos ver a resposta para o endereço do PC1 retornando:
+		* ![[Pasted image 20250717170455.png]]
+
+* Interface 0/0:
+	* Olha o unknown unicast aparecendo mais uma vez:
+		* ![[Pasted image 20250717165634.png]]
+	* Novamente, o detalhe do unknown unicast:
+		* ![[Pasted image 20250717170532.png]]
+	* Essa interface retornou o quadro para o SWT-ACC1 encaminhar para o PC1:
+		* ![[Pasted image 20250717170557.png]]
+
+* Interface 0/1:
+	* Essa interface enviou o unknown unicast, porém não recebeu a resposta do ARP, vamos falar sobre isso mais adiante, guarde essa informação:
+		* ![[Pasted image 20250717165705.png]]
+	* Só para manter o padrão:
+		* ![[Pasted image 20250717170644.png]]
+
+Vamos voltar as nossas atenções ao PC1 e ao PC2...
+
+* PC1:
+	* Após recebermos a resposta do comando *ping*, se liga, a tabela ARP está com o endereço MAC do PC2:
+		* ![[Pasted image 20250717165802.png]]
+	* Antes de seguirmos em frente, rapidinho, tem uma coisa muito importante acontecendo, essa informação do endereço MAC do PC2 vai expirar e com isso, quando o PC1 tiver que enviar qualquer tipo de comunicação ao PC2, ele fará uso do ARP novamente.
+
+* PC2:
+	* Após enviar a resposta do *ping* para o PC1, o PC2 instalou o endereço MAC do PC1 na sua tabela ARP:
+		* ![[Pasted image 20250717165823.png]]
+	* Sim, você não perguntou absolutamente nada, mas o mesmo vale para o PC2, o endereço MAC vai expirar também.
+
+### Vamos voltar nossa atenção para a teoria novamente...
+
+Gostaria de dizer que talvez fosse mais interessante falar toda a teoria primeiro e depois praticar tudo de uma vez, mas eu preciso genuinamente da sua ajuda, se gostar desse formato de falar da teoria e da prática de forma cadenciada, me deixe saber e se não gostar, peço que não minta, que eu corrijo para os próximos artigos, ok?
+
+Vimos algumas palavras que não foram mencionadas e agora precisamos esclarecer para fazer sentido o que foi observado no exemplo acima, vou tentar ser o mais objetivo possível para não deixar esse texto maior do que deveria:
+1. Protocolo ARP
+2. Broadcast
+3. Unknown Unicast
+#### Protocolo ARP
+
+A intenção é ser breve, para mais detalhes, consulte a [RFC 826](https://datatracker.ietf.org/doc/html/rfc826), falando de forma bem resumida, esse protocolo auxilia no funcionamento do protocolo IP...
+Para encaminharmos um quadro em uma rede local, os dispositivos devem conhecer o endereço físico dos equipamentos de destino, e é aqui que o *ARP* (Address Resolution Protocol) entra em ação...
+Antes de mais nada, é importante falar sobre as formas de envio dos quadros:
+* Unicast: O quadro é enviado a um único destino, quando o dispositivo conhece o endereço do destino
+* Multicast: O quadro é enviado a um grupo, vamos ver o seu funcionamento ao falar de alguns protocolos de roteamento
+* Broadcast: O quadro é enviado para todas as interfaces, exceto a que o quadro foi recebido
+
+Mas você deve estar se perguntando, o que raios é *Unknown Unicast*? Na prática, se comporta como o broadcast, mas é o nome técnico do quadro que o ARP envia para descobrir o endereço físico, através do seu endereço IP.
+
+
+
 #### Referências
 
 * Gustavo Kalau
