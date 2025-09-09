@@ -4,22 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "18723d043423ecc4",
+        "id": "d576c8b1bc9b7668",
         "type": "tabs",
         "children": [
           {
-            "id": "1a63e602f35a7fb5",
+            "id": "1cbc6913e94733da",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "drafts/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica"
+              "title": "New tab"
             }
           }
         ]
@@ -174,31 +169,38 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "1a63e602f35a7fb5",
+  "active": "efbe9109c632246e",
   "lastOpenFiles": [
-    "assets/labs",
-    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/ETH-HEADER-TRAILER.png",
-    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/ETH-HEADER-TRAILER.md",
-    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/Pasted image 20250717170455.png",
+    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/25-stp-06.png",
+    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/24-stp-05.png",
+    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/23-stp-04.png",
+    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/22-stp-03.png",
+    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/21-stp-02.png",
+    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/20-stp-01.png",
+    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/stp-06.png",
+    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/stp-05.png",
+    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/stp-04.png",
+    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/stp-03.png",
+    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/stp-02.png",
+    "Excalidraw/Drawing 2025-09-08 22.20.23.excalidraw.md",
+    "Excalidraw/arp-request.md",
+    "Excalidraw/Drawing 2025-09-08 21.55.20.excalidraw.md",
+    "Excalidraw/arp-request-reply.md",
+    "Excalidraw/arp-request-imagine.md",
+    "Excalidraw/arp-request-flooding 1.md",
+    "Excalidraw/arp-request-flooding.md",
     "drafts/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica.md",
-    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/arp-protocol.png",
-    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/Pasted image 20250717162105.png",
+    "assets/labs",
+    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/ETH-HEADER-TRAILER.md",
     "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica",
     "notes/redes-de-computadores/enarsi/01-ipv4-review-by-gemini.md",
     "WERTYUYUJJBFFGLEIAVVVVBCFFUIEDFFFFGGGGHHHHGJHJUUHHHHJJKJKHGGFFFFCCCCFGGGVVVFGGGHFGHHGGGGGFVHGUGHFGVVBVC CCCCVBVVVVBVOOOMBNVDCCCXXXZZZFDAQQQSD.md",
     "Clippings/Exercícios de Revisão – ENARSI – M1 – Gustavo Kalau.md",
     "Clippings",
     "notes/redes-de-computadores/enarsi/02-ipv6-review-by-gemini.md",
-    "Excalidraw/arp-request-flooding 1.md",
     "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/chapter-2-fundamentals-of-ethernet-lans.md",
     "notes/redes-de-computadores/enarsi",
     "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/chapter-1-introduction-to-tcp-ip-networking.md",
-    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/Pasted Image 20250717181005_870.png",
-    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/Pasted image 20250717170644.png",
-    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/Pasted image 20250717170557.png",
-    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/Pasted image 20250717170532.png",
-    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/Pasted image 20250717170402.png",
-    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/Pasted image 20250717165823.png",
     "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/chapter-3-fundamentals-of-wans-and-ip-routing.md",
     "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-3-implementing-vlans-and-stp/chapter-8-implementing-ethernet-virtual-lans.md",
     "notes/redes-de-computadores/cisco-ccna-200-301/gk-ccna/modulo-1-introduction-to-networking.md",
@@ -208,20 +210,13 @@
     "drafts/ferramentas-basicas-para-troubleshooting-de-rede.md",
     "drafts/a-camada-de-enlace.md",
     "_posts/2025-01-12-fundamentos-de-redes-de-computadores.md",
-    "Excalidraw/arp-request-imagine.md",
-    "Excalidraw/arp-request-reply.md",
-    "Excalidraw/arp-request-flooding.md",
-    "Excalidraw/arp-request.md",
     "Excalidraw/Drawing 2025-07-17 18.16.00.excalidraw.md",
-    "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/M1-P3-UDP-HEADER.md",
-    "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/M1-P3-TCP-VS-UDP-HEADER.md",
     "notes/redes-de-computadores/redes-de-computadores-e-a-internet-kurose-ross",
     "notes/redes-de-computadores/redes-de-computadores-tanenbaum",
     "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-7-final-review/chapter-26-final-review",
     "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-4-ip-services/chapter-17-snmp-ftp-and-tftp",
     "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-2-ip-access-control-lists/chapter-8-applied-acls",
     "Excalidraw",
-    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/chapter-2-fundamentals-of-ethernet-lans/chapter-2-notes",
     "quick-notes/Redes de Computadores/Cisco - CCNA 200-301/GK - CCNA/Untitled.canvas"
   ]
 }

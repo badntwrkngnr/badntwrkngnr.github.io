@@ -175,10 +175,44 @@ Simplificando:
 
 Agora traduzindo:
 
-1. Você deseja encaminhar um pacote a um dispositivo que você conhece o endereço IP, mas não conhece o endereço físico (MAC);
-2. Quando você envia o pacote pela rede, ao ser encapsulado, o dispositivo de origem vai inserir o endereço MAC (FF:FF:FF:FF:FF:FF), ou seja, como ele não sabe o MAC, ele usa esse endereço especial para descobrir o endereço MAC do dispositivo (ARP Request);
-3. O quadro viaja pela rede e ao chegar no destino incorreto, é descartado, até que ao chegar ao destino correto, é reconhecido e então envia uma resposta diretamente a quem fez a solicitação (ARP Reply);
-4. Ao receber o ARP Reply, o dispositivo de origem ao enviar novos pacotes ao dispositivo de destino não precisará mais fazer o uso do ARP, pelo menos enquanto o temporizador não acabar.
+- Você deseja encaminhar um pacote a um dispositivo que você conhece o endereço IP, mas não conhece o endereço físico (MAC)
+
+  - <img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/15-arp-request.png">
+
+- Quando você envia o pacote pela rede, ao ser encapsulado, o dispositivo de origem vai inserir o endereço MAC (FF:FF:FF:FF:FF:FF), ou seja, como ele não sabe o MAC, ele usa esse endereço especial para descobrir o endereço MAC do dispositivo (ARP Request)
+  - <img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/16-arp-request-flooding.png">
+  - <img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/17-arp-request-flooding 1.png">
+- O quadro viaja pela rede e ao chegar no destino incorreto, é descartado, vamos fingir que o endereço IP do PC2 não é 10.0.0.2
+  - <img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/18-arp-request-imagine.png">
+- O frame vai trafegar pela rede até que ao chegar ao destino correto, é reconhecido e então envia uma resposta diretamente a quem fez a solicitação (ARP Reply)
+  - <img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/19-arp-request-reply.png">
+- Ao receber o ARP Reply, o dispositivo de origem ao enviar novos pacotes ao dispositivo de destino não precisará mais fazer o uso do ARP, pelo menos enquanto o temporizador não acabar.
+
+### Surge a necessidade de evitar que "quadros fantasmas" fiquem vagando pela rede
+
+Bom, falamos sobre os frames de broadcast e unknown unicast, mas você já parou para pensar que na nossa topologia eles podem vagar eternamente como fantasmas?
+
+Temos inúmeros caminhos redundantes, cada switch vai receber uma cópia e reencaminhar o frame novamente por todas as outras portas, vou usar uma topologia mais simples para exemplificar...
+<img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/20-stp-01.png">
+
+Ao enviar um quadro unknown unicast, o switch faz uma cópia e envia para todas as portas, exceto pela que recebeu...
+<img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/21-stp-02.png">
+
+O próximo switch vai fazer a mesma coisa...
+<img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/22-stp-03.png">
+
+O unknown unicast vai chegar ao seu destino, mas o comportamento dos outros switches vai permanecer o mesmo...
+<img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/23-stp-04.png">
+
+Ao receber o frame, vai encaminhar uma cópia para todas as portas...
+<img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/24-stp-05.png">
+
+Nesse ponto, não há nada a ser feito, os quadros vão ficar vagando eternamente pela rede local igual uma alma penada, causando instabilidade na tabela MAC e consumo de CPU até que algum switch não consiga encaminhar mais nenhum quadro e trave completamente!
+<img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/25-stp-06.png">
+
+Mas afinal, como resolver esse problema?
+Bom, para isso foi desenvolvido um protocolo de rede chamado Spanning-Tree Protocol (STP) e o que ele faz? Indo direto ao ponto:
+> O STP bloqueia um dos caminhos redundantes, evitando que ocorra o loop.
 
 ### Referências
 
