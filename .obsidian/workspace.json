@@ -4,17 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "833f61ecf7a14d5a",
+        "id": "18723d043423ecc4",
         "type": "tabs",
         "children": [
           {
-            "id": "4dbbb2f9d3260f4a",
+            "id": "1a63e602f35a7fb5",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "drafts/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica"
             }
           }
         ]
@@ -74,7 +79,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 480.51103591918945
+    "width": 570.5110359191895
   },
   "right": {
     "id": "53db1b35e6c6c5ee",
@@ -138,13 +143,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Excalidraw/arp-request-imagine.md",
+                "file": "_posts/2024-09-29-introducao-ao-protocolo-ipv4.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of arp-request-imagine"
+              "title": "Outline of 2024-09-29-introducao-ao-protocolo-ipv4"
             }
           }
         ],
@@ -169,43 +174,47 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "4dbbb2f9d3260f4a",
+  "active": "1a63e602f35a7fb5",
   "lastOpenFiles": [
+    "assets/labs",
+    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/ETH-HEADER-TRAILER.png",
+    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/ETH-HEADER-TRAILER.md",
+    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/Pasted image 20250717170455.png",
     "drafts/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica.md",
-    "Pasted Image 20250717181005_870.png",
-    "Pasted image 20250717170644.png",
-    "Pasted image 20250717170557.png",
-    "Pasted image 20250717170532.png",
-    "Pasted image 20250717170455.png",
-    "Pasted image 20250717170402.png",
-    "Pasted image 20250717165823.png",
-    "Pasted image 20250717165802.png",
-    "Pasted image 20250717165705.png",
-    "Pasted image 20250717165602.png",
+    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/arp-protocol.png",
+    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/Pasted image 20250717162105.png",
+    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica",
+    "notes/redes-de-computadores/enarsi/01-ipv4-review-by-gemini.md",
+    "WERTYUYUJJBFFGLEIAVVVVBCFFUIEDFFFFGGGGHHHHGJHJUUHHHHJJKJKHGGFFFFCCCCFGGGVVVFGGGHFGHHGGGGGFVHGUGHFGVVBVC CCCCVBVVVVBVOOOMBNVDCCCXXXZZZFDAQQQSD.md",
+    "Clippings/Exercícios de Revisão – ENARSI – M1 – Gustavo Kalau.md",
+    "Clippings",
+    "notes/redes-de-computadores/enarsi/02-ipv6-review-by-gemini.md",
+    "Excalidraw/arp-request-flooding 1.md",
+    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/chapter-2-fundamentals-of-ethernet-lans.md",
+    "notes/redes-de-computadores/enarsi",
+    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/chapter-1-introduction-to-tcp-ip-networking.md",
+    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/Pasted Image 20250717181005_870.png",
+    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/Pasted image 20250717170644.png",
+    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/Pasted image 20250717170557.png",
+    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/Pasted image 20250717170532.png",
+    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/Pasted image 20250717170402.png",
+    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/Pasted image 20250717165823.png",
+    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/chapter-3-fundamentals-of-wans-and-ip-routing.md",
+    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-3-implementing-vlans-and-stp/chapter-8-implementing-ethernet-virtual-lans.md",
+    "notes/redes-de-computadores/cisco-ccna-200-301/gk-ccna/modulo-1-introduction-to-networking.md",
+    "assets/images/drafts/ETH-HEADER-TRAILER.md",
+    "_posts/2024-09-29-introducao-ao-protocolo-ipv4.md",
+    "drafts/protocolo-ipv4.md",
+    "drafts/ferramentas-basicas-para-troubleshooting-de-rede.md",
+    "drafts/a-camada-de-enlace.md",
+    "_posts/2025-01-12-fundamentos-de-redes-de-computadores.md",
     "Excalidraw/arp-request-imagine.md",
     "Excalidraw/arp-request-reply.md",
     "Excalidraw/arp-request-flooding.md",
-    "Excalidraw/arp-request-flooding 1.md",
     "Excalidraw/arp-request.md",
     "Excalidraw/Drawing 2025-07-17 18.16.00.excalidraw.md",
-    "assets/images/drafts/ETH-HEADER-TRAILER.md",
-    "_posts/2025-01-12-fundamentos-de-redes-de-computadores.md",
     "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/M1-P3-UDP-HEADER.md",
     "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/M1-P3-TCP-VS-UDP-HEADER.md",
-    "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/M1-P2-TCP-HEADER.md",
-    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/part-1-review.md",
-    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/chapter-3-fundamentals-of-wans-and-ip-routing.md",
-    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/chapter-2-fundamentals-of-ethernet-lans.md",
-    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/chapter-1-introduction-to-tcp-ip-networking.md",
-    "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/Drawing 2025-06-22 19.58.32.excalidraw.md",
-    "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/Drawing 2025-06-22 19.59.41.excalidraw.md",
-    "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/Drawing 2025-06-22 19.59.10.excalidraw.md",
-    "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/Drawing 2025-06-22 19.56.42.excalidraw.md",
-    "drafts/2024-03-20-redes-de-computadores-uma-introducao-para-quem-deseja-se-aventura-no-ccna.md",
-    "_posts/2024-09-29-introducao-ao-protocolo-ipv4.md",
-    "notes/redes-de-computadores/cisco-ccna-200-301/gk-ccna/modulo-1-introduction-to-networking.md",
-    "notes/redes-de-computadores/cisco-ccna-200-301/gk-ccna/modulo-2-fundamentals-of-ethernet-lans.md",
-    "notes/redes-de-computadores/cisco-ccna-200-301/gk-ccna/modulo-3-implementing-ethernet-lans.md",
     "notes/redes-de-computadores/redes-de-computadores-e-a-internet-kurose-ross",
     "notes/redes-de-computadores/redes-de-computadores-tanenbaum",
     "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-7-final-review/chapter-26-final-review",
@@ -213,9 +222,6 @@
     "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-2-ip-access-control-lists/chapter-8-applied-acls",
     "Excalidraw",
     "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/chapter-2-fundamentals-of-ethernet-lans/chapter-2-notes",
-    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/part-1-review",
-    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/chapter-3-fundamentals-of-wans-and-ip-routing",
-    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/chapter-2-fundamentals-of-ethernet-lans",
     "quick-notes/Redes de Computadores/Cisco - CCNA 200-301/GK - CCNA/Untitled.canvas"
   ]
 }
