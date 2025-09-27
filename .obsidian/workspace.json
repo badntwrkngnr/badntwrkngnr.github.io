@@ -4,17 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "d576c8b1bc9b7668",
+        "id": "c3024a442f554501",
         "type": "tabs",
         "children": [
           {
-            "id": "1cbc6913e94733da",
+            "id": "a664d1b33a35216b",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "_posts/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica-parte-1.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica-parte-1"
             }
           }
         ]
@@ -74,7 +79,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 570.5110359191895
+    "width": 328.51103591918945
   },
   "right": {
     "id": "53db1b35e6c6c5ee",
@@ -157,6 +162,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -171,6 +177,14 @@
   },
   "active": "efbe9109c632246e",
   "lastOpenFiles": [
+    "_posts/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica-parte-1.md",
+    "_posts/2025-01-12-fundamentos-de-redes-de-computadores.md",
+    "_posts/2024-09-29-introducao-ao-protocolo-ipv4.md",
+    "drafts/2025-09-27-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica-parte-2.md",
+    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/26-mac-address-structure.png",
+    "Excalidraw/26-mac-address-structure.md",
+    "Excalidraw/Drawing 2025-09-08 22.20.23.excalidraw.md",
+    "drafts/protocolo-ipv4.md",
     "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/25-stp-06.png",
     "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/24-stp-05.png",
     "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/23-stp-04.png",
@@ -180,16 +194,12 @@
     "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/stp-06.png",
     "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/stp-05.png",
     "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/stp-04.png",
-    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/stp-03.png",
-    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/stp-02.png",
-    "Excalidraw/Drawing 2025-09-08 22.20.23.excalidraw.md",
     "Excalidraw/arp-request.md",
     "Excalidraw/Drawing 2025-09-08 21.55.20.excalidraw.md",
     "Excalidraw/arp-request-reply.md",
     "Excalidraw/arp-request-imagine.md",
     "Excalidraw/arp-request-flooding 1.md",
     "Excalidraw/arp-request-flooding.md",
-    "drafts/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica.md",
     "assets/labs",
     "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/ETH-HEADER-TRAILER.md",
     "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica",
@@ -205,12 +215,8 @@
     "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-3-implementing-vlans-and-stp/chapter-8-implementing-ethernet-virtual-lans.md",
     "notes/redes-de-computadores/cisco-ccna-200-301/gk-ccna/modulo-1-introduction-to-networking.md",
     "assets/images/drafts/ETH-HEADER-TRAILER.md",
-    "_posts/2024-09-29-introducao-ao-protocolo-ipv4.md",
-    "drafts/protocolo-ipv4.md",
     "drafts/ferramentas-basicas-para-troubleshooting-de-rede.md",
     "drafts/a-camada-de-enlace.md",
-    "_posts/2025-01-12-fundamentos-de-redes-de-computadores.md",
-    "Excalidraw/Drawing 2025-07-17 18.16.00.excalidraw.md",
     "notes/redes-de-computadores/redes-de-computadores-e-a-internet-kurose-ross",
     "notes/redes-de-computadores/redes-de-computadores-tanenbaum",
     "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-7-final-review/chapter-26-final-review",
