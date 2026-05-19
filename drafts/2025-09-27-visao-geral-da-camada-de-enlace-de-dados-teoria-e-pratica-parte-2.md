@@ -1,137 +1,159 @@
-## Vamos para a parte prática?
+# Visão Geral da Camada de Enlace de Dados: Teoria e Prática (Parte 2)
 
-Agora que vimos o básico da teoria, vamos praticar e ver a camada de enlace funcionando, a princípio a ideia é bem simples, será um único conteúdo abordando os principais assuntos relacionados à Ethernet, LAN e Spanning-Tree, posso te adiantar que a tendência é que o texto fique um pouco cansativo, fique à vontade para ler aos poucos e praticar com o lab disponibilizado. Por uma preferência pessoal, utilizei o PNETLAB, mas o lab é compatível com o EVE-NG.
+## Introdução
+
+Fala rapaziada, firmeza total? Seguinte, agora que vimos o básico da teoria, vamos começar a praticar e ver a camada de enlace funcionando, a princípio a ideia é bem simples, será um único conteúdo abordando os principais assuntos relacionados à Ethernet, LAN e Spanning-Tree, fique à vontade para ler e praticar com o lab disponibilizado. Por uma preferência pessoal, utilizei o PNETLAB, mas o lab é compatível com o EVE-NG.
 
 <img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/00-topology.png">
 
-### Antes de começarmos, precisamos falar sobre o switch
+## Antes de começarmos, precisamos falar sobre o Switch
 
-O switch, ou comutador, em tese é um dispositivo que opera na camada 2, conforme você vai ver em muitas literaturas, mas eu não levo isso como uma verdade absoluta e escrita em pedra, eu prefiro seguir a linha de que o switch é um dispositivo que desempenha diversas funções, uma delas é fazer o encaminhamento de quadros, portanto essa função está localizada na camada 2.
+O switch, ou comutador (em tradução livre), na teoria é um dispositivo que opera na camada 2, conforme você vai ver em muitas literaturas, mas eu não levo isso como uma verdade absoluta, eu prefiro seguir a linha de que o switch é um dispositivo que possui diversas capacidades e desempenha diversas funções, uma delas é fazer o encaminhamento de quadros, portanto essa função está localizada na camada 2.
 
-Esse dispositivo, quando executando as funções previstas na camada 2, encaminha os quadros baseado no endereço MAC de destino e somente isso, ele não faz o encaminhamento baseado em endereçamento IP.
+Esse dispositivo, quando executando as funções previstas na camada 2, encaminha os quadros baseado no endereço MAC de destino e somente isso, portanto, o switch não faz o encaminhamento baseado em endereçamento IP.
 
-> Uma coisa que passou batida e eu quase ia me esquecendo, é que a camada 2 (camada de enlace) se refere a um enlace, por mais óbvio que seja, acho importante falar que o encaminhamento de quadros tem escopo local, dentro da mesma LAN, rede ou VLAN, nesse momento não vamos falar dos tipos de virtualização para a camada 2, mas saiba que existem formas de enganar os equipamentos.
+> Uma coisa que passou batida e eu quase ia me esquecendo, é que a camada 2 (camada de enlace) se refere a um enlace, por mais óbvio que seja, acho importante falar que o encaminhamento de quadros tem escopo local, dentro da mesma LAN, rede ou VLAN, nesse momento não vamos falar dos tipos de virtualização para a camada 2, mas saiba que existem algumas formas de "enganar" os equipamentos, mas esse é um assunto para o Vinícius do futuro tratar.
 
-Prosseguindo, ao receber um quadro, o switch observa a sua tabela MAC e verifica se conhece o endereço de destino, se ele não conhece, vai fazer a utilização protocolo ARP, que é um protocolo auxiliar do protocolo IP.
-
-### O início
-
-Bom, eu fiz uma pequena alteração na topologia, igual pode ser observado na imagem abaixo, e liguei todos os dispositivos do lab e para se ter uma noção de como o encaminhamento de quadros funciona:
-
-- <img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/01-topology-with-pcs.png">
-
-Podemos observar que o PC1 não sabe o endereço físico do PC2, e vice-versa, mas sabemos o endereço IP do PC1 (10.0.0.1/30) e do PC2 (10.0.0.2/30), porque é o endereço que foi configurado:
-
-- <img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/02-pc1-show-arp-inicial.png">
-- <img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/03-pc2-show-arp-inicial.png">
-
-Para observarmos o comportamento do protocolo *ARP*, foi aplicado o comando de ping no PC1 em direção ao endereço IP do PC2, para isso, abri o wireshark em todas as interfaces do SWT-ACC1:
-
-- Interface 1/3:
-  - Apesar de estar escrito "Broadcast", o comportamento é conhecido como "Unknown Unicast":
-    - <img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/04-unknown-unicast-01.png">
-  - Aqui podemos ver no detalhe do quadro de unknown unicast:
-    - <img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/05-unknown-unicast-02.png">
-  - Aqui podemos ver a resposta para o endereço do PC1 retornando:
-    - <img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/06-unknown-unicast-03.png">
-
-- Interface 0/0:
-  - Olha o unknown unicast aparecendo mais uma vez:
-    - <img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/07-unknown-unicast-04.png">
-  - Novamente, o detalhe do unknown unicast:
-    - <img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/08-unknown-unicast-05.png">
-  - Essa interface retornou o quadro para o SWT-ACC1 encaminhar para o PC1:
-    - <img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/09-unknown-unicast-06.png">
-
-- Interface 0/1:
-  - Essa interface enviou o unknown unicast, porém não recebeu a resposta do ARP, vamos falar sobre isso mais adiante, guarde essa informação:
-    - <img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/10-unknown-unicast-07.png">
-  - Só para manter o padrão:
-    - <img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/11-unknown-unicast-08.png">
-
-Vamos voltar as nossas atenções ao PC1 e ao PC2...
-
-- PC1:
-  - Após recebermos a resposta do comando *ping*, se liga, a tabela ARP está com o endereço MAC do PC2:
-    - <img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/12-ping-pc1-pc2.png">
-  - Antes de seguirmos em frente, rapidinho, tem uma coisa muito importante acontecendo, essa informação do endereço MAC do PC2 vai expirar e com isso, quando o PC1 tiver que enviar qualquer tipo de comunicação ao PC2, ele fará uso do ARP novamente.
-
-- PC2:
-  - Após enviar a resposta do *ping* para o PC1, o PC2 instalou o endereço MAC do PC1 na sua tabela ARP:
-    - <img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/13-pc2-show-arp-depois.png">
-  - Sim, você não perguntou absolutamente nada, mas o mesmo vale para o PC2, o endereço MAC vai expirar também.
-
-### Vamos voltar nossa atenção para a teoria novamente
-
-Gostaria de dizer que talvez fosse mais interessante falar toda a teoria primeiro e depois praticar tudo de uma vez, mas eu preciso genuinamente da sua ajuda, se gostar desse formato de falar da teoria e da prática de forma cadenciada, me deixe saber e se não gostar, peço que não minta, que eu corrijo para os próximos artigos, ok?
-
-Vimos algumas palavras que não foram mencionadas e agora precisamos esclarecer para fazer sentido o que foi observado no exemplo acima, vou tentar ser o mais objetivo possível para não deixar esse texto maior do que deveria:
-
-1. Protocolo ARP
-2. Broadcast
-3. Unknown Unicast
+Prosseguindo, ao preparar um quadro para realizar o envio, o dispositivo observa a sua tabela MAC para verificar se conhece o endereço MAC de destino para determinado endereço IP, se ele não conhecer, vai precisar utilizar o protocolo ARP para descobrir o endereço MAC de destino, o ARP é um protocolo auxiliar do protocolo IP.
 
 ### Protocolo ARP
 
-A intenção é ser breve, para mais detalhes, consulte a [RFC 826](https://datatracker.ietf.org/doc/html/rfc826), falando de forma bem resumida, esse protocolo auxilia no funcionamento do protocolo IP, é sabido que para encaminharmos um quadro em uma rede local, os dispositivos devem conhecer o endereço físico dos equipamentos de destino, mas nem sempre temos essa informação, geralmente possuímos o endereço IP e é aqui que o *ARP* (Address Resolution Protocol) entra em ação...
+A intenção é ser breve, para mais detalhes, consulte a [RFC 826](https://datatracker.ietf.org/doc/html/rfc826), falando de forma bem resumida, esse protocolo auxilia no funcionamento do protocolo IP. Para encaminharmos um quadro em uma rede local, os dispositivos devem conhecer o endereço físico dos equipamentos de destino, mas nem sempre temos essa informação, geralmente possuímos o endereço IP e é aqui que o *ARP* (Address Resolution Protocol) entra em ação.
 
-Primeiro de tudo e antes de mais nada, é importante dar contexto e falarmos sobre as formas de envio dos quadros:
+Antes que eu me esqueça, é importante dar contexto e falarmos sobre as formas de envio dos quadros:
 
 - Unicast: O quadro é enviado a um único destino, quando o dispositivo conhece o endereço do destino
-- Multicast: O quadro é enviado a um grupo, vamos ver o seu funcionamento ao falar de alguns protocolos de roteamento em um futuro próximo, assim eu espero
+- Multicast: O quadro é enviado a um grupo, vamos ver o seu funcionamento ao falar de alguns protocolos de roteamento em um futuro próximo
 - Broadcast: O quadro é enviado para todas as interfaces, exceto a que o quadro foi recebido
+  - *Unknown Unicast*: Na prática, o funcionamento é idêntico ao broadcast, mas é o nome técnico do quadro que o ARP envia para descobrir o endereço físico, através do seu endereço IP
 
-Mas você deve estar se perguntando, o que raios é *Unknown Unicast*? Na prática, se comporta como o broadcast, mas é o nome técnico do quadro que o ARP envia para descobrir o endereço físico, através do seu endereço IP.
+Para entendermos melhor o funcionamento do ARP, vamos imaginar que estamos no primeiro dia de aula e que ninguém se conhece, o professor possui uma lista com os nomes dos alunos, mas ainda não os conhece e nem sabe em que lugar estão sentados.
 
-Vamos lá, imagine que você esteja no primeiro dia de aula, o professor possui uma lista com os nomes dos alunos, mas não os conhece e nem sabe em que lugar estão sentados...
+Nesse exemplo, a sala de aula é a LAN, o professor e os alunos são dispositivos.
 
-<img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/14-arp-protocol.png">
+Partindo do ponto de vista do professor, vamos explicar o funcionamento do protocolo ARP:
 
-Simplificando:
+1. O professor ao realizar a chamada, diz o nome do aluno, Pedro, para toda a sala de aula (ARP Request - Unknown Unicast)
+2. A mensagem chega a todos os alunos presentes na sala de aula, correto? Então, os alunos ignoram a mensagem, exceto um... (Os quadros são descartados pelos dispositivos que não possuem o endereço IP contigo no ARP Request)
+3. Pedro responde, com isso o professor sabe quem é e onde ele está (ARP Reply - Unicast)
 
-1. O professor pergunta o nome do aluno (ARP Request)
-2. O aluno responde, com isso o professor sabe quem é e onde ele está (ARP Reply)
+<img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/01-arp-protocol.png">
 
-Agora traduzindo:
+#### ARP Gratuito
 
-- Você deseja encaminhar um pacote a um dispositivo que você conhece o endereço IP, mas não conhece o endereço físico (MAC)
+Não poderia deixar de falar do ARP gratuito, é um mecanismo fundamental para evitar a duplicação de endereços IP, ao conectar um dispositivo na rede, ele envia automaticamente um ARP Request para saber se o seu endereço IP está ocupado.
 
-  - <img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/15-arp-request.png">
+## Finalmente chegou a parte prática
 
-- Quando você envia o pacote pela rede, ao ser encapsulado, o dispositivo de origem vai inserir o endereço MAC (FF:FF:FF:FF:FF:FF), ou seja, como ele não sabe o MAC, ele usa esse endereço especial para descobrir o endereço MAC do dispositivo (ARP Request)
-  - <img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/16-arp-request-flooding.png">
-  - <img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/17-arp-request-flooding 1.png">
-- O quadro viaja pela rede e ao chegar no destino incorreto, é descartado, vamos fingir que o endereço IP do PC2 não é 10.0.0.2
-  - <img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/18-arp-request-imagine.png">
-- O frame vai trafegar pela rede até que ao chegar ao destino correto, é reconhecido e então envia uma resposta diretamente a quem fez a solicitação (ARP Reply)
-  - <img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/19-arp-request-reply.png">
-- Ao receber o ARP Reply, o dispositivo de origem ao enviar novos pacotes ao dispositivo de destino não precisará mais fazer o uso do ARP, pelo menos enquanto o temporizador não acabar.
+Vamos relembrar a topologia apresentada no início, digamos que o PC1 precisa se comunicar com o PC2.
 
-### Surge a necessidade de evitar que "quadros fantasmas" fiquem vagando pela rede
+Para o nosso entendimento de como os quadros são encaminhados, vamos realizar um teste simples de ping, perceba que o protocolo ARP vai entrar em ação para descobrir o endereço físico do PC2, o quadro chega na porta e1/3 do SWT-ACC1 com a seguinte estrutura.
 
-Bom, falamos sobre os frames de broadcast e unknown unicast, mas você já parou para pensar que na nossa topologia eles podem vagar eternamente como fantasmas?
+<img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/02-pc1-wants-to-send-a-msg-to-pc2.png">
 
-Temos inúmeros caminhos redundantes, cada switch vai receber uma cópia e reencaminhar o frame novamente por todas as outras portas, vou usar uma topologia mais simples para exemplificar...
-<img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/20-stp-01.png">
+Depois do ARP Request passar pela LAN e encontrar o destino, ele vai retornar com o endereço físico para o dispositivo que originou a solicitação, simples assim, poderia ser, mas não era para ser, abaixo vamos entender melhor, firmeza?
 
-Ao enviar um quadro unknown unicast, o switch faz uma cópia e envia para todas as portas, exceto pela que recebeu...
-<img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/21-stp-02.png">
+<img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/03-arp-request.png">
 
-O próximo switch vai fazer a mesma coisa...
-<img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/22-stp-03.png">
+<img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/04-arp-reply.png">
 
-O unknown unicast vai chegar ao seu destino, mas o comportamento dos outros switches vai permanecer o mesmo...
-<img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/23-stp-04.png">
+Vamos entender como que o ARP trafega na LAN, primeiro de tudo, eu sei que escolhi uma topologia complexa demais para explicar o que vai acontecer, peço que me deixe saber se eu deveria ter simplificado mais para explicar os conceitos. Quando você envia o pacote pela rede, ao ser encapsulado, o dispositivo de origem vai inserir o endereço MAC (FF:FF:FF:FF:FF:FF), ou seja, como ele não sabe o MAC, ele usa esse endereço especial para descobrir o endereço MAC do dispositivo (ARP Request).
+Observe que o quadro contendo o ARP Request entra na interface e1/3 do SWT-ACC1, certo?
+O SWT-ACC1 vai fazer a sua parte, lembra? Vai encaminhar o quadro para todas as portas, exceto a que recebeu.
 
-Ao receber o frame, vai encaminhar uma cópia para todas as portas...
-<img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/24-stp-05.png">
+> Os outros equipamentos vão repetir exatamente o mesmo comportamento.
 
-Nesse ponto, não há nada a ser feito, os quadros vão ficar vagando eternamente pela rede local igual uma alma penada, causando instabilidade na tabela MAC e consumo de CPU até que algum switch não consiga encaminhar mais nenhum quadro e trave completamente!
-<img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/25-stp-06.png">
+Bom, falamos sobre os frames de broadcast e unknown unicast, mas você já parou para pensar que na nossa topologia eles podem vagar eternamente? Temos inúmeros caminhos redundantes, cada switch vai receber uma cópia e reencaminhar o frame novamente por todas as outras portas infinitamente... Amigos, esse negócio se chama loop de camada 2! Nesse ponto, não há nada a ser feito, os quadros vão ficar vagando eternamente pela rede local, causando instabilidade na tabela MAC e aumentando consumo de recursos até que algum switch não consiga encaminhar mais nenhum quadro e trave completamente!
+
+<img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/05-arp-stp-need.gif">
 
 Mas afinal, como resolver esse problema?
 Bom, para isso foi desenvolvido um protocolo de rede chamado Spanning-Tree Protocol (STP) e o que ele faz? Indo direto ao ponto:
-> O STP bloqueia um dos caminhos redundantes, evitando que ocorra o loop.
+
+> O STP bloqueia um ou mais caminhos redundantes, criando assim, um caminho sem loops.
+
+O mais legal de tudo é que o cenário que eu mencionei é totalmente hipotético, já que o spanning-tree vem habilitado por padrão em switches! Espera um pouco, mas como que ficou a LAN depois do STP eliminar os loops?
+
+Vamos aplicar o comando abaixo em todos os switches, analisar as saídas do comando e redesenhar a topologia sem loops:
+
+```cisco
+show spanning-tree
+```
+
+### Vamos analisar a topologia por partes
+
+Primeiro de tudo, vamos analisar as portas do equipamento SWT-CORE1:
+
+<img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/06-show-stp-1.png">
+
+<img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/07-show-stp-1.png">
+
+Agora, vamos analisar o switch SWT-CORE2:
+
+<img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/06-show-stp-2.png">
+
+<img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/07-show-stp-2.png">
+
+SWT-DIST1:
+
+<img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/06-show-stp-3.png">
+
+<img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/07-show-stp-3.png">
+
+SWT-DIST2:
+
+<img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/06-show-stp-4.png">
+
+<img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/07-show-stp-4.png">
+
+SWT-ACC1:
+
+<img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/06-show-stp-5.png">
+
+<img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/07-show-stp-5.png">
+
+Finalmente, vamos analisar o último equipamento, o SWT-ACC2:
+
+<img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/06-show-stp-6.png">
+
+<img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/07-show-stp-6.png">
+
+Estado da rede após o STP estabilizar:
+<img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/08-loop-free-topology-1.png">
+
+Vamos fazer uma pequena reflexão agora, geralmente os switches utilizados na camada CORE são os que possuem maior capacidade, certo? Porém na nossa topologia, o switch eleito como *root*, foi o SWT-DIST1. Mas o que é o switch root!?
+
+<img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/09-stp-tunning-1.png">
+
+SWT-CORE1:
+
+```cisco
+enable
+configure terminal
+spanning-tree vlan 1 priority 0
+end
+write
+```
+
+SWT-CORE2:
+
+```cisco
+enable
+configure terminal
+spanning-tree vlan 1 priority 4096
+end
+write
+```
+
+```cisco
+show spanning-tree
+```
+
+<img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/09-stp-tunning-2.png">
+
+<img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/10-loop-free-topology-2.png">
+
+
 
 ### Referências
 

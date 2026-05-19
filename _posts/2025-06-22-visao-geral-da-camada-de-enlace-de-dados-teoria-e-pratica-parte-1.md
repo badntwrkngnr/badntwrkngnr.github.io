@@ -1,4 +1,5 @@
 # Visão Geral da Camada de Enlace de Dados: Teoria e Prática (Parte 1)
+
 ## Introdução e Base Teórica
 
 Este artigo é baseado em anotações que fiz durante minha preparação para o exame CCNA (Cisco Certified Network Associate) 200-301, onde pude aprofundar meus conhecimentos sobre a camada de enlace de dados.
