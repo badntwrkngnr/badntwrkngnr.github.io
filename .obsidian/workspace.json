@@ -1,25 +1,24 @@
 {
   "main": {
-    "id": "b59e64871cd31ace",
+    "id": "42fc07e0133d104e",
     "type": "split",
     "children": [
       {
-        "id": "a10691dc34f0d7a0",
+        "id": "b042f0bb3c99eb0c",
         "type": "tabs",
         "children": [
           {
-            "id": "a04a1f312dea5e34",
+            "id": "311361967dd57bc7",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "drafts/2025-10-27-como-funciona-uma-rede-em-uma-transmissora-hvdc.md",
+                "file": "drafts/2026-05-23-ospfv2-descomplicado.md",
                 "mode": "source",
-                "source": false,
-                "backlinks": false
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "2025-10-27-como-funciona-uma-rede-em-uma-transmissora-hvdc"
+              "title": "2026-05-23-ospfv2-descomplicado"
             }
           }
         ]
@@ -28,15 +27,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "9351bf5fca08d40c",
+    "id": "0dba1d14a6a054a8",
     "type": "split",
     "children": [
       {
-        "id": "636d019e2bbb0ff8",
+        "id": "86d73a3273a245c3",
         "type": "tabs",
         "children": [
           {
-            "id": "efbe9109c632246e",
+            "id": "e79305b1eefbd5d5",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -49,7 +48,7 @@
             }
           },
           {
-            "id": "e65c7261db548fa1",
+            "id": "a6e4c25805ff97c1",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -66,7 +65,7 @@
             }
           },
           {
-            "id": "01af8c809e8c20c8",
+            "id": "920e4d0f970d301e",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -74,38 +73,28 @@
               "icon": "lucide-bookmark",
               "title": "Bookmarks"
             }
-          },
-          {
-            "id": "e8040e42fd1865f9",
-            "type": "leaf",
-            "state": {
-              "type": "notebook-navigator",
-              "state": {},
-              "icon": "notebook-navigator",
-              "title": "Notebook Navigator"
-            }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 328.51103591918945
+    "width": 333.5
   },
   "right": {
-    "id": "53db1b35e6c6c5ee",
+    "id": "78ba75e6079e2fd0",
     "type": "split",
     "children": [
       {
-        "id": "708b0426a4742f58",
+        "id": "4f6c4394eebf1b6c",
         "type": "tabs",
         "children": [
           {
-            "id": "0b28e33c5f74e308",
+            "id": "2ba65900c25cafd7",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/chapter-3-fundamentals-of-wans-and-ip-routing.md",
+                "file": "drafts/2026-05-23-ospfv2-descomplicado.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,25 +104,25 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for chapter-3-fundamentals-of-wans-and-ip-routing"
+              "title": "Backlinks for 2026-05-23-ospfv2-descomplicado"
             }
           },
           {
-            "id": "d411869a8a69bdab",
+            "id": "0601908a1503ec52",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/chapter-3-fundamentals-of-wans-and-ip-routing.md",
+                "file": "drafts/2026-05-23-ospfv2-descomplicado.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from chapter-3-fundamentals-of-wans-and-ip-routing"
+              "title": "Outgoing links from 2026-05-23-ospfv2-descomplicado"
             }
           },
           {
-            "id": "e96be699fe470c91",
+            "id": "a24734ffa5926811",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -148,92 +137,114 @@
             }
           },
           {
-            "id": "a5bcecaecb3b79d8",
+            "id": "1e3b1976144257a4",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "6a9b58eb63f056be",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "_posts/2024-09-29-introducao-ao-protocolo-ipv4.md",
+                "file": "drafts/2026-05-23-ospfv2-descomplicado.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 2024-09-29-introducao-ao-protocolo-ipv4"
+              "title": "Outline of 2026-05-23-ospfv2-descomplicado"
+            }
+          },
+          {
+            "id": "d0e20290b8538e6d",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
+            }
+          },
+          {
+            "id": "da20af79773f1907",
+            "type": "leaf",
+            "state": {
+              "type": "smart-connections-view",
+              "state": {},
+              "icon": "smart-connections",
+              "title": "Connections"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
-    "width": 385.5,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
-      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
+      "bases:Create new base": false,
       "obsidian-excalidraw-plugin:New drawing": false,
       "templater-obsidian:Templater": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
       "smart-connections:Smart Connections: Open connections view": false,
-      "smart-connections:Smart Lookup: Open lookup view": false,
+      "smart-connections:Toggle Footer Connections": false,
       "smart-connections:Smart Connections: Open random connection": false,
-      "notebook-navigator:Notebook Navigator": false
+      "smart-connections:Smart Lookup: Open lookup view": false
     }
   },
-  "active": "a04a1f312dea5e34",
+  "active": "311361967dd57bc7",
   "lastOpenFiles": [
-    "drafts/2025-09-27-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica-parte-2.md",
-    "Untitled.base",
-    "drafts/2025-10-27-como-funciona-uma-rede-em-uma-transmissora-hvdc.md",
-    "drafts/protocolo-ipv4.md",
-    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/15-arp-request.png",
-    "_posts/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica-parte-1.md",
-    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/ETH-HEADER-TRAILER.png",
-    "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/M1-P3-UDP-HEADER.png",
-    "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/M1-P3-TCP-VS-UDP-HEADER.png",
-    "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/M1-P2-TCP-HEADER.png",
-    "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/M1-P2-TCP-HEADER.md",
-    "Excalidraw/Drawing 2025-09-08 22.20.23.excalidraw.md",
-    "Excalidraw/26-mac-address-structure.md",
-    "_posts/2025-01-12-fundamentos-de-redes-de-computadores.md",
+    "assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado.png",
+    "drafts/2026-05-23-ospfv2-descomplicado.md",
+    "assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado-15.png",
+    "2026-05-23-ospfv2-descomplicado-16.png",
+    "assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado-14.png",
+    "assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado-15.png",
+    "assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado-13.png",
+    "assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado-12.png",
+    "assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado-11.png",
+    "assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado-10.png",
+    "assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado-9.png",
+    "assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado-8.png",
+    "Excalidraw/Drawing 2026-05-24 16.35.54.excalidraw.md",
+    "assets/images/networking/2026-05-23-ospfv2-descomplicado",
+    "Excalidraw",
     "_posts/2024-09-29-introducao-ao-protocolo-ipv4.md",
-    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/26-mac-address-structure.png",
-    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/25-stp-06.png",
-    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/24-stp-05.png",
-    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/23-stp-04.png",
-    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/22-stp-03.png",
-    "Excalidraw/arp-request.md",
-    "Excalidraw/Drawing 2025-09-08 21.55.20.excalidraw.md",
-    "Excalidraw/arp-request-reply.md",
-    "Excalidraw/arp-request-imagine.md",
-    "Excalidraw/arp-request-flooding 1.md",
-    "Excalidraw/arp-request-flooding.md",
-    "assets/labs",
-    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/ETH-HEADER-TRAILER.md",
-    "assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica",
-    "notes/redes-de-computadores/enarsi/01-ipv4-review-by-gemini.md",
-    "WERTYUYUJJBFFGLEIAVVVVBCFFUIEDFFFFGGGGHHHHGJHJUUHHHHJJKJKHGGFFFFCCCCFGGGVVVFGGGHFGHHGGGGGFVHGUGHFGVVBVC CCCCVBVVVVBVOOOMBNVDCCCXXXZZZFDAQQQSD.md",
-    "Clippings/Exercícios de Revisão – ENARSI – M1 – Gustavo Kalau.md",
-    "Clippings",
-    "notes/redes-de-computadores/enarsi/02-ipv6-review-by-gemini.md",
-    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/chapter-2-fundamentals-of-ethernet-lans.md",
-    "notes/redes-de-computadores/enarsi",
-    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/chapter-1-introduction-to-tcp-ip-networking.md",
-    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-1-introduction-to-networking/chapter-3-fundamentals-of-wans-and-ip-routing.md",
-    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-1/part-3-implementing-vlans-and-stp/chapter-8-implementing-ethernet-virtual-lans.md",
-    "notes/redes-de-computadores/cisco-ccna-200-301/gk-ccna/modulo-1-introduction-to-networking.md",
-    "notes/redes-de-computadores/redes-de-computadores-e-a-internet-kurose-ross",
-    "notes/redes-de-computadores/redes-de-computadores-tanenbaum",
-    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-7-final-review/chapter-26-final-review",
-    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-4-ip-services/chapter-17-snmp-ftp-and-tftp",
-    "notes/redes-de-computadores/cisco-ccna-200-301/cisco-ccna-200-301-official-cert-guide/volume-2/part-2-ip-access-control-lists/chapter-8-applied-acls",
-    "quick-notes/Redes de Computadores/Cisco - CCNA 200-301/GK - CCNA/Untitled.canvas"
+    "_posts/2025-01-12-fundamentos-de-redes-de-computadores.md",
+    "_posts/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica-parte-1.md",
+    "drafts/2025-10-27-como-funciona-uma-rede-em-uma-transmissora-hvdc.md",
+    "drafts/2025-09-27-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica-parte-2.md",
+    "drafts/protocolo-ipv4.md",
+    "Untitled.base",
+    "index.markdown",
+    "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/M1-P3-UDP-HEADER.md",
+    "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/M1-P3-TCP-VS-UDP-HEADER.md",
+    "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/M1-P2-TCP-HEADER.md",
+    "assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores",
+    "assets/images/networking/2024-09-29-introducao-ao-protocolo-ipv4",
+    "about.markdown",
+    "_config.yml",
+    "README.md",
+    "LICENSE.md",
+    "Gemfile.lock",
+    "Gemfile"
   ]
 }
