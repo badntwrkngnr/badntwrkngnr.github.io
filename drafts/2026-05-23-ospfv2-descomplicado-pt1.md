@@ -2,7 +2,7 @@
 
 ## Introdução
 
-Olá, tudo bem? Era para ser somente um artigo abordando um assunto, mas acabou que, conforme eu ia escrevendo, o texto foi ficando cada vez mais extenso. No meio do caminho, resolvi mudar o foco e separar em partes para não ficar cansativo demais. Para começar, escolhi este título por ser *fanboy* da [LinuxTips](https://linuxtips.io/) e, embora o artigo traga bastante conteúdo, para mais detalhes, recomendo também o curso [*Descomplicando o OSPF*](https://gustavokalau.com.br/), do professor Gustavo Kalau, para um aprofundamento um pouco maior.
+Olá, tudo bem? Era para ser somente um artigo abordando um assunto, mas acabou que, conforme eu ia escrevendo, o texto foi ficando cada vez mais extenso. No meio do caminho, resolvi mudar o foco e separar em partes para não ficar cansativo demais. Para começar, escolhi este título por ser *fanboy* da [*LinuxTips*](https://linuxtips.io/) e, embora o artigo traga bastante conteúdo, recomendo o curso [*Descomplicando o OSPF*](https://gustavokalau.com.br/), do professor Gustavo Kalau, para um aprofundamento um pouco maior.
 Antes de falarmos sobre o OSPF propriamente dito, vale recapitular o papel de um protocolo de roteamento dinâmico. São conceitos simples, mas que preparam o terreno para o que vem a seguir.
 
 As principais funções de um protocolo de roteamento incluem:
