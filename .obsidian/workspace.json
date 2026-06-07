@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "drafts/2026-05-23-ospfv2-descomplicado.md",
+                "file": "drafts/2026-05-23-ospfv2-descomplicado-pt1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-05-23-ospfv2-descomplicado"
+              "title": "2026-05-23-ospfv2-descomplicado-pt1"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 333.5
+    "width": 582.5,
+    "collapsed": true
   },
   "right": {
     "id": "78ba75e6079e2fd0",
@@ -146,8 +147,8 @@
                 "showSearch": false,
                 "searchQuery": ""
               },
-              "icon": "lucide-archive",
-              "title": "All properties"
+              "icon": "lucide-ghost",
+              "title": "all-properties"
             }
           },
           {
@@ -190,7 +191,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -212,18 +214,19 @@
   },
   "active": "311361967dd57bc7",
   "lastOpenFiles": [
-    "assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado.png",
+    "assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado-pt1.png",
+    "assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado-pt1-10.png",
+    "assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado-pt1-9.png",
+    "assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado-pt1-8.png",
+    "assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado-pt1-6.png",
+    "assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado-pt1-5.png",
+    "assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado-pt1-4.png",
+    "assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado-pt1-3.png",
+    "assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado-pt1-2.png",
+    "assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado-pt1-1.png",
+    "2026-05-23-ospfv2-descomplicado-pt1-11.png",
+    "drafts/2026-05-23-ospfv2-descomplicado-pt1.md",
     "drafts/2026-05-23-ospfv2-descomplicado.md",
-    "assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado-15.png",
-    "2026-05-23-ospfv2-descomplicado-16.png",
-    "assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado-14.png",
-    "assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado-15.png",
-    "assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado-13.png",
-    "assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado-12.png",
-    "assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado-11.png",
-    "assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado-10.png",
-    "assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado-9.png",
-    "assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado-8.png",
     "Excalidraw/Drawing 2026-05-24 16.35.54.excalidraw.md",
     "assets/images/networking/2026-05-23-ospfv2-descomplicado",
     "Excalidraw",
