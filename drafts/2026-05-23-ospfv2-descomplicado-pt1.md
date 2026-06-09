@@ -1,8 +1,8 @@
-# OSPF Descomplicado
+# OSPF Descomplicado: Parte 1
 
 ## Introdução
 
-Olá, tudo bem contigo? Era para ser somente um artigo rápido abordando um assunto do começo ao fim, mas acabou que, conforme eu ia escrevendo, o texto ia ficando cada vez mais extenso, isso acontece porque eu tenho uma dificuldade colossal de identificar o momento correto de encerrar alguns assuntos. No meio do caminho, achei melhor mudar a abordagem e separar em partes para não ficar cansativo demais. Para começar, escolhi este título por ser *fanboy* da [*LinuxTips*](https://linuxtips.io/) e, embora o artigo traga bastante conteúdo, recomendo o curso [*Descomplicando o OSPF*](https://gustavokalau.com.br/), do professor Gustavo Kalau, para um aprofundamento um pouco maior.
+Olá, tudo bem contigo? Era para ser somente um artigo completo abordando um assunto do começo ao fim, mas acabou que, conforme eu ia escrevendo, o texto ia ficando cada vez mais extenso, isso acontece porque eu tenho uma dificuldade colossal de identificar o momento correto de encerrar alguns assuntos. No meio do caminho, achei melhor mudar a abordagem e separar em partes para não ficar cansativo demais. Para começar, escolhi este título por ser *fanboy* da [*LinuxTips*](https://linuxtips.io/) e, embora o artigo traga bastante conteúdo, aproveito para recomendar o curso [*Descomplicando o OSPF*](https://gustavokalau.com.br/), do professor Gustavo Kalau, para um aprofundamento um pouco maior.
 Antes de falarmos sobre o OSPF propriamente dito, vale recapitular o papel de um protocolo de roteamento dinâmico. São conceitos simples, mas que são fundamentais e vão preparar o terreno para o que vem a seguir.
 
 As principais funções de um protocolo de roteamento incluem:
@@ -30,7 +30,7 @@ O ciclo de vida do OSPF em uma área resume-se a três fases:
 
 Com o mapa da rede (LSDB) em mãos, o OSPF traça o melhor caminho com o algoritmo **SPF (*Shortest Path First*)**, de Edsger W. Dijkstra. O cálculo segue quatro passos:
 
-**1. Ponto de partida:** cada roteador executa o SPF de forma independente, colocando **a si mesmo** como raiz da *Shortest Path Tree* (SPT).
+**1. Ponto de partida:** cada roteador executa o SPF de forma independente, colocando **a si mesmo** como raiz da *Shortest Path Tree* (SPT), .
 
 **2. Métrica:** o critério de melhor caminho é o **custo**, inversamente proporcional à largura de banda do link, links mais rápidos, pedágio mais barato.
 
@@ -60,7 +60,7 @@ Agora, vamos exemplificar o funcionamento básico do OSPF, que utiliza a lógica
 ![Custos OSPF na topologia](/assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado-pt1-2.png)
 
 Agora, com o valor do custo acumulado da origem até chegar no destino calculado pelo OSPF, vamos observar o comportamento do encaminhamento de pacotes na prática!
-A topologia já está com OSPF habilitado, explicaremos as duas formas de ativação na seção de adjacência. O arquivo dos labs está disponível para [*download*](https://drive.google.com/), você pode baixar todos eles e praticar o quanto quiser, lembrando que utilizo o PNETLab, portanto o arquivo também é compatível com o EVE-NG!
+A topologia já está com OSPF habilitado, explicaremos as duas formas de ativação na seção de adjacência. O arquivo dos labs está disponível para [*download*](https://drive.google.com/drive/folders/1PFSQtfXWONkJiUJ5dYLB7eKL-c4M5bcl?usp=drive_link), você pode baixar todos eles e praticar o quanto quiser, lembrando que utilizo o PNETLab, portanto o arquivo também é compatível com o EVE-NG!
 Ao examinarmos a tabela de roteamento, podemos ver que estamos recebendo a rota de destino da rede que está localizada no roteador RT7 com um custo de 8. Você pode estar se perguntando como, já que se somarmos os custos das interfaces de saída até o destino, o valor obtido é 7. Aqui reside um detalhe minúsculo que pode confundir a linha de raciocínio durante uma análise da tabela de roteamento. Conforme definido na RFC do OSPF e implementado pelo Cisco IOS, a interface loopback é tratada como *stub host* e sempre vai receber um custo fixo e automático de 1. Me vejo forçado a falar sobre o termo *stub* antes da hora, mas para o entendimento do conceito, preciso que você imagine que no contexto de redes é como se fosse o "fim da linha" ou podemos entender como um "beco sem saída". É um dispositivo que o tráfego pode entrar e sair normalmente, porém nunca vai chegar diretamente a um terceiro destino porque tem um único caminho para o tráfego chegar e sair. Não confunda com *stub area*, que é outro conceito, com o natural aprofundamento do tema, falaremos disso nos próximos artigos.
 
 ```cisco
@@ -492,7 +492,7 @@ Finalmente chegamos ao fim desta primeira etapa. Como pudemos ver, o OSPF não �
 
 Nesta Parte 1 já colocamos a mão na massa com labs, capturas, *traceroute*, configs e aqueles logs deliciosos pipocando na tela até chegar em FULL. Mas convenhamos... Ainda dá para ir muito mais longe. Teoria e prática precisam andar juntas, como Buchecha e Claudinho, Piu-piu e Frajola...
 
-Na Parte 2 desta série, vamos subir o nível: pacotes Hello, tipos de LSA, topologias mais complexas para exemplificar os conceitos, áreas stub/NSSA, sumarização, troubleshooting de verdade e cenários que se aproximam mais do dia a dia. Espero que a base que construímos aqui, adjacência, custo, SPF, te ajude em um futuro próximo.
+Na Parte 2 desta série, vamos subir o nível: pacotes Hello, tipos de LSA, topologias mais complexas para exemplificar os conceitos, áreas stub/NSSA, sumarização, troubleshooting de verdade e cenários que se aproximam mais do dia a dia. No material de troubleshooting, também vamos demonstrar na prática o ajuste do *auto-cost reference-bandwidth* para corrigir o problema do custo igual entre FastEthernet e GigabitEthernet, e o comportamento de precedência quando há conflito entre o *network statement* e o *ip ospf* configurado diretamente na interface. Espero que a base que construímos aqui, adjacência, custo, SPF, te ajude em um futuro próximo.
 
 Então, pode escolher o seu emulador favorito (Packet Tracer, GNS3, EVE-NG, PNETLab) e até o próximo artigo da série. Só para relembrar, eu utilizo o PNETLab, vale lembrar que o arquivo é totalmente compatível com o EVE-NG e que já vai estar com as interfaces pré-configuradas, hein!
 
