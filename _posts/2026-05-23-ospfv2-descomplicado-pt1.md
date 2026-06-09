@@ -1,4 +1,9 @@
-# OSPF Descomplicado: Parte 1
+---
+Descrição: OSPF Descomplicado - Parte 1
+Layout: post
+Categories: networking
+---
+# OSPF Descomplicado - Parte 1
 
 ## Introdução
 
