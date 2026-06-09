@@ -384,7 +384,7 @@ RT2(config-router)#
 *Jun  7 01:44:54.417: %OSPF-5-ADJCHG: Process 2, Nbr 10.0.0.1 on Ethernet0/0 from LOADING to FULL, Loading Done
 ```
 
-Até aqui vimos o comportamento em rede **broadcast**, com eleição de DR/BDR. Lembra da regra de prioridade? Configuração na interface sobrescreve a genérica, então vamos mudar o tipo de rede para *point-to-point* direto na interface e ver como o processo muda:
+Até aqui vimos o comportamento em rede **broadcast** , com eleição de DR/BDR. Para que não ocorra a eleição de DR/BDR sem necessidade, vamos mudar o tipo de rede para *point-to-point* direto na interface e ver como o processo muda:
 
 - **RT1**
 
