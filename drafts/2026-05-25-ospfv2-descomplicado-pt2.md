@@ -1,3 +1,12 @@
+---
+Descrição: OSPF Descomplicado - Parte 2
+Layout: post
+Categories: networking
+---
+# OSPF Descomplicado - Parte 2
+
+## Introdução
+
 ## Troubleshooting
 
 Nesta fase, a abordagem muda da configuração para a análise do *control-plane*. O isolamento de falhas OSPF costuma dividir-se em: falha na formação de vizinhança e problemas com LSAs ou tabelas de roteamento.
