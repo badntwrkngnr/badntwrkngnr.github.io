@@ -1,13 +1,19 @@
-baseURL = "https://seudominio.com/"
-languageCode = "pt-br"
-title = "networking de quebradinha"
+baseURL = "https://badntwrkngnr.github.io/"
+title = "Networking de Quebradinha"
 theme = "PaperMod"
+defaultContentLanguage = "pt"
 
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.extensions]
-      [markup.goldmark.extensions.passthrough]
-        enable = true
-        [markup.goldmark.extensions.passthrough.delimiters]
-          block = [['\[', '\]'], ['$$', '$$']]
-          inline = [['\(', '\)']]
+[languages]
+  [languages.pt]
+    languageName = "Português"
+    weight = 1
+    contentDir = "content/pt"
+    [languages.pt.params]
+      description = "Eu sou só um cara que já tentou quase tudo e hoje paga as contas graças aos modelos OSI e TCP/IP"
+
+  [languages.en]
+    languageName = "English"
+    weight = 2
+    contentDir = "content/en"
+    [languages.en.params]
+      description = "I've tried almost everything, and today I'm paying the bills thanks to the OSI and TCP/IP models."

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto" data-theme="auto">
+<html lang="pt" dir="auto" data-theme="auto">
 
 <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Networking | networking de quebradinha</title>
+<title>Networking | Networking de Quebradinha</title>
 <meta name="keywords" content="">
-<meta name="description" content="">
+<meta name="description" content="Eu sou só um cara que já tentou quase tudo e hoje paga as contas graças aos modelos OSI e TCP/IP">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/categories/networking/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.cd9298b33628769aa1bc1acebbbfd7aa11ce81dfe03484d479e1907760249a1d.css" integrity="sha256-zZKYszYodpqhvBrOu7/XqhHOgd/gNITUeeGQd2Akmh0=" rel="preload stylesheet" as="style">
@@ -19,7 +19,8 @@
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
 <link rel="alternate" type="application/rss+xml" href="http://localhost:1313/categories/networking/index.xml" title="rss">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/categories/networking/">
+<link rel="alternate" hreflang="pt" href="http://localhost:1313/categories/networking/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/en/categories/networking/">
 <noscript>
     <style>
         #theme-toggle,
@@ -71,7 +72,7 @@
     <header class="header">
     <nav class="header-nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="networking de quebradinha (Alt + H)">networking de quebradinha</a>
+            <a href="http://localhost:1313/" accesskey="h" title="Networking de Quebradinha (Alt + H)">Networking de Quebradinha</a>
             <div class="logo-switches">
                 <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
@@ -92,7 +93,13 @@
                         <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
-                </button>
+                </button><span class="nav-sep">|</span>
+                    <ul class="lang-menu">
+                        <li>
+                            <a href="http://localhost:1313/en/" title="English"
+                                aria-label="English">En</a>
+                        </li>
+                    </ul>
             </div>
         </div>
         <ul id="menu" class="menu">
@@ -118,60 +125,12 @@
   <footer class="entry-footer">
 
 <span title='2026-05-23 00:00:00 +0000 UTC'>23 de maio de 2026</span></footer>
-  <a class="entry-link" aria-label="post link to OSPF Descomplicado - Parte 1" href="http://localhost:1313/pt/posts/ospfv2-descomplicado-pt1/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Fundamentos de Redes de Computadores Introdução Este artigo representa um dos trabalhos mais cansativos que já realizei. Foram diversas revisões e reestruturações, decidi refazer, quase que do zero, e abordar o tema de maneira simples, direta e acessível. Organizei o conteúdo em tópicos-chave, buscando criar um resumo prático e fácil de assimilar. Essa abordagem reflete a forma como eu gostaria de ter aprendido, e espero que ela seja útil para você também.
-...</p>
-  </div>
-  <footer class="entry-footer">
-
-</footer>
-  <a class="entry-link" aria-label="post link to " href="http://localhost:1313/pt/posts/fundamentos-de-redes-de-computadores/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Introdução ao Protocolo IPv4 Introdução Nesse artigo exploraremos o protocolo IP, vamos observar parte do contexto histórico e entender a sua importância, apresentar uma visão geral das funcionalidades e posteriormente nos aprofundar nos detalhes.
-Vamos começar pelo início de tudo, durante o período da Guerra Fria, que ocorreu entre os Estados Unidos da América e a União das Repúblicas Socialistas Soviéticas, mas não vamos nos aprofundar no conflito, somente no que aconteceu a partir dele para o desenvolvimento das redes de computadores como conhecemos atualmente.
-...</p>
-  </div>
-  <footer class="entry-footer">
-
-</footer>
-  <a class="entry-link" aria-label="post link to " href="http://localhost:1313/pt/posts/introducao-ao-protocolo-ipv4/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>OSPF Descomplicado - Parte 2 Introdução Troubleshooting Nesta fase, a abordagem muda da configuração para a análise do control-plane. O isolamento de falhas OSPF costuma dividir-se em: falha na formação de vizinhança e problemas com LSAs ou tabelas de roteamento.
-Comandos de Verificação Durante auditorias ou exames práticos, o isolamento de anomalias depende dos comandos listados abaixo para diagnosticar as estruturas internas do OSPF:
-show ip ospf neighbor — A primeira linha de defesa. Analise o State (deve estar Full ou 2-Way). Qualquer estado intermediário prolongado (Init, ExStart) denuncia falhas de negociação. show ip ospf interface [brief] — Audita as redes participantes, verifica os Timers (Hello/Dead), a máscara de rede embutida na interface e o Network Type ativado na porta. show ip route ospf — Inspeciona se as rotas processadas pelo algoritmo de Dijkstra chegaram efetivamente à RIB e valida a preferência de caminhos (O, O IA, O E1, O E2). show ip ospf database — Permite abrir o “cérebro” do protocolo. Mostra a LSDB, expondo quem originou cada LSA (Router Link, Net Link, Summary Net Link) para rastrear o caminho exato e identificar filtros inesperados. show ip ospf — Fornece estatísticas cruciais do processo global, revelando a quantidade de execuções do algoritmo SPF, que aponta se a rede está instável (flapping). clear ip ospf process — Executa um reset pesado do protocolo, limpando a LSDB e renegociando vizinhos do zero; essencial após alterar variáveis amarradas ao processo como o Router ID. debug ip ospf adj / debug ip ospf hello — Para dissecção em tempo real. Essencial para ler nas entrelinhas falhas silenciosas de MTU, senhas incompatíveis ou falhas de flags nas mensagens de descoberta. Problemas Comuns e Localização de Falhas 1. Vizinhança Travada (Problemas de Control-Plane):
-...</p>
-  </div>
-  <footer class="entry-footer">
-
-</footer>
-  <a class="entry-link" aria-label="post link to " href="http://localhost:1313/pt/posts/ospfv2-descomplicado-pt2/"></a>
+  <a class="entry-link" aria-label="post link to OSPF Descomplicado - Parte 1" href="http://localhost:1313/posts/ospfv2-descomplicado-pt1/"></a>
 </article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2026 <a href="http://localhost:1313/">networking de quebradinha</a></span> · 
+        <span>&copy; 2026 <a href="http://localhost:1313/">Networking de Quebradinha</a></span> · 
 
     
     

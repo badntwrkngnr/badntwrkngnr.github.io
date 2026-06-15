@@ -5,6 +5,7 @@ date: 2026-05-23
 translationKey: "ospf-part1"
 categories: ["networking"]
 math: true
+draft: false
 ---
 
 ## Introdução

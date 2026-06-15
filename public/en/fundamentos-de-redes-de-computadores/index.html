@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>networking de quebradinha</title>
+<meta name="keywords" content="">
+<meta name="description" content="Fundamentos de Redes de Computadores
+Introdução
+Este artigo representa um dos trabalhos mais cansativos que já realizei. Foram diversas revisões e reestruturações, decidi refazer, quase que do zero, e abordar o tema de maneira simples, direta e acessível. Organizei o conteúdo em tópicos-chave, buscando criar um resumo prático e fácil de assimilar. Essa abordagem reflete a forma como eu gostaria de ter aprendido, e espero que ela seja útil para você também.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/en/fundamentos-de-redes-de-computadores/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.cd9298b33628769aa1bc1acebbbfd7aa11ce81dfe03484d479e1907760249a1d.css" integrity="sha256-zZKYszYodpqhvBrOu7/XqhHOgd/gNITUeeGQd2Akmh0=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/en/fundamentos-de-redes-de-computadores/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="networking de quebradinha (Alt + H)">networking de quebradinha</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      
+    </h1>
+    <div class="post-meta">
+
+
+
+</div>
+  </header> 
+  <div class="post-content md-content"><h1 id="fundamentos-de-redes-de-computadores">Fundamentos de Redes de Computadores<a hidden class="anchor" aria-hidden="true" href="#fundamentos-de-redes-de-computadores">#</a></h1>
+<h2 id="introdução">Introdução<a hidden class="anchor" aria-hidden="true" href="#introdução">#</a></h2>
+<p>Este artigo representa um dos trabalhos mais cansativos que já realizei. Foram diversas revisões e reestruturações, decidi refazer, quase que do zero, e abordar o tema de maneira simples, direta e acessível. Organizei o conteúdo em tópicos-chave, buscando criar um resumo prático e fácil de assimilar. Essa abordagem reflete a forma como eu gostaria de ter aprendido, e espero que ela seja útil para você também.</p>
+<p>O conteúdo deste artigo está alinhado com o blueprint da certificação Cisco CCNA 200-301, fornecendo uma base sólida para quem deseja se aprofundar no estudo de redes de computadores.</p>
+<h2 id="objetivos-e-arquitetura-de-redes">Objetivos e Arquitetura de Redes<a hidden class="anchor" aria-hidden="true" href="#objetivos-e-arquitetura-de-redes">#</a></h2>
+<h3 id="por-que-criamos-redes">Por que criamos redes?<a hidden class="anchor" aria-hidden="true" href="#por-que-criamos-redes">#</a></h3>
+<ul>
+<li><strong>Acesso a dados e serviços</strong>: Permitir que usuários e aplicações acessem informações e serviços, independentemente de onde estejam.</li>
+<li><strong>Compartilhamento de recursos</strong>: Utilizar de forma conjunta impressoras, scanners, armazenamento e outros periféricos.</li>
+<li><strong>Administração centralizada</strong>: Facilitar o gerenciamento, a atualização e a segurança dos dispositivos e serviços.</li>
+</ul>
+<h3 id="pilares-da-arquitetura-de-redes">Pilares da Arquitetura de Redes<a hidden class="anchor" aria-hidden="true" href="#pilares-da-arquitetura-de-redes">#</a></h3>
+<p>Existem quatro características básicas que os arquitetos de rede devem considerar para atender às expectativas dos usuários:</p>
+<ol>
+<li><strong>Tolerância a Falhas</strong>: Uma rede deve ser resiliente, continuando a operar mesmo com falhas parciais através de redundância de componentes e caminhos.</li>
+<li><strong>Escalabilidade</strong>: A capacidade de crescer (adicionar usuários e serviços) sem perder desempenho, planejando para expansões futuras.</li>
+<li><strong>Qualidade de Serviço (QoS)</strong>: A habilidade de priorizar o tráfego crítico (como voz e vídeo), garantindo a banda, a latência e o controle de jitter necessários para cada aplicação.</li>
+<li><strong>Segurança</strong>: Proteger a rede e os dados contra acessos não autorizados (confidencialidade), garantir que a informação não foi alterada (integridade) e que os serviços estejam sempre acessíveis (disponibilidade).</li>
+</ol>
+<h2 id="componentes-fundamentais-de-rede">Componentes Fundamentais de Rede<a hidden class="anchor" aria-hidden="true" href="#componentes-fundamentais-de-rede">#</a></h2>
+<h3 id="dispositivos">Dispositivos<a hidden class="anchor" aria-hidden="true" href="#dispositivos">#</a></h3>
+<ul>
+<li><strong>Finais (Hosts)</strong>: Onde a comunicação se origina ou termina (computadores, servidores, smartphones, IoT).</li>
+<li><strong>Intermediários</strong>: Conectam os dispositivos finais e outras redes (switches, roteadores, access points). Suas funções incluem regenerar sinais, gerenciar rotas, aplicar políticas de segurança e QoS.</li>
+</ul>
+<h3 id="meios-de-transmissão">Meios de Transmissão<a hidden class="anchor" aria-hidden="true" href="#meios-de-transmissão">#</a></h3>
+<ul>
+<li><strong>Metálico (cabo de par trançado)</strong>: Usa pulsos elétricos.</li>
+<li><strong>Fibra Óptica</strong>: Usa pulsos de luz. Imune a interferências, ideal para alta velocidade e longas distâncias.</li>
+<li><strong>Wireless (Sem Fio)</strong>: Usa ondas de rádio, oferecendo mobilidade.</li>
+</ul>
+<h2 id="modelos-de-referência-uma-visão-detalhada">Modelos de Referência: Uma Visão Detalhada<a hidden class="anchor" aria-hidden="true" href="#modelos-de-referência-uma-visão-detalhada">#</a></h2>
+<p>Para organizar a complexidade da comunicação, foram criados modelos de referência. Eles dividem as funções de rede em <strong>camadas</strong>, onde cada uma oferece um serviço à camada superior e consome serviços da camada inferior.</p>
+<p>A comunicação ocorre de duas formas:</p>
+<ul>
+<li><strong>Interação de Camadas Adjacentes (Vertical)</strong>: No mesmo dispositivo, uma camada superior solicita um serviço da camada inferior.</li>
+<li><strong>Interação de Mesmas Camadas (Horizontal)</strong>: Entre dispositivos diferentes, camadas iguais se comunicam usando cabeçalhos de protocolo.</li>
+</ul>
+<table>
+	<thead>
+			<tr>
+					<th>Conceito</th>
+					<th>Descrição</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Interação na mesma camada</td>
+					<td>Computadores usam um protocolo para se comunicar com a mesma camada em outro dispositivo. O protocolo define um cabeçalho para comunicar o que cada computador quer fazer.</td>
+			</tr>
+			<tr>
+					<td>Interação entre camadas adjacentes</td>
+					<td>Em um único computador, uma camada inferior fornece um serviço para a camada superior. O software/hardware da camada superior solicita que a camada inferior execute a função necessária.</td>
+			</tr>
+	</tbody>
+</table>
+<h3 id="camada-de-aplicação">Camada de Aplicação<a hidden class="anchor" aria-hidden="true" href="#camada-de-aplicação">#</a></h3>
+<p>É a camada mais próxima do usuário. Ela não define a aplicação em si, mas os <strong>serviços e protocolos</strong> que as aplicações precisam para interagir com a rede (HTTP para web, SMTP para e-mail, FTP para arquivos). Ela atua como a interface entre o software e a pilha de rede.</p>
+<h3 id="camada-de-transporte">Camada de Transporte<a hidden class="anchor" aria-hidden="true" href="#camada-de-transporte">#</a></h3>
+<p>Esta camada é responsável pela comunicação lógica fim a fim entre aplicações. Seus dois principais protocolos são TCP e UDP.</p>
+<h4 id="multiplexação-e-sockets">Multiplexação e Sockets<a hidden class="anchor" aria-hidden="true" href="#multiplexação-e-sockets">#</a></h4>
+<p>Para que múltiplas aplicações em um mesmo host possam se comunicar simultaneamente, a camada de transporte utiliza o conceito de <strong>portas</strong>. A combinação de um endereço IP e um número de porta forma um <strong>Socket</strong>, que identifica de forma única uma sessão de comunicação.</p>
+<ul>
+<li><strong>Portas Bem-Conhecidas (0-1023)</strong>: Reservadas para serviços padrão (80/HTTP, 443/HTTPS, 22/SSH).</li>
+<li><strong>Portas Efêmeras (1024-65535)</strong>: Usadas dinamicamente pelos clientes para iniciar conexões.</li>
+</ul>
+<h4 id="tcp-transmission-control-protocol">TCP (Transmission Control Protocol)<a hidden class="anchor" aria-hidden="true" href="#tcp-transmission-control-protocol">#</a></h4>
+<p>O TCP é um protocolo <strong>confiável e orientado à conexão</strong>. Ele oferece uma abstração de um canal de comunicação perfeito, mesmo sobre uma rede não confiável como a Internet.</p>
+<!-- raw HTML omitted -->
+<p>Suas principais características são:</p>
+<ul>
+<li><strong>Entrega Ordenada e Confiável</strong>: Garante que os dados cheguem na ordem correta e sem perdas, usando números de sequência e confirmações (acknowledgments - ACKs).</li>
+<li><strong>Controle de Fluxo</strong>: Através da <strong>Janela de Recebimento (rwnd)</strong>, o receptor informa ao emissor quanto espaço de buffer ele tem disponível, evitando que o emissor envie mais dados do que o receptor consegue processar. O RFC 1323 introduziu o &ldquo;escalonamento de janela&rdquo; para permitir janelas maiores que 65.535 bytes.</li>
+<li><strong>Controle de Congestionamento</strong>: Mecanismos como o <strong>Slow Start</strong> evitam sobrecarregar a rede. Ele utiliza uma <strong>Janela de Congestionamento (cwnd)</strong> para limitar a quantidade de dados em trânsito antes de receber um ACK.</li>
+<li><strong>TCP Fast Open</strong>: Reduz a latência em novas conexões reutilizando informações da conexão anterior.</li>
+</ul>
+<h4 id="udp-user-datagram-protocol">UDP (User Datagram Protocol)<a hidden class="anchor" aria-hidden="true" href="#udp-user-datagram-protocol">#</a></h4>
+<p>O UDP é um protocolo <strong>simples, rápido e não orientado à conexão</strong>. Sua principal vantagem é a ausência de sobrecarga.</p>
+<!-- raw HTML omitted -->
+<ul>
+<li><strong>Sem Garantias</strong>: Não há garantia de entrega, ordem ou controle de fluxo. É um serviço &ldquo;best-effort&rdquo;.</li>
+<li><strong>Ideal para</strong>: Aplicações em tempo real como streaming, jogos online e VoIP, onde a velocidade é mais crítica que a confiabilidade.</li>
+</ul>
+<!-- raw HTML omitted -->
+<h3 id="camada-de-rede-ou-internet">Camada de Rede (ou Internet)<a hidden class="anchor" aria-hidden="true" href="#camada-de-rede-ou-internet">#</a></h3>
+<p>Esta camada é responsável pelo endereçamento lógico (IP) e pelo roteamento dos pacotes da origem ao destino final, através de múltiplas redes.</p>
+<p>O roteamento IP é um processo colaborativo entre os hosts e os roteadores. O sistema operacional do host decide para onde enviar o pacote (geralmente para um roteador próximo, o <em>default gateway</em>), e os roteadores subsequentes tomam decisões de encaminhamento baseadas em suas tabelas de roteamento.</p>
+<p><strong>Processo de Roteamento em um Roteador:</strong></p>
+<ol>
+<li>O roteador recebe um quadro (frame) de dados.</li>
+<li>Verifica se houve erros usando o campo FCS (Frame Check Sequence) do trailer. Se houver, descarta o quadro.</li>
+<li>Descarta o cabeçalho e o trailer da camada de enlace, revelando o pacote IP.</li>
+<li>Consulta sua tabela de roteamento para encontrar a melhor rota para o endereço IP de destino.</li>
+<li>Encapsula o pacote IP em um novo cabeçalho e trailer de enlace, apropriado para a interface de saída.</li>
+<li>Encaminha o novo quadro.</li>
+</ol>
+<h3 id="camadas-de-enlace-e-física-acesso-à-rede">Camadas de Enlace e Física (Acesso à Rede)<a hidden class="anchor" aria-hidden="true" href="#camadas-de-enlace-e-física-acesso-à-rede">#</a></h3>
+<p>Estas camadas definem como os dados são transmitidos através de um meio físico específico (cabo, fibra, ar). Elas cuidam do endereçamento físico (endereço MAC) e da detecção de erros em um link local.</p>
+<h4 id="ethernet">Ethernet<a hidden class="anchor" aria-hidden="true" href="#ethernet">#</a></h4>
+<p>É a tecnologia de LAN mais popular do mundo. Ela define:</p>
+<ul>
+<li><strong>Endereçamento Físico (MAC Address)</strong>: Um endereço único de 48 bits gravado na placa de rede.</li>
+<li><strong>Detecção de Erros (FCS)</strong>: O campo <em>Frame Check Sequence</em> no trailer do quadro permite ao receptor verificar se ocorreram erros de transmissão. Se um erro for detectado, o quadro é descartado. A Ethernet detecta erros, mas não os corrige; essa é uma responsabilidade de camadas superiores (como o TCP).</li>
+<li><strong>Auto-MDIX</strong>: Um recurso que detecta automaticamente o tipo de cabo (crossover ou direto) e ajusta a pinagem para que a conexão funcione.</li>
+<li><strong>Modos de Operação</strong>:
+<ul>
+<li><strong>Half-duplex</strong>: Não pode enviar e receber ao mesmo tempo.</li>
+<li><strong>Full-duplex</strong>: Pode enviar e receber simultaneamente.</li>
+</ul>
+</li>
+</ul>
+<p>A Ethernet também evoluiu para ser uma tecnologia de <strong>WAN</strong>, com padrões de fibra ótica que suportam dezenas de quilômetros, permitindo a criação de serviços como a <strong>Ethernet Line Service (E-Line)</strong>.</p>
+<h2 id="tipos-de-redes-e-topologias">Tipos de Redes e Topologias<a hidden class="anchor" aria-hidden="true" href="#tipos-de-redes-e-topologias">#</a></h2>
+<h3 id="abrangência">Abrangência<a hidden class="anchor" aria-hidden="true" href="#abrangência">#</a></h3>
+<ul>
+<li><strong>LAN (Local Area Network)</strong>: Rede em uma área geográfica limitada (escritório, prédio).</li>
+<li><strong>WAN (Wide Area Network)</strong>: Conecta LANs em locais geograficamente distantes. A Internet é a maior WAN de todas.</li>
+<li><strong>Intranet</strong>: Uma rede privada de uma organização.</li>
+<li><strong>Extranet</strong>: Permite acesso controlado de parceiros externos a partes da intranet.</li>
+</ul>
+<h3 id="topologias-físicas">Topologias Físicas<a hidden class="anchor" aria-hidden="true" href="#topologias-físicas">#</a></h3>
+<p>Descrevem como os dispositivos são fisicamente conectados.</p>
+<ul>
+<li><strong>Estrela</strong>: Mais comum em LANs, com um dispositivo central (switch).</li>
+<li><strong>Mesh (Malha)</strong>: Alta redundância, comum em WANs.</li>
+<li><strong>Barramento/Anel</strong>: Topologias legadas.</li>
+</ul>
+<h2 id="modelos-de-comunicação-de-dados">Modelos de Comunicação de Dados<a hidden class="anchor" aria-hidden="true" href="#modelos-de-comunicação-de-dados">#</a></h2>
+<h3 id="clienteservidor-vs-peer-to-peer">Cliente/Servidor vs. Peer-to-Peer<a hidden class="anchor" aria-hidden="true" href="#clienteservidor-vs-peer-to-peer">#</a></h3>
+<ul>
+<li><strong>Cliente/Servidor</strong>: Um servidor centralizado oferece serviços aos clientes. Modelo mais comum.</li>
+<li><strong>Peer-to-Peer (P2P)</strong>: Todos os dispositivos são pares e podem atuar como cliente e servidor.</li>
+</ul>
+<h3 id="comutação-de-circuitos-vs-pacotes">Comutação de Circuitos vs. Pacotes<a hidden class="anchor" aria-hidden="true" href="#comutação-de-circuitos-vs-pacotes">#</a></h3>
+<ul>
+<li><strong>Comutação de Circuitos</strong>: Um caminho dedicado é estabelecido antes da comunicação (ex: telefonia antiga). Ineficiente, pois o canal fica alocado mesmo em silêncio.</li>
+<li><strong>Comutação de Pacotes</strong>: Os dados são divididos em <strong>pacotes</strong> (ou <strong>datagramas</strong>), que são enviados de forma independente pela rede e podem seguir rotas diferentes. É o modelo da Internet, mais eficiente e resiliente.</li>
+</ul>
+<h2 id="conclusão">Conclusão<a hidden class="anchor" aria-hidden="true" href="#conclusão">#</a></h2>
+<p>Neste artigo, exploramos os fundamentos essenciais das redes de computadores. Como pudemos observar, uma rede moderna é um sistema complexo que depende da interação harmoniosa entre diversos componentes:</p>
+<ol>
+<li><strong>Infraestrutura Física</strong>: Dispositivos, meios e topologias.</li>
+<li><strong>Arquitetura Lógica</strong>: Modelos em camadas, protocolos e serviços.</li>
+<li><strong>Princípios de Design</strong>: Tolerância a falhas, escalabilidade, QoS e segurança.</li>
+</ol>
+<p>A evolução das redes continua em ritmo acelerado, com novas tecnologias emergindo constantemente. Conceitos como SDN (Software-Defined Networking) e NFV (Network Functions Virtualization) estão redefinindo como as redes são projetadas e gerenciadas.</p>
+<p>Para quem deseja se aprofundar no estudo de redes, especialmente visando a certificação CCNA, assim como eu, os próximos passos incluem:</p>
+<ul>
+<li><strong>Switching e VLANs</strong>: Entender a segmentação de redes locais e os protocolos derivados do STP</li>
+<li><strong>Roteamento</strong>: Conhecer a base teórica dos protocolos de roteamento dinâmico</li>
+<li><strong>Segurança</strong>: Entender o conceito de firewalls, VPNs e listas de controle de acesso</li>
+<li><strong>Automação</strong>: Entender o conceito das ferramentas de automação e programabilidade</li>
+</ul>
+<p>Lembre-se: uma rede bem projetada é aquela que os usuários nem percebem que existe - ela simplesmente funciona, permitindo que as pessoas se concentrem em suas atividades sem se preocupar com a infraestrutura.</p>
+<blockquote>
+<p>&ldquo;A complexidade é seu inimigo. Qualquer tolo pode fazer algo complicado. O difícil é fazer algo simples.&rdquo; - Richard Branson</p>
+</blockquote>
+<p>Nos próximos artigos, exploraremos cada um dos tópicos da certificação, vamos construir juntos uma base teórica e prática. Até lá, o desafio é manter a disciplina, a curiosidade e continuar estudando.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">networking de quebradinha</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

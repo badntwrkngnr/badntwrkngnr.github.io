@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on Networking de Quebradinha</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on Networking de Quebradinha</description>
+    <generator>Hugo</generator>
+    <language>pt</language>
+    <lastBuildDate>Sat, 23 May 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>OSPF Descomplicado - Parte 1</title>
+      <link>http://localhost:1313/posts/ospfv2-descomplicado-pt1/</link>
+      <pubDate>Sat, 23 May 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/ospfv2-descomplicado-pt1/</guid>
+      <description>&lt;h2 id=&#34;introdução&#34;&gt;Introdução&lt;/h2&gt;
+&lt;p&gt;Olá, tudo bem contigo? Era para ser somente um artigo completo abordando um assunto do começo ao fim, mas acabou que, conforme eu ia escrevendo, o texto ia ficando cada vez mais extenso, isso acontece porque eu tenho uma dificuldade colossal de identificar o momento correto de encerrar alguns assuntos. No meio do caminho, achei melhor mudar a abordagem e separar em partes para não ficar cansativo demais. Para começar, escolhi este título por ser &lt;em&gt;fanboy&lt;/em&gt; da &lt;a href=&#34;https://linuxtips.io/&#34;&gt;&lt;em&gt;LinuxTips&lt;/em&gt;&lt;/a&gt; e, embora o artigo traga bastante conteúdo, aproveito para recomendar o curso &lt;a href=&#34;https://gustavokalau.com.br/&#34;&gt;&lt;em&gt;Descomplicando o OSPF&lt;/em&gt;&lt;/a&gt;, do professor Gustavo Kalau, para um aprofundamento um pouco maior.
+Antes de falarmos sobre o OSPF propriamente dito, vale recapitular o papel de um protocolo de roteamento dinâmico. São conceitos simples, mas que são fundamentais e vão preparar o terreno para o que vem a seguir.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

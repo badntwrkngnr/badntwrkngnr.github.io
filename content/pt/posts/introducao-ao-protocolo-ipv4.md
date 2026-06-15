@@ -1,9 +1,12 @@
 ---
-Descrição: Introdução ao Protocolo IPv4
-Layout: post
-Categories: networking
+title: "x"
+slug: "x" 
+date: 2026-05-23
+translationKey: "x"
+categories: ["nx"]
+math: true
+draft: true
 ---
-# Introdução ao Protocolo IPv4
 
 ## Introdução
 

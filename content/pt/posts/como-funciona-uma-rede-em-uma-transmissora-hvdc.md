@@ -1,4 +1,14 @@
-# Introdução
+---
+title: "x"
+slug: "x" 
+date: 2026-05-23
+translationKey: "x"
+categories: ["nx"]
+math: true
+draft: true
+---
+
+## Introdução
 
 Sendo bem honesto, eu comecei esse lab sem nem saber onde iria chegar... Mas vou tentar falar sobre algumas coisas que eu julgo serem bem legais.
 
