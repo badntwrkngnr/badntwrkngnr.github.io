@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>networking de quebradinha</title>
+<meta name="keywords" content="">
+<meta name="description" content="Visão Geral da Camada de Enlace de Dados: Teoria e Prática (Parte 1)
+Introdução e Base Teórica
+Este artigo é baseado em anotações que fiz durante minha preparação para o exame CCNA (Cisco Certified Network Associate) 200-301, onde pude aprofundar meus conhecimentos sobre a camada de enlace de dados.
+A camada de enlace de dados é fundamental no modelo OSI e TCP/IP, sendo a segunda camada no processo de comunicação entre dispositivos em rede. Ela é responsável por garantir que as unidades de informação, chamadas quadros, sejam transferidas de maneira confiável entre dispositivos fisicamente conectados por meio de um canal de comunicação, sejam eles guiados, como cabos de rede e fibras ópticas, ou não-guiados, como as redes sem fio.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/pt/posts/visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica-parte-1/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.cd9298b33628769aa1bc1acebbbfd7aa11ce81dfe03484d479e1907760249a1d.css" integrity="sha256-zZKYszYodpqhvBrOu7/XqhHOgd/gNITUeeGQd2Akmh0=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/pt/posts/visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica-parte-1/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="networking de quebradinha (Alt + H)">networking de quebradinha</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      
+    </h1>
+    <div class="post-meta">
+
+
+
+</div>
+  </header> 
+  <div class="post-content md-content"><h1 id="visão-geral-da-camada-de-enlace-de-dados-teoria-e-prática-parte-1">Visão Geral da Camada de Enlace de Dados: Teoria e Prática (Parte 1)<a hidden class="anchor" aria-hidden="true" href="#visão-geral-da-camada-de-enlace-de-dados-teoria-e-prática-parte-1">#</a></h1>
+<h2 id="introdução-e-base-teórica">Introdução e Base Teórica<a hidden class="anchor" aria-hidden="true" href="#introdução-e-base-teórica">#</a></h2>
+<p>Este artigo é baseado em anotações que fiz durante minha preparação para o exame CCNA (Cisco Certified Network Associate) 200-301, onde pude aprofundar meus conhecimentos sobre a camada de enlace de dados.</p>
+<p>A <strong>camada de enlace de dados</strong> é fundamental no modelo OSI e TCP/IP, sendo a segunda camada no processo de comunicação entre dispositivos em rede. Ela é responsável por garantir que as unidades de informação, chamadas <strong>quadros</strong>, sejam transferidas de maneira confiável entre dispositivos fisicamente conectados por meio de um canal de comunicação, sejam eles guiados, como cabos de rede e fibras ópticas, ou não-guiados, como as redes sem fio.</p>
+<h2 id="uma-reflexão-pessoal-sobre-a-importância-da-camada-2">Uma Reflexão Pessoal sobre a Importância da Camada 2<a hidden class="anchor" aria-hidden="true" href="#uma-reflexão-pessoal-sobre-a-importância-da-camada-2">#</a></h2>
+<p>Durante minha preparação para o exame CCNA 200-301, confesso que <strong>subestimei significativamente a importância da camada de enlace de dados</strong>. Minha experiência profissional sempre esteve mais focada em protocolos de camada 3, trabalhando na maior parte do tempo com backbones e serviços de VPNs L2/L3 em ambientes de service providers. Essa bagagem me levou a acreditar que dominar a camada 2 seria extremamente simples.</p>
+<p><strong>Admito que eu estava completamente enganado!</strong> Devido ao CCNA ser focado em redes enterprise, percebi lacunas importantes no meu conhecimento sobre como switches realmente funcionam, como endereços MAC são utilizados, e como VLANs impactam diretamente a arquitetura de redes corporativas. A diferença entre o ambiente de service provider (onde a camada 2 é muitas vezes &ldquo;transparente&rdquo; para os serviços) e o ambiente enterprise (onde a camada 2 é o alicerce de tudo) é muito mais significativa do que eu imaginava.</p>
+<p>Esta experiência me ensinou que, independentemente do seu background em redes, <strong>a camada de enlace de dados merece atenção especial e estudo dedicado</strong>. Para profissionais que, como eu, têm mais experiência com protocolos de camada superior, entender profundamente como a camada 2 funciona é fundamental para uma preparação completa para certificações como o CCNA.</p>
+<p>Em todo lugar, você vai observar comentários dizendo que para profissionais de redes de computadores é necessário ter uma base sólida, por isso, uma das coisas fundamentais é conhecer a camada de enlace, pois ela é essencial para entender como switches, endereços MAC e VLANs funcionam na prática. Neste artigo, exploraremos alguns dos conceitos teóricos e depois, nos próximos artigos, aplicaremos esse conhecimento em cenários reais de configuração.</p>
+<h2 id="funções-básicas-da-camada-de-enlace-de-dados">Funções Básicas da Camada de Enlace de Dados<a hidden class="anchor" aria-hidden="true" href="#funções-básicas-da-camada-de-enlace-de-dados">#</a></h2>
+<p>A camada de enlace de dados utiliza os serviços da camada física para a transmissão de bits, garantindo que os dados cheguem à máquina de destino. Entre as funções principais desta camada estão:</p>
+<ol>
+<li><strong>Interface de Serviço</strong>: Proporcionar uma interface definida para a camada de rede, facilitando a comunicação entre camadas superiores e inferiores.</li>
+<li><strong>Enquadramento</strong>: Organizar bytes em quadros para transmissão eficiente e integrada.</li>
+<li><strong>Controle de Erros</strong>: Detectar e corrigir possíveis erros durante a transmissão de dados.</li>
+<li><strong>Controle de Fluxo</strong>: Regular a taxa de transmissão de dados para evitar sobrecarregar receptores mais lentos.</li>
+</ol>
+<p>Além das funções citadas, a camada de enlace também é responsável pelo <strong>endereçamento físico</strong>, utilizando endereços MAC (Media Access Control) para identificar dispositivos em uma rede local (LAN).</p>
+<p>O endereço MAC possui <strong>6 bytes (48 bits)</strong> e é dividido em duas partes:</p>
+<ol>
+<li><strong>OUI (Organizationally Unique Identifier)</strong>: 3 bytes (24 bits) - Identifica o fabricante do dispositivo</li>
+<li><strong>Vendor Assigned</strong>: 3 bytes (24 bits) - Identificador único atribuído pelo fabricante</li>
+</ol>
+<!-- raw HTML omitted -->
+<p>O endereço MAC é representado em formato hexadecimal, separado por dois pontos ou hífens. Por exemplo: <code>00:1A:2B:3C:4D:5E</code> ou <code>00-1A-2B-3C-4D-5E</code>. Apenas de curiosidade, o primeiro byte do OUI também contém informações importantes:</p>
+<ul>
+<li><strong>Bit 0 (LSB)</strong>: Indica se o endereço é unicast (0) ou multicast (1)</li>
+<li><strong>Bit 1</strong>: Indica se o endereço é globalmente administrado (0) ou localmente administrado (1)</li>
+</ul>
+<h3 id="serviços">Serviços<a hidden class="anchor" aria-hidden="true" href="#serviços">#</a></h3>
+<p>Os serviços da camada de enlace de dados variam de acordo com o protocolo, mas podemos categorizá-los em três tipos principais:</p>
+<ul>
+<li><strong>Serviço não orientado a conexões sem confirmação</strong>: Os quadros são enviados sem qualquer confirmação de recebimento. A Ethernet é um exemplo clássico desse serviço, sendo usado em ambientes onde a taxa de erro é baixa e a recuperação de dados é feita por camadas superiores.</li>
+<li><strong>Serviço não orientado a conexões com confirmação</strong>: Cada quadro enviado é confirmado individualmente, o que permite a retransmissão de quadros perdidos. O padrão <strong>802.11 (WiFi)</strong> adota essa abordagem para garantir confiabilidade em redes sem fio.</li>
+<li><strong>Serviço orientado a conexões com confirmação</strong>: Neste serviço, uma conexão lógica é estabelecida entre as máquinas antes do envio dos dados. Cada quadro é numerado e a confirmação garante a entrega.</li>
+</ul>
+<p>Nas certificações de fabricantes de equipamentos, sobretudo o CCNA 200-301, o foco geralmente recai sobre o <strong>Ethernet (IEEE 802.3)</strong>, que utiliza um serviço não orientado a conexão sem confirmação. A título de curiosidade, podemos falar que o <strong>WiFi (IEEE 802.11)</strong> usa confirmações devido à natureza propensa a erros das redes sem fio, esse padrão também é cobrado no blueprint do CCNA 200-301, mas não será abordado nesse artigo.</p>
+<h3 id="enquadramento">Enquadramento<a hidden class="anchor" aria-hidden="true" href="#enquadramento">#</a></h3>
+<p>Para garantir que os quadros sejam transmitidos de forma correta, a camada de enlace de dados deve organizar o fluxo de bits brutos provenientes da camada física em quadros. Esse processo é chamado de <strong>enquadramento</strong> e envolve:</p>
+<ul>
+<li>Dividir o fluxo contínuo de bits em quadros.</li>
+<li>Adicionar um <strong>checksum</strong> (soma de verificação) a cada quadro para detectar erros.</li>
+<li>Recalcular o checksum no destino e verificar se o valor corresponde ao valor transmitido.</li>
+</ul>
+<p>Existem várias estratégias de enquadramento, como:</p>
+<ol>
+<li><strong>Contagem de caracteres</strong>: Um campo de contagem define o tamanho do quadro.</li>
+<li><strong>Bytes de flag com inserção de bytes</strong>: Utiliza flags especiais para marcar o início e o fim dos quadros, inserindo bytes adicionais quando necessário.</li>
+<li><strong>Bits de flag com inserção de bits</strong>: Semelhante ao método de bytes, mas opera a nível de bits.</li>
+<li><strong>Violações de codificação da camada física</strong>: Utiliza violações propositalmente criadas nas regras de codificação da camada física para indicar o início e o fim dos quadros.</li>
+</ol>
+<p>A Ethernet, por exemplo, utiliza um preâmbulo (sequência de bits de sincronização) seguido de um campo de comprimento para marcar o início e o final dos quadros.</p>
+<!-- raw HTML omitted -->
+<p>Campos do Cabeçalho Ethernet e Trailer (IEEE 802.3)</p>
+<table>
+	<thead>
+			<tr>
+					<th>Campo</th>
+					<th>Bytes</th>
+					<th>Descrição</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Preâmbulo</td>
+					<td>7</td>
+					<td>Sincronização</td>
+			</tr>
+			<tr>
+					<td>SFD (Start Frame Delimiter)</td>
+					<td>1</td>
+					<td>Sinaliza que o próximo byte inicia o campo de MAC Address de destino</td>
+			</tr>
+			<tr>
+					<td>Destino</td>
+					<td>6</td>
+					<td>Identifica o MAC Address de destino da mensagem</td>
+			</tr>
+			<tr>
+					<td>Origem</td>
+					<td>6</td>
+					<td>Identifica o MAC Address de origem da mensagem</td>
+			</tr>
+			<tr>
+					<td>Tipo</td>
+					<td>2</td>
+					<td>Identifica o tipo de protocolo que está dentro do quadro, os mais comuns são os protocolos IPv4 e IPv6</td>
+			</tr>
+			<tr>
+					<td>Dados e Preenchimento</td>
+					<td>46~1500</td>
+					<td>Nesse campo estão os dados de camadas superiores, o L3PDU ou pacote. Caso os dados não atendam aos requerimentos mínimos de comprimento dos dados (46 bytes), a origem adiciona dados de preenchimento</td>
+			</tr>
+			<tr>
+					<td>FCS (Frame Check Sequence)</td>
+					<td>4</td>
+					<td>A NIC (Network Interface Card) de destino utiliza esse campo para saber se foram detectados erros na transmissão de dados</td>
+			</tr>
+	</tbody>
+</table>
+<h3 id="controle-de-erros-e-de-fluxo">Controle de Erros e de Fluxo<a hidden class="anchor" aria-hidden="true" href="#controle-de-erros-e-de-fluxo">#</a></h3>
+<p>Os protocolos da camada de enlace de dados empregam diferentes mecanismos para controlar erros e fluxo, garantindo a integridade e eficiência da transmissão de dados. Entre os principais mecanismos estão:</p>
+<ul>
+<li><strong>Detecção de Erros</strong>: Métodos como o checksum e CRC (Cyclic Redundancy Check) são amplamente utilizados para identificar falhas na transmissão de quadros.</li>
+<li><strong>Correção de Erros</strong>: Em alguns casos, a camada de enlace pode corrigir automaticamente pequenos erros ou solicitar a retransmissão do quadro defeituoso.</li>
+<li><strong>Controle de Fluxo</strong>: Protocolos como o <strong>Windowing</strong> (controle de janela) e <strong>ACK/NACK</strong> (acknowledgement/negative acknowledgement) regulam o fluxo de dados entre dispositivos, evitando que um transmissor rápido sobrecarregue um receptor mais lento.</li>
+</ul>
+<h3 id="métodos-de-encaminhamento-de-quadros">Métodos de Encaminhamento de Quadros<a hidden class="anchor" aria-hidden="true" href="#métodos-de-encaminhamento-de-quadros">#</a></h3>
+<ul>
+<li>Store-and-Forward: o switch recebe o quadro inteiro antes de encaminhá-lo, fornecendo maior confiabilidade e, consequentemente, maior latência.</li>
+<li>Cut-Through: o switch começa a encaminhar o quadro assim que detecta o endereço MAC de destino, 6 bytes logo após o campo SFD, e não faz a verificação de erros, a latência tende a ser muito baixa, porém a chance de encaminhar quadros corrompidos é alta, sendo ideal para redes com baixa taxa de erros.
+<ul>
+<li>Fast-Forward: é uma variação do Cut-Through, onde o switch introduz um pequeno atraso (delay) antes de encaminhar, reduzindo colisões. O switch aguarda os primeiros 64 bytes, tamanho mínimo de um quadro ethernet, antes de encaminhar, se o quadro for menor, é descartado (runt frame). É um método menos comum, é mais observado em switches mais antigos.</li>
+<li>Fragment-Free: é um híbrido entre o Cut-Through e o Store-and-Forward. O switch verifica os primeiros 64 bytes, onde ocorrem a maioria dos erros de transmissão, antes de encaminhar, se não houver erro, ele encaminha o restante do quadro sem fazer verificação de erros. Faz o balanceamento entre velocidade e confiabilidade mínima.</li>
+</ul>
+</li>
+</ul>
+<p>Abaixo segue uma tabela que faz uma comparação entre os modos de encaminhamento de quadros:</p>
+<table>
+	<thead>
+			<tr>
+					<th>Modo</th>
+					<th>Latência</th>
+					<th>Verificação de Erros</th>
+					<th>Uso típico</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Store-and-Forward</td>
+					<td>Alta</td>
+					<td>Completa (CRC/FCS)</td>
+					<td>Redes modernas</td>
+			</tr>
+			<tr>
+					<td>Cut-Through</td>
+					<td>Mínima</td>
+					<td>Nenhuma</td>
+					<td>Data Centers / Low-Latency</td>
+			</tr>
+			<tr>
+					<td>Fragment-Free</td>
+					<td>Moderada</td>
+					<td>Primeiros 64 bytes</td>
+					<td>Redes com histórico de colisões</td>
+			</tr>
+	</tbody>
+</table>
+<h2 id="conclusão">Conclusão<a hidden class="anchor" aria-hidden="true" href="#conclusão">#</a></h2>
+<p>Neste primeiro artigo, exploramos os fundamentos teóricos da camada de enlace de dados, abordando suas funções essenciais, serviços, métodos de enquadramento e controle de erros e fluxo. Compreendemos como os diferentes modos de encaminhamento de quadros impactam o desempenho e a confiabilidade das redes.</p>
+<p>Esta base teórica sólida é fundamental para profissionais de redes, especialmente aqueles que buscam certificações como o CCNA 200-301, onde o conhecimento prático da camada de enlace é essencial para configurar switches, gerenciar VLANs e entender o funcionamento dos endereços MAC.</p>
+<p><strong>Para profissionais com background em service providers</strong> (como eu), que estão acostumados a trabalhar com protocolos de camada superior como MPLS e VPNs, este estudo da camada 2 representa uma mudança significativa de perspectiva. O que antes era &ldquo;transparente&rdquo; nos serviços de telecomunicações, agora se torna o <strong>alicerce fundamental</strong> para entender como as redes enterprise realmente funcionam.</p>
+<p>Nos próximos artigos desta série, aprofundaremos esses conceitos através de <strong>configurações práticas em equipamentos reais</strong>, onde implementaremos cenários de laboratório que demonstram:</p>
+<ul>
+<li>Configuração e gerenciamento de switches</li>
+<li>Implementação e troubleshooting de VLANs</li>
+<li>Análise de tráfego de rede com ferramentas de captura</li>
+<li>Resolução de problemas comuns em redes locais</li>
+<li>Otimização de desempenho baseada nos diferentes modos de encaminhamento</li>
+</ul>
+<p>O conhecimento teórico apresentado aqui servirá como alicerce para as práticas avançadas que virão, permitindo uma compreensão mais profunda dos mecanismos internos dos equipamentos de rede e suas aplicações no mundo real. <strong>Para aqueles que, como eu, subestimaram inicialmente a importância da camada 2, este estudo representa um investimento valioso no desenvolvimento de uma visão mais completa e integrada das redes de computadores.</strong></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/">networking de quebradinha</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

@@ -11,10 +11,12 @@
             "id": "311361967dd57bc7",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
+              "type": "excalidraw",
+              "state": {
+                "file": "Excalidraw/2026-06-15 16.22.36.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "2026-06-15 16.22.36.excalidraw"
             }
           }
         ]
@@ -74,8 +76,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 582.5,
-    "collapsed": true
+    "width": 582.5
   },
   "right": {
     "id": "78ba75e6079e2fd0",
@@ -168,8 +169,8 @@
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "calendar-with-checkmark",
-              "title": "Calendar"
+              "icon": "lucide-ghost",
+              "title": "calendar"
             }
           },
           {
@@ -178,8 +179,8 @@
             "state": {
               "type": "smart-connections-view",
               "state": {},
-              "icon": "smart-connections",
-              "title": "Connections"
+              "icon": "lucide-ghost",
+              "title": "smart-connections-view"
             }
           }
         ],
@@ -200,32 +201,32 @@
       "command-palette:Open command palette": false,
       "bases:Create new base": false,
       "obsidian-excalidraw-plugin:New drawing": false,
-      "templater-obsidian:Templater": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "smart-connections:Smart Connections: Open connections view": false,
-      "smart-connections:Toggle Footer Connections": false,
-      "smart-connections:Smart Connections: Open random connection": false,
-      "smart-connections:Smart Lookup: Open lookup view": false
+      "templater-obsidian:Templater": false
     }
   },
-  "active": "311361967dd57bc7",
+  "active": "0b20b4e63ceaeabf",
   "lastOpenFiles": [
+    "public/assets/images/networking/ospfv2-descomplicado/ospfv2-descomplicado-pt1-11.png",
+    "static/assets/images/networking/ospfv2-descomplicado/ospfv2-descomplicado-pt1-11.png",
+    "public/assets/images/networking/ospfv2-descomplicado/2026-06-15 16.22.36.excalidraw.png",
+    "static/assets/images/networking/ospfv2-descomplicado/2026-06-15 16.22.36.excalidraw.png",
+    "Excalidraw/2026-06-15 16.22.36.excalidraw.png",
+    "public/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/2026-06-15 16.22.36.excalidraw.png",
+    "static/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/2026-06-15 16.22.36.excalidraw.png",
+    "Excalidraw/2026-06-15 16.22.36.excalidraw.md",
+    "Excalidraw/2026-06-15 16.22.22.excalidraw.md",
+    "Excalidraw/Drawing 2026-06-15 16.11.55.excalidraw.md",
+    "content/pt/posts/ospfv2-descomplicado-pt1.md",
+    "Excalidraw/Drawing 2026-06-15 16.08.26.excalidraw.md",
+    "Excalidraw",
     "assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado-pt1.png",
     "assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado-pt1-10.png",
     "assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado-pt1-9.png",
     "assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado-pt1-8.png",
-    "assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado-pt1-6.png",
-    "assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado-pt1-5.png",
-    "assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado-pt1-4.png",
-    "assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado-pt1-3.png",
-    "assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado-pt1-2.png",
-    "assets/images/networking/2026-05-23-ospfv2-descomplicado/2026-05-23-ospfv2-descomplicado-pt1-1.png",
-    "2026-05-23-ospfv2-descomplicado-pt1-11.png",
     "drafts/2026-05-23-ospfv2-descomplicado-pt1.md",
     "drafts/2026-05-23-ospfv2-descomplicado.md",
     "Excalidraw/Drawing 2026-05-24 16.35.54.excalidraw.md",
     "assets/images/networking/2026-05-23-ospfv2-descomplicado",
-    "Excalidraw",
     "_posts/2024-09-29-introducao-ao-protocolo-ipv4.md",
     "_posts/2025-01-12-fundamentos-de-redes-de-computadores.md",
     "_posts/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica-parte-1.md",
