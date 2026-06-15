@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2026-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2026-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/networking/</loc>
+    <lastmod>2026-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/pt/posts/ospfv2-descomplicado-pt1/</loc>
+    <lastmod>2026-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/pt/</loc>
+    <lastmod>2026-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/pt/posts/como-funciona-uma-rede-em-uma-transmissora-hvdc/</loc>
+  </url><url>
+    <loc>http://localhost:1313/pt/posts/fundamentos-de-redes-de-computadores/</loc>
+  </url><url>
+    <loc>http://localhost:1313/pt/posts/introducao-ao-protocolo-ipv4/</loc>
+  </url><url>
+    <loc>http://localhost:1313/pt/posts/ospfv2-descomplicado-pt2/</loc>
+  </url><url>
+    <loc>http://localhost:1313/pt/posts/protocolo-ipv4/</loc>
+  </url><url>
+    <loc>http://localhost:1313/pt/posts/visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica-parte-1/</loc>
+  </url><url>
+    <loc>http://localhost:1313/pt/posts/visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica-parte-2/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+  </url>
+</urlset>

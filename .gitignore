@@ -1,16 +1,9 @@
-_site
-.sass-cache
-.jekyll-cache
-.jekyll-metadata
-vendor
 .obsidian/
 notes/
 templates/
 Excalidraw/
 .DS_Store
 
-
-
-
 # Ignore Smart Environment folder
 .smart-env
+.obsidian/
