@@ -1,9 +1,9 @@
 ---
-title: "x"
-slug: "x" 
+title: "OSPF Descomplicado - Parte 2"
+slug: "ospfv2-simplified-pt2" 
 date: 2026-05-23
-translationKey: "x"
-categories: ["nx"]
+translationKey: "ospf-part2"
+categories: ["networking"]
 math: true
 draft: true
 ---

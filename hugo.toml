@@ -1,12 +1,15 @@
-baseURL = "https://badntwrkngnr.github.io/"
-title = "Networking de Quebradinha"
 theme = "PaperMod"
-defaultContentLanguage = "pt"
+defaultContentLanguage = "en"
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
 
 [languages]
   [languages.pt]
     languageName = "Português"
     weight = 1
+    title = "Networking de Quebradinha"
     contentDir = "content/pt"
     [languages.pt.params]
       description = "Eu sou só um cara que já tentou quase tudo e hoje paga as contas graças aos modelos OSI e TCP/IP"
@@ -14,6 +17,7 @@ defaultContentLanguage = "pt"
   [languages.en]
     languageName = "English"
     weight = 2
+    title = "Street-Smart Networking"
     contentDir = "content/en"
     [languages.en.params]
       description = "I've tried almost everything, and today I'm paying the bills thanks to the OSI and TCP/IP models."

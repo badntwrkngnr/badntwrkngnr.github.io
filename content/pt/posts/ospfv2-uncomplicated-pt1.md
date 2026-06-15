@@ -1,8 +1,8 @@
 ---
 title: "OSPF Descomplicado - Parte 1"
-slug: "ospfv2-descomplicado-pt1" 
+slug: "ospfv2-uncomplicated-pt1" 
 date: 2026-05-23
-translationKey: "ospf-part1"
+translationKey: "ospfv2-uncomplicated-pt1"
 categories: ["networking"]
 math: true
 draft: false

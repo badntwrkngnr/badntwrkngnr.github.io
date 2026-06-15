@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>OSPF Descomplicado - Parte 1 | Networking de Quebradinha</title>
+<meta name="keywords" content="">
+<meta name="description" content="Introdução
+Olá, tudo bem contigo? Era para ser somente um artigo completo abordando um assunto do começo ao fim, mas acabou que, conforme eu ia escrevendo, o texto ia ficando cada vez mais extenso, isso acontece porque eu tenho uma dificuldade colossal de identificar o momento correto de encerrar alguns assuntos. No meio do caminho, achei melhor mudar a abordagem e separar em partes para não ficar cansativo demais. Para começar, escolhi este título por ser fanboy da LinuxTips e, embora o artigo traga bastante conteúdo, aproveito para recomendar o curso Descomplicando o OSPF, do professor Gustavo Kalau, para um aprofundamento um pouco maior.
+Antes de falarmos sobre o OSPF propriamente dito, vale recapitular o papel de um protocolo de roteamento dinâmico. São conceitos simples, mas que são fundamentais e vão preparar o terreno para o que vem a seguir.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/en/posts/ospfv2-descomplicado-pt1/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.cd9298b33628769aa1bc1acebbbfd7aa11ce81dfe03484d479e1907760249a1d.css" integrity="sha256-zZKYszYodpqhvBrOu7/XqhHOgd/gNITUeeGQd2Akmh0=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="pt" href="http://localhost:1313/posts/ospfv2-descomplicado-pt1/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/en/posts/ospfv2-descomplicado-pt1/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
+        <div class="logo">
+            <a href="http://localhost:1313/en/" accesskey="h" title="Networking de Quebradinha (Alt + H)">Networking de Quebradinha</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button><span class="nav-sep">|</span>
+                    <ul class="lang-menu">
+                        <li>
+                            <a href="http://localhost:1313/" title="Português"
+                                aria-label="Português">Pt</a>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+        <ul id="menu" class="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      OSPF Descomplicado - Parte 1
+      <span class="entry-hint" title="Draft">
+        <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" fill="currentColor">
+          <path
+            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
+        </svg>
+      </span>
+    </h1>
+    <div class="post-meta">
+
+<span title='2026-05-23 00:00:00 +0000 UTC'>May 23, 2026</span>&nbsp;|&nbsp;<span>Translations:</span>
+    <ul class="i18n_list">
+        <li>
+            <a href="http://localhost:1313/posts/ospfv2-descomplicado-pt1/">Pt</a>
+        </li>
+    </ul>
+
+</div>
+  </header> 
+  <div class="post-content md-content"><h2 id="introdução">Introdução<a hidden class="anchor" aria-hidden="true" href="#introdução">#</a></h2>
+<p>Olá, tudo bem contigo? Era para ser somente um artigo completo abordando um assunto do começo ao fim, mas acabou que, conforme eu ia escrevendo, o texto ia ficando cada vez mais extenso, isso acontece porque eu tenho uma dificuldade colossal de identificar o momento correto de encerrar alguns assuntos. No meio do caminho, achei melhor mudar a abordagem e separar em partes para não ficar cansativo demais. Para começar, escolhi este título por ser <em>fanboy</em> da <a href="https://linuxtips.io/"><em>LinuxTips</em></a> e, embora o artigo traga bastante conteúdo, aproveito para recomendar o curso <a href="https://gustavokalau.com.br/"><em>Descomplicando o OSPF</em></a>, do professor Gustavo Kalau, para um aprofundamento um pouco maior.
+Antes de falarmos sobre o OSPF propriamente dito, vale recapitular o papel de um protocolo de roteamento dinâmico. São conceitos simples, mas que são fundamentais e vão preparar o terreno para o que vem a seguir.</p>
+<p>As principais funções de um protocolo de roteamento incluem:</p>
+<ul>
+<li><strong>Descoberta de vizinhos e redes:</strong> identificação automática (ou manual) de outros roteadores no mesmo segmento, eliminando o mapeamento manual de rotas a cada expansão.</li>
+<li><strong>Cálculo e seleção do melhor caminho (<em>path selection</em>):</strong> uso de algoritmos que analisam a topologia (largura de banda, atraso, saltos etc.) para escolher a melhor rota por prefixo.</li>
+<li><strong>Prevenção de loops:</strong> mecanismos que impedem pacotes de circular indefinidamente. Em protocolos <em>link-state</em>, que é o caso do OSPF, todos os nós calculam rotas a partir de um mapa topológico livre de loops.</li>
+<li><strong>Tolerância a falhas:</strong> reação a quedas de link ou equipamento, recalculando rotas alternativas.</li>
+<li><strong>Roteamento sem classe (<em>classless</em>):</strong> suporte a VLSM e CIDR, transportando máscaras nas atualizações de roteamento.</li>
+</ul>
+<h2 id="conceitos-fundamentais">Conceitos Fundamentais<a hidden class="anchor" aria-hidden="true" href="#conceitos-fundamentais">#</a></h2>
+<p>Neste momento, vamos começar a falar sobre o protocolo OSPF na versão 2. O OSPFv2 (<em>Open Shortest Path First version 2</em>) é um protocolo de roteamento dinâmico interno (IGP) do tipo <em>link-state</em>, padronizado pela IETF na RFC 2328. Para entender o que isso realmente significa, vamos comparar com protocolos mais antigos, como o RIP (<em>distance vector</em>):</p>
+<ul>
+<li><strong>Distance vector:</strong> o roteamento usa como parâmetro a quantidade de saltos (quanto menos, melhor). É como dirigir olhando só para as placas de distância: você confia no número, mas não sabe como é a estrada, se há congestionamento ou como as vias se conectam. Na prática, as interfaces operam em velocidades diferentes, o caminho com menos saltos pode ser o mais lento e, paradoxalmente, o melhor caminho pode ser justamente o pior.</li>
+<li><strong>Link-state:</strong> os roteadores trocam informações, como se fossem peças de um quebra-cabeça (no caso do OSPF, essas mensagens são os LSAs, <em>Link-State Advertisements</em>). Reunidas na LSDB (<em>Link-State Database</em>), quando sincronizada, o quebra-cabeça está completo e <strong>cada roteador monta um mapa topológico idêntico e completo da área</strong>: todos os nós, links, status (Up/Down) e o &ldquo;pedágio&rdquo; (custo) de cada trecho.</li>
+</ul>
+<p>O ciclo de vida do OSPF em uma área resume-se a três fases:</p>
+<ol>
+<li>Descoberta de vizinhos e formação de adjacências</li>
+<li>Construção e sincronização da LSDB</li>
+<li>Execução do algoritmo SPF (<em>Dijkstra</em>)</li>
+</ol>
+<h3 id="spf-e-métrica">SPF e Métrica<a hidden class="anchor" aria-hidden="true" href="#spf-e-métrica">#</a></h3>
+<p>Com o mapa da rede (LSDB) em mãos, o OSPF traça o melhor caminho com o algoritmo <strong>SPF (<em>Shortest Path First</em>)</strong>, de Edsger W. Dijkstra. O cálculo segue quatro passos:</p>
+<p><strong>1. Ponto de partida:</strong> cada roteador executa o SPF de forma independente, colocando <strong>a si mesmo</strong> como raiz da <em>Shortest Path Tree</em> (SPT), .</p>
+<p><strong>2. Métrica:</strong> o critério de melhor caminho é o <strong>custo</strong>, inversamente proporcional à largura de banda do link, links mais rápidos, pedágio mais barato.</p>
+<p><img alt="OSPF Cost Formula" loading="lazy" src="/assets/images/networking/ospfv2-descomplicado/ospfv2-descomplicado-pt1-11.png"></p>
+<p>O OSPF considera as condições do caminho, mas preste atenção em uma coisa extremamente importante: ele considera apenas a <strong>largura de banda</strong> como parâmetro para calcular a sua métrica. Outro detalhe importante: por padrão, a banda de referência é de 100 Mbps no Cisco IOS, o que faz portas FastEthernet e GigabitEthernet terem o mesmo custo <strong>1</strong>, isso pode ser um problema, para corrigir, utilize o comando <strong>auto-cost reference-bandwidth</strong> em todos os dispositivos do domínio OSPF para não distorcer o cálculo, no material de troubleshooting que será produzido, vamos demonstrar na prática. Apenas como curiosidade e para efeitos de comparação, o protocolo EIGRP pode considerar a largura de banda, atraso, carga e confiabilidade.</p>
+<p><strong>3. Custo cumulativo:</strong> o roteador soma o custo de saída de cada interface ao longo do caminho até cada destino.</p>
+<p><strong>4. Instalação na RIB:</strong> para a mesma sub-rede, vence o menor custo cumulativo, o perdedor permanece só na LSDB. A rota vencedora vai para a <strong>RIB</strong>. Em caso de empate, o OSPF instala ambos os caminhos e faz balanceamento (ECMP, <em>Equal-Cost Multipathing</em>).</p>
+<p>Para demonstrar o comportamento entre os dois tipos de algoritmos mencionados acima, vamos utilizar a topologia abaixo:</p>
+<p><img alt="Topologia RIP e OSPF" loading="lazy" src="/assets/images/networking/ospfv2-descomplicado/ospfv2-descomplicado-pt1.png"></p>
+<p>Vamos exemplificar primeiramente o funcionamento de um protocolo que utiliza o algoritmo <em>Distance Vector</em>, o RIP:</p>
+<ul>
+<li>Como ponto de partida, vamos dizer que as conexões em azul são <em>Links Ethernet</em> e as conexões em amarelo são <em>Links Seriais</em>.</li>
+<li>Agora, imagine que um pacote precisa sair do roteador RT2 e chegar ao RT7.</li>
+<li>Baseado na topologia que temos, o caminho mais curto seria RT2 &gt; RT4 &gt; RT7.</li>
+<li>Com base na velocidade dos links, podemos dizer que o &ldquo;melhor caminho&rdquo; talvez não seja o mais eficiente (rápido) para chegar ao destino.</li>
+</ul>
+<p><img alt="Caminho RIP na topologia" loading="lazy" src="/assets/images/networking/ospfv2-descomplicado/ospfv2-descomplicado-pt1-1.png"></p>
+<p>Agora, vamos exemplificar o funcionamento básico do OSPF, que utiliza a lógica <em>link-state</em>. Com a fórmula de cálculo fornecida, podemos definir os custos conforme a topologia abaixo:</p>
+<p><img alt="Custos OSPF na topologia" loading="lazy" src="/assets/images/networking/ospfv2-descomplicado/ospfv2-descomplicado-pt1-2.png"></p>
+<p>Agora, com o valor do custo acumulado da origem até chegar no destino calculado pelo OSPF, vamos observar o comportamento do encaminhamento de pacotes na prática!
+A topologia já está com OSPF habilitado, explicaremos as duas formas de ativação na seção de adjacência. O arquivo dos labs está disponível para <a href="https://drive.google.com/drive/folders/1PFSQtfXWONkJiUJ5dYLB7eKL-c4M5bcl?usp=drive_link"><em>download</em></a>, você pode baixar todos eles e praticar o quanto quiser, lembrando que utilizo o PNETLab, portanto o arquivo também é compatível com o EVE-NG!
+Ao examinarmos a tabela de roteamento, podemos ver que estamos recebendo a rota de destino da rede que está localizada no roteador RT7 com um custo de 8. Você pode estar se perguntando como, já que se somarmos os custos das interfaces de saída até o destino, o valor obtido é 7. Aqui reside um detalhe minúsculo que pode confundir a linha de raciocínio durante uma análise da tabela de roteamento. Conforme definido na RFC do OSPF e implementado pelo Cisco IOS, a interface loopback é tratada como <em>stub host</em> e sempre vai receber um custo fixo e automático de 1. Me vejo forçado a falar sobre o termo <em>stub</em> antes da hora, mas para o entendimento do conceito, preciso que você imagine que no contexto de redes é como se fosse o &ldquo;fim da linha&rdquo; ou podemos entender como um &ldquo;beco sem saída&rdquo;. É um dispositivo que o tráfego pode entrar e sair normalmente, porém nunca vai chegar diretamente a um terceiro destino porque tem um único caminho para o tráfego chegar e sair. Não confunda com <em>stub area</em>, que é outro conceito, com o natural aprofundamento do tema, falaremos disso nos próximos artigos.</p>
+<pre tabindex="0"><code class="language-cisco" data-lang="cisco">RT2#show ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route, H - NHRP, l - LISP
+       a - application route
+       + - replicated route, % - next hop override
+
+Gateway of last resort is not set
+
+      1.0.0.0/32 is subnetted, 1 subnets
+O        1.1.1.1 [110/2] via 10.1.12.1, 00:00:16, Ethernet0/0
+      2.0.0.0/32 is subnetted, 1 subnets
+C        2.2.2.2 is directly connected, Loopback0
+      3.0.0.0/32 is subnetted, 1 subnets
+O        3.3.3.3 [110/3] via 10.1.12.1, 00:00:16, Ethernet0/0
+      4.0.0.0/32 is subnetted, 1 subnets
+O        4.4.4.4 [110/4] via 10.1.12.1, 00:00:06, Ethernet0/0
+      5.0.0.0/32 is subnetted, 1 subnets
+O        5.5.5.5 [110/7] via 10.1.12.1, 00:00:06, Ethernet0/0
+      6.0.0.0/32 is subnetted, 1 subnets
+O        6.6.6.6 [110/5] via 10.1.12.1, 00:00:06, Ethernet0/0
+      7.0.0.0/32 is subnetted, 1 subnets
+O        7.7.7.7 [110/8] via 10.1.12.1, 00:00:06, Ethernet0/0
+      8.0.0.0/32 is subnetted, 1 subnets
+O        8.8.8.8 [110/6] via 10.1.12.1, 00:00:06, Ethernet0/0
+      10.0.0.0/8 is variably subnetted, 11 subnets, 2 masks
+C        10.1.12.0/24 is directly connected, Ethernet0/0
+L        10.1.12.2/32 is directly connected, Ethernet0/0
+O        10.1.13.0/24 [110/2] via 10.1.12.1, 00:00:16, Ethernet0/0
+C        10.1.24.0/24 is directly connected, Serial1/0
+L        10.1.24.2/32 is directly connected, Serial1/0
+O        10.1.34.0/24 [110/3] via 10.1.12.1, 00:00:16, Ethernet0/0
+O        10.1.46.0/24 [110/4] via 10.1.12.1, 00:00:06, Ethernet0/0
+O        10.1.47.0/24 [110/67] via 10.1.12.1, 00:00:06, Ethernet0/0
+O        10.1.58.0/24 [110/6] via 10.1.12.1, 00:00:06, Ethernet0/0
+O        10.1.68.0/24 [110/5] via 10.1.12.1, 00:00:06, Ethernet0/0
+O        10.1.75.0/24 [110/7] via 10.1.12.1, 00:00:06, Ethernet0/0
+</code></pre><p>Segue a representação gráfica do caminho percorrido pelos pacotes até o destino:</p>
+<p><img alt="Caminho percorrido pelos pacotes até o destino" loading="lazy" src="/assets/images/networking/ospfv2-descomplicado/ospfv2-descomplicado-pt1-4.png"></p>
+<p>Abaixo podemos observar, através do comando <em>traceroute</em>, o caminho que os pacotes percorrem até chegar à rede de destino:</p>
+<pre tabindex="0"><code class="language-cisco" data-lang="cisco">RT2#traceroute 7.7.7.7
+Type escape sequence to abort.
+Tracing the route to 7.7.7.7
+VRF info: (vrf in name/id, vrf out name/id)
+  1 10.1.12.1 1 msec 1 msec 1 msec
+  2 10.1.13.3 1 msec 1 msec 0 msec
+  3 10.1.34.4 1 msec 2 msec 1 msec
+  4 10.1.46.6 1 msec 2 msec 1 msec
+  5 10.1.68.8 2 msec 2 msec 2 msec
+  6 10.1.58.5 1 msec 2 msec 1 msec
+  7 10.1.75.7 2 msec 2 msec *
+RT2#
+</code></pre><h3 id="descoberta-de-vizinhos-e-formação-de-adjacências">Descoberta de Vizinhos e Formação de Adjacências<a hidden class="anchor" aria-hidden="true" href="#descoberta-de-vizinhos-e-formação-de-adjacências">#</a></h3>
+<p>Descobrir um vizinho (fase 1) é só o começo. Mas, atenção: antes de começarem a trocar informações e passarem pela máquina de estados, os roteadores precisam concordar num verdadeiro &ldquo;acordo de cavalheiros&rdquo;. Através dos pacotes Hello, eles validam um checklist. Se algo estiver fora do lugar, o processo de criar uma vizinhança nem começa!</p>
+<p>Para que o processo de formação de adjacência seja iniciado, as seguintes configurações precisam ser exatamente iguais em ambos os lados do link:</p>
+<ul>
+<li><strong>ID da Área:</strong> Se um roteador diz pertencer à Área 0 e o outro à Área 1 no mesmo link, eles não irão seguir com o processo de adjacência.</li>
+<li><strong>Sub-rede e Máscara:</strong> Os endereços IP das interfaces conectadas têm de pertencer exatamente  à mesma rede.</li>
+<li><strong>Hello e Dead Timers:</strong> O ritmo da conversa tem de bater (geralmente 10s para o Hello e 40s para o Dead Timer).</li>
+<li><strong>Autenticação:</strong> Se houver uma senha configurada, ela precisa ser idêntica.</li>
+<li><strong>Flags de Área Especial (Stub/NSSA):</strong> Ambos precisam concordar sobre o tipo de área em que estão inseridos.</li>
+</ul>
+<p>Além destas, existem duas regras para garantir que o processo não trave mais adiante, durante a troca da base de dados:</p>
+<ul>
+<li><strong>Router IDs Únicos:</strong> Cada roteador precisa do seu próprio documento de identidade (RID). Se houver duplicidade na rede, a matriz de rotas entra em colapso.</li>
+<li><strong>MTU (Maximum Transmission Unit) Igual:</strong> O tamanho máximo de pacote suportado nas interfaces precisa ser o mesmo. Se um lado tiver um MTU de 1500 bytes e o outro 1400, eles começam a conversar, mas a adjacência &ldquo;trava&rdquo; a meio do caminho. Importante lembrar que isso ocorre porque o OSPF não suporta fragmentação.</li>
+</ul>
+<blockquote>
+<p>O número do processo OSPF não precisa ser idêntico entre roteadores para formar adjacência.</p>
+</blockquote>
+<p>Para exemplificar melhor, foi criada a topologia abaixo:</p>
+<p><img alt="Topologia de adjacência OSPF" loading="lazy" src="/assets/images/networking/ospfv2-descomplicado/ospfv2-descomplicado-pt1-6.png"></p>
+<p>Com tudo isso previamente alinhado, para sincronizar a LSDB, os roteadores OSPF passam por uma máquina de estados de sete passos. A comunicação ocorre diretamente sobre IP (protocol ID 89), com cinco tipos de pacote, <strong>Hello</strong>, <strong>DBD</strong>, <strong>LSR</strong>, <strong>LSU</strong> e <strong>LSAck</strong>, que aparecem conforme o avanço dos estados:</p>
+<ol>
+<li><strong>Down (inativo):</strong> estado inicial. O processo OSPF está ativo na interface, mas nenhum <em>Hello</em> foi recebido. O roteador envia <em>Hello</em> para o multicast <strong>224.0.0.5</strong> (<em>All OSPF Routers</em>) e aguarda resposta.</li>
+<li><strong>Init (inicialização):</strong> chegou um <em>Hello</em> de um vizinho, mas a comunicação ainda é unidirecional. O RID local não aparece no campo de vizinhos ativos do pacote recebido.</li>
+<li><strong>2-Way (bidirecional):</strong> o <em>Hello</em> lista o próprio <em>Router ID (RID)</em>. A comunicação bidirecional está confirmada. O protocolo avalia o <strong>tipo de rede (<em>Network Type</em>)</strong> da interface e decide o próximo passo. Neste material, vamos falar somente sobre os dois tipos mais comuns: <strong>Point-to-Point</strong>, conexões entre dois nós. A eleição de DR/BDR é ignorada e o processo segue para os estados seguintes. <strong>Broadcast (multiacesso)</strong>, o padrão em Ethernet. Com vários dispositivos no segmento, o OSPF elege um <em>Designated Router</em> (DR) e um <em>Backup Designated Router</em> (BDR) para centralizar a troca de LSAs, os demais (<em>DROTHERs</em>) mantêm adjacência <strong>2-Way</strong> entre si e só avançam para o estado <strong>Full</strong> com DR e BDR. Vamos detalhar isso na seção de Características mais adiante, mas adianto que isso acontece para evitar problemas de escalabilidade.</li>
+<li><strong>ExStart:</strong> a comunicação básica está pronta, falta apenas sincronizar a LSDB. Os pares elegem <em>Master</em> e <em>Slave</em> (maior RID vence) para definir a sequência inicial dos pacotes <strong>DBD</strong> (<em>Database Description</em>).</li>
+<li><strong>Exchange:</strong> <em>Master</em> e <em>Slave</em> trocam DBDs, o &ldquo;índice&rdquo; da LSDB, com cabeçalhos de LSA para comparação, ainda sem o conteúdo completo das rotas.</li>
+<li><strong>Loading:</strong> após os DBDs, o roteador pede LSAs ausentes ou mais recentes via <strong>LSR</strong> (<em>Link-State Request</em>). O vizinho responde com <strong>LSU</strong> (<em>Link-State Update</em>) e o solicitante confirma com <strong>LSAck</strong> (<em>Link-State Acknowledgment</em>).</li>
+<li><strong>Full:</strong> as LSDBs estão idênticas e sincronizadas na área, agora pode tirar o grito <em><strong>É TETRA</strong></em> da garganta! Finalmente o roteador executa o SPF e instala as melhores rotas na tabela de roteamento (RIB).</li>
+</ol>
+<blockquote>
+<p>Nota: As fases 2 e 3 ocorrem nos estados <strong>Exchange</strong>, <strong>Loading</strong> e <strong>Full</strong>: a LSDB fica sincronizada e, em seguida, cada roteador roda o SPF de forma independente para popular a RIB.</p>
+</blockquote>
+<h3 id="ativando-o-ospf-no-cisco-ios">Ativando o OSPF no Cisco IOS<a hidden class="anchor" aria-hidden="true" href="#ativando-o-ospf-no-cisco-ios">#</a></h3>
+<p>Falamos muita teoria já, mas para que o entendimento seja claro, a prática é fundamental. Antes de qualquer pacote <em>Hello</em> sair pela rede, precisamos habilitar o OSPF nos roteadores. No Cisco IOS, existem duas formas de fazer isso:</p>
+<h4 id="1-network-statement-configuração-global-no-router-ospf">1. Network statement (configuração global no <em>router ospf</em>)<a hidden class="anchor" aria-hidden="true" href="#1-network-statement-configuração-global-no-router-ospf">#</a></h4>
+<p>É o modelo mais tradicional. Você entra no modo de configuração do processo OSPF e informa quais redes (e, por consequência, quais interfaces) participarão do protocolo, a configuração abaixo foi aplicada no roteador <em>RT1</em>:</p>
+<pre tabindex="0"><code class="language-cisco" data-lang="cisco">router ospf 1
+ network 10.0.0.1 0.0.0.0 area 0
+</code></pre><p>Muita gente confunde o network statement com um comando de anúncio de rotas, mas o funcionamento é um pouco diferente, ele age como um seletor de interface. O processo é simples:</p>
+<ul>
+<li>Você informa um endereço e uma máscara wildcard.</li>
+<li>O roteador percorre as interfaces configuradas.</li>
+<li>Se o endereço IP da interface &lsquo;casar&rsquo; com a máscara, o OSPF passa a operar nela.</li>
+</ul>
+<p>Simples assim!</p>
+<p>No exemplo do endereço IP 10.0.0.1 com a máscara wildcard 0.0.0.0, estamos sendo específicos, apenas a interface com esse IP exato participará do OSPF. Se o endereço não for encontrado, a interface não entra no processo e, consequentemente, não há anúncio de rota. Entender esse conceito é fundamental e pode te poupar tempo ao analisar o comportamento de uma rede.</p>
+<h4 id="2-configuração-por-interface">2. Configuração por interface<a hidden class="anchor" aria-hidden="true" href="#2-configuração-por-interface">#</a></h4>
+<p>A alternativa é anexar a interface diretamente ao processo OSPF, sem a necessidade de aplicar o <em>network statement</em>, conforme foi realizado no roteador <em>RT2</em>:</p>
+<pre tabindex="0"><code class="language-cisco" data-lang="cisco">interface Ethernet0/0
+ ip address 10.0.0.2 255.255.255.252
+ ip ospf 2 area 0
+</code></pre><p>Ambas as formas ativam o OSPF na interface. A diferença está apenas no <strong>local</strong> você configura: no processo (genérico/centralizado) ou na interface (específico).</p>
+<blockquote>
+<p>No Cisco IOS, configurações <strong>específicas</strong> prevalecem sobre as <strong>genéricas</strong>, isso não seria diferente para as configurações do OSPF. Se houver conflito, por exemplo, um <em>network</em> colocando a interface na Área 0 e um <em>ip ospf 2 area 1</em> na mesma porta, o que está na interface vence. Vamos demonstrar isso no artigo sobre troubleshooting que virá posteriormente, ok? Preciso me manter focado para não deixar esse material maior do que já está!</p>
+</blockquote>
+<h5 id="primeiro-refinamento-na-configuração-dos-equipamentos">Primeiro refinamento na configuração dos equipamentos<a hidden class="anchor" aria-hidden="true" href="#primeiro-refinamento-na-configuração-dos-equipamentos">#</a></h5>
+<p>Vale lembrar também o comportamento padrão do OSPF baseado no tipo de rede. Na nossa topologia, devemos aplicar o comando <em>ip ospf network point-to-point</em> na interface, por se tratar de uma conexão ponto-a-ponto, para sobrescrever o comportamento padrão para redes <em>broadcast</em> que o Ethernet possui, com isso, não haverá a eleição desnecessária de DR e BDR. Vamos observar isso na prática logo adiante.</p>
+<h4 id="retornando-ao-assunto-principal-desse-tópico">Retornando ao assunto principal desse tópico<a hidden class="anchor" aria-hidden="true" href="#retornando-ao-assunto-principal-desse-tópico">#</a></h4>
+<p>Agora, vamos ver o processo de formação de vizinhança e adjacência funcionando na prática:</p>
+<ul>
+<li>Ao configurarmos o OSPF, o roteador envia os pacotes Hello, como podemos observar nas capturas de pacotes realizadas com o WireShark conforme abaixo:</li>
+</ul>
+<p><img alt="Captura de pacote Hello OSPF" loading="lazy" src="/assets/images/networking/ospfv2-descomplicado/ospfv2-descomplicado-pt1-8.png"></p>
+<p><img alt="Detalhe do pacote Hello OSPF" loading="lazy" src="/assets/images/networking/ospfv2-descomplicado/ospfv2-descomplicado-pt1-9.png"></p>
+<p><img alt="Pacote Hello OSPF na captura" loading="lazy" src="/assets/images/networking/ospfv2-descomplicado/ospfv2-descomplicado-pt1-10.png"></p>
+<p>Foi aplicado o comando abaixo para avaliar os protocolos de roteamento ativos no roteador <em>RT1</em>:</p>
+<pre tabindex="0"><code class="language-cisco" data-lang="cisco">RT1#show ip protocols
+*** IP Routing is NSF aware ***
+
+Routing Protocol is &#34;application&#34;
+  Sending updates every 0 seconds
+  Invalid after 0 seconds, hold down 0, flushed after 0
+  Outgoing update filter list for all interfaces is not set
+  Incoming update filter list for all interfaces is not set
+  Maximum path: 32
+  Routing for Networks:
+  Routing Information Sources:
+    Gateway         Distance      Last Update
+  Distance: (default is 4)
+
+Routing Protocol is &#34;ospf 1&#34;
+  Outgoing update filter list for all interfaces is not set
+  Incoming update filter list for all interfaces is not set
+  Router ID 10.0.0.1
+  Number of areas in this router is 1. 1 normal 0 stub 0 nssa
+  Maximum path: 4
+  Routing for Networks:
+    10.0.0.1 0.0.0.0 area 0
+  Routing Information Sources:
+    Gateway         Distance      Last Update
+  Distance: (default is 110)
+</code></pre><p>Após o processo de adjacência ser concluído, o comando <em>show ip ospf neighbor</em> deve apresentar a saída abaixo:</p>
+<pre tabindex="0"><code class="language-cisco" data-lang="cisco">RT1#show ip ospf neighbor
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+10.0.0.2          1   FULL/DR         00:00:38    10.0.0.2        Ethernet0/0
+</code></pre><p>Agora observaremos a saída do comando <em>show ip protocols</em> para o roteador <em>RT2</em>:</p>
+<pre tabindex="0"><code class="language-cisco" data-lang="cisco">RT2#show ip protocols
+*** IP Routing is NSF aware ***
+
+Routing Protocol is &#34;application&#34;
+  Sending updates every 0 seconds
+  Invalid after 0 seconds, hold down 0, flushed after 0
+  Outgoing update filter list for all interfaces is not set
+  Incoming update filter list for all interfaces is not set
+  Maximum path: 32
+  Routing for Networks:
+  Routing Information Sources:
+    Gateway         Distance      Last Update
+  Distance: (default is 4)
+
+Routing Protocol is &#34;ospf 2&#34;
+  Outgoing update filter list for all interfaces is not set
+  Incoming update filter list for all interfaces is not set
+  Router ID 10.0.0.2
+  Number of areas in this router is 1. 1 normal 0 stub 0 nssa
+  Maximum path: 4
+  Routing for Networks:
+  Routing on Interfaces Configured Explicitly (Area 0):
+    Ethernet0/0
+  Routing Information Sources:
+    Gateway         Distance      Last Update
+  Distance: (default is 110)
+</code></pre><p>Agora, podemos observar o <em>RT2</em> após a conclusão do processo de adjacência:</p>
+<pre tabindex="0"><code class="language-cisco" data-lang="cisco">RT2#show ip ospf neighbor
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+10.0.0.1          1   FULL/BDR        00:00:36    10.0.0.1        Ethernet0/0
+</code></pre><p>Podemos observar as diferenças entre as formas que o OSPF foi habilitado nos dois roteadores, se você prestar atenção às saídas do comando <em>show ip protocols</em>, podemos descobrir como o OSPF foi habilitado:</p>
+<ul>
+<li><strong>RT1</strong> via <em>network statement</em></li>
+</ul>
+<pre tabindex="0"><code class="language-cisco" data-lang="cisco">Routing for Networks:
+  10.0.0.1 0.0.0.0 area 0
+</code></pre><ul>
+<li><strong>RT2</strong> via <em>interface</em></li>
+</ul>
+<pre tabindex="0"><code class="language-cisco" data-lang="cisco">Routing on Interfaces Configured Explicitly (Area 0):
+  Ethernet0/0
+</code></pre><p>Com o <em>debug ip ospf adj</em> habilitado, dá para acompanhar a transição de estados no <strong>RT1</strong>:</p>
+<pre tabindex="0"><code class="language-cisco" data-lang="cisco">*Jun  7 01:41:48.306: OSPF-1 ADJ   Et0/0: Interface going Up
+*Jun  7 01:42:28.313: OSPF-1 ADJ   Et0/0: end of Wait on interface
+*Jun  7 01:42:28.313: OSPF-1 ADJ   Et0/0: DR/BDR election
+*Jun  7 01:42:28.313: OSPF-1 ADJ   Et0/0: Elect BDR 10.0.0.1
+*Jun  7 01:42:28.313: OSPF-1 ADJ   Et0/0: Elect DR 10.0.0.1
+*Jun  7 01:42:28.313: OSPF-1 ADJ   Et0/0: Elect BDR 0.0.0.0
+*Jun  7 01:42:28.313: OSPF-1 ADJ   Et0/0: Elect DR 10.0.0.1
+*Jun  7 01:42:28.313: OSPF-1 ADJ   Et0/0: DR: 10.0.0.1 (Id)   BDR: none
+*Jun  7 01:44:54.415: OSPF-1 ADJ   Et0/0: 2 Way Communication to 10.0.0.2, state 2WAY
+*Jun  7 01:44:54.415: OSPF-1 ADJ   Et0/0: Neighbor change event
+*Jun  7 01:44:54.415: OSPF-1 ADJ   Et0/0: DR/BDR election
+*Jun  7 01:44:54.415: OSPF-1 ADJ   Et0/0: Elect BDR 10.0.0.2
+*Jun  7 01:44:54.415: OSPF-1 ADJ   Et0/0: Elect DR 10.0.0.1
+*Jun  7 01:44:54.415: OSPF-1 ADJ   Et0/0: DR: 10.0.0.1 (Id)   BDR: 10.0.0.2 (Id)
+*Jun  7 01:44:54.415: OSPF-1 ADJ   Et0/0: Nbr 10.0.0.2: Prepare dbase exchange
+*Jun  7 01:44:54.415: OSPF-1 ADJ   Et0/0: Send DBD to 10.0.0.2 seq 0x2376 opt 0x52 flag 0x7 len 32
+*Jun  7 01:44:54.415: OSPF-1 ADJ   Et0/0: Neighbor change event
+*Jun  7 01:44:54.415: OSPF-1 ADJ   Et0/0: DR/BDR election
+*Jun  7 01:44:54.415: OSPF-1 ADJ   Et0/0: Elect BDR 10.0.0.2
+*Jun  7 01:44:54.415: OSPF-1 ADJ   Et0/0: Elect DR 10.0.0.1
+*Jun  7 01:44:54.415: OSPF-1 ADJ   Et0/0: DR: 10.0.0.1 (Id)   BDR: 10.0.0.2 (Id)
+*Jun  7 01:44:54.415: OSPF-1 ADJ   Et0/0: Neighbor change event
+*Jun  7 01:44:54.415: OSPF-1 ADJ   Et0/0: DR/BDR election
+*Jun  7 01:44:54.415: OSPF-1 ADJ   Et0/0: Elect BDR 10.0.0.2
+*Jun  7 01:44:54.415: OSPF-1 ADJ   Et0/0: Elect DR 10.0.0.1
+*Jun  7 01:44:54.415: OSPF-1 ADJ   Et0/0: DR: 10.0.0.1 (Id)   BDR: 10.0.0.2 (Id)
+*Jun  7 01:44:54.415: OSPF-1 ADJ   Et0/0: Rcv DBD from 10.0.0.2 seq 0xD30 opt 0x52 flag 0x7 len 32  mtu 1500 state EXSTART
+*Jun  7 01:44:54.415: OSPF-1 ADJ   Et0/0: NBR Negotiation Done. We are the SLAVE
+*Jun  7 01:44:54.415: OSPF-1 ADJ   Et0/0: Nbr 10.0.0.2: Summary list built, size 1
+*Jun  7 01:44:54.415: OSPF-1 ADJ   Et0/0: Send DBD to 10.0.0.2 seq 0xD30 opt 0x52 flag 0x2 len 52
+*Jun  7 01:44:54.416: OSPF-1 ADJ   Et0/0: Rcv DBD from 10.0.0.2 seq 0xD31 opt 0x52 flag 0x1 len 32  mtu 1500 state EXCHANGE
+*Jun  7 01:44:54.416: OSPF-1 ADJ   Et0/0: Exchange Done with 10.0.0.2
+*Jun  7 01:44:54.416: OSPF-1 ADJ   Et0/0: Synchronized with 10.0.0.2, state FULL
+*Jun  7 01:44:54.416: %OSPF-5-ADJCHG: Process 1, Nbr 10.0.0.2 on Ethernet0/0 from LOADING to FULL, Loading Done
+</code></pre><p>E no <strong>RT2</strong>:</p>
+<pre tabindex="0"><code class="language-cisco" data-lang="cisco">*Jun  7 01:44:54.413: OSPF-2 ADJ   Et0/0: Interface going Up
+*Jun  7 01:44:54.414: OSPF-2 ADJ   Et0/0: 2 Way Communication to 10.0.0.1, state 2WAY
+*Jun  7 01:44:54.414: OSPF-2 ADJ   Et0/0: Backup seen event before WAIT timer
+*Jun  7 01:44:54.414: OSPF-2 ADJ   Et0/0: DR/BDR election
+*Jun  7 01:44:54.414: OSPF-2 ADJ   Et0/0: Elect BDR 10.0.0.2
+*Jun  7 01:44:54.414: OSPF-2 ADJ   Et0/0: Elect DR 10.0.0.1
+*Jun  7 01:44:54.414: OSPF-2 ADJ   Et0/0: Elect BDR 10.0.0.2
+*Jun  7 01:44:54.414: OSPF-2 ADJ   Et0/0: Elect DR 10.0.0.1
+*Jun  7 01:44:54.414: OSPF-2 ADJ   Et0/0: DR: 10.0.0.1 (Id)   BDR: 10.0.0.2 (Id)
+*Jun  7 01:44:54.414: OSPF-2 ADJ   Et0/0: Nbr 10.0.0.1: Prepare dbase exchange
+*Jun  7 01:44:54.414: OSPF-2 ADJ   Et0/0: Send DBD to 10.0.0.1 seq 0xD30 opt 0x52 flag 0x7 len 32
+*Jun  7 01:44:54.415: OSPF-2 ADJ   Et0/0: Rcv DBD from 10.0.0.1 seq 0x2376 opt 0x52 flag 0x7 len 32  mtu 1500 state EXSTART
+*Jun  7 01:44:54.415: OSPF-2 ADJ   Et0/0: First DBD and we are not SLAVE
+*Jun  7 01:44:54.415: OSPF-2 ADJ   Et0/0: Rcv DBD from 10.0.0.1 seq 0xD30 opt 0x52 flag 0x2 len 52  mtu 1500 state EXSTART
+*Jun  7 01:44:54.415: OSPF-2 ADJ   Et0/0: NBR Negotiation Done. We are the MASTER
+*Jun  7 01:44:54.415: OSPF-2 ADJ   Et0/0: Nbr 10.0.0.1: Summary list built, size 0
+*Jun  7 01:44:54.415: OSPF-2 ADJ   Et0/0: Send DBD to 10.0.0.1 seq 0xD31 opt 0x52 flag 0x1 len 32
+*Jun  7 01:44:54.416: OSPF-2 ADJ   Et0/0: Rcv DBD from 10.0.0.1 seq 0xD31 opt 0x52 flag 0x0 len 32  mtu 1500 state EXCHANGE
+*Jun  7 01:44:54.416: OSPF-2 ADJ   Et0/0: Exchange Done with 10.0.0.1
+*Jun  7 01:44:54.416: OSPF-2 ADJ   Et0/0: Send LS REQ to 10.0.0.1 length 36 LSA count 1
+*Jun  7 01:44:54.417: OSPF-2 ADJ   Et0/0: Rcv LS UPD from 10.0.0.1 length 64 LSA count 1
+*Jun  7 01:44:54.417: OSPF-2 ADJ   Et0/0: Synchronized with 10.0.0.1, state FULL
+RT2(config-router)#
+*Jun  7 01:44:54.417: %OSPF-5-ADJCHG: Process 2, Nbr 10.0.0.1 on Ethernet0/0 from LOADING to FULL, Loading Done
+</code></pre><p>Até aqui vimos o comportamento em rede <strong>broadcast</strong> , com eleição de DR/BDR. Para que não ocorra a eleição de DR/BDR sem necessidade, vamos mudar o tipo de rede para <em>point-to-point</em> direto na interface e ver como o processo muda:</p>
+<ul>
+<li><strong>RT1</strong></li>
+</ul>
+<pre tabindex="0"><code class="language-cisco" data-lang="cisco">interface Ethernet0/0
+ ip address 10.0.0.1 255.255.255.252
+ ip ospf network point-to-point
+</code></pre><ul>
+<li><strong>RT2</strong></li>
+</ul>
+<pre tabindex="0"><code class="language-cisco" data-lang="cisco">interface Ethernet0/0
+ ip address 10.0.0.2 255.255.255.252
+ ip ospf network point-to-point
+</code></pre><p>Logs do <strong>RT1</strong> após a mudança:</p>
+<pre tabindex="0"><code class="language-cisco" data-lang="cisco">*Jun  7 02:35:37.050: OSPF-1 ADJ   Et0/0: Interface going Up
+*Jun  7 02:36:01.279: OSPF-1 ADJ   Et0/0: 2 Way Communication to 10.0.0.2, state 2WAY
+*Jun  7 02:36:01.279: OSPF-1 ADJ   Et0/0: Nbr 10.0.0.2: Prepare dbase exchange
+*Jun  7 02:36:01.279: OSPF-1 ADJ   Et0/0: Send DBD to 10.0.0.2 seq 0xDFC opt 0x52 flag 0x7 len 32
+*Jun  7 02:36:01.279: OSPF-1 ADJ   Et0/0: Rcv DBD from 10.0.0.2 seq 0x92C opt 0x52 flag 0x7 len 32  mtu 1500 state EXSTART
+*Jun  7 02:36:01.279: OSPF-1 ADJ   Et0/0: NBR Negotiation Done. We are the SLAVE
+*Jun  7 02:36:01.279: OSPF-1 ADJ   Et0/0: Nbr 10.0.0.2: Summary list built, size 1
+*Jun  7 02:36:01.279: OSPF-1 ADJ   Et0/0: Send DBD to 10.0.0.2 seq 0x92C opt 0x52 flag 0x2 len 52
+*Jun  7 02:36:01.280: OSPF-1 ADJ   Et0/0: Rcv DBD from 10.0.0.2 seq 0x92D opt 0x52 flag 0x1 len 32  mtu 1500 state EXCHANGE
+*Jun  7 02:36:01.280: OSPF-1 ADJ   Et0/0: Exchange Done with 10.0.0.2
+*Jun  7 02:36:01.280: OSPF-1 ADJ   Et0/0: Synchronized with 10.0.0.2, state FULL
+*Jun  7 02:36:01.280: %OSPF-5-ADJCHG: Process 1, Nbr 10.0.0.2 on Ethernet0/0 from LOADING to FULL, Loading Done
+</code></pre><p>Logs do <strong>RT2</strong>:</p>
+<pre tabindex="0"><code class="language-cisco" data-lang="cisco">*Jun  7 02:36:01.278: OSPF-2 ADJ   Et0/0: Interface going Up
+*Jun  7 02:36:01.279: OSPF-2 ADJ   Et0/0: 2 Way Communication to 10.0.0.1, state 2WAY
+*Jun  7 02:36:01.279: OSPF-2 ADJ   Et0/0: Nbr 10.0.0.1: Prepare dbase exchange
+*Jun  7 02:36:01.279: OSPF-2 ADJ   Et0/0: Send DBD to 10.0.0.1 seq 0x92C opt 0x52 flag 0x7 len 32
+*Jun  7 02:36:01.279: OSPF-2 ADJ   Et0/0: Rcv DBD from 10.0.0.1 seq 0xDFC opt 0x52 flag 0x7 len 32  mtu 1500 state EXSTART
+*Jun  7 02:36:01.279: OSPF-2 ADJ   Et0/0: First DBD and we are not SLAVE
+*Jun  7 02:36:01.279: OSPF-2 ADJ   Et0/0: Rcv DBD from 10.0.0.1 seq 0x92C opt 0x52 flag 0x2 len 52  mtu 1500 state EXSTART
+*Jun  7 02:36:01.279: OSPF-2 ADJ   Et0/0: NBR Negotiation Done. We are the MASTER
+*Jun  7 02:36:01.279: OSPF-2 ADJ   Et0/0: Nbr 10.0.0.1: Summary list built, size 0
+*Jun  7 02:36:01.279: OSPF-2 ADJ   Et0/0: Send DBD to 10.0.0.1 seq 0x92D opt 0x52 flag 0x1 len 32
+*Jun  7 02:36:01.280: OSPF-2 ADJ   Et0/0: Rcv DBD from 10.0.0.1 seq 0x92D opt 0x52 flag 0x0 len 32  mtu 1500 state EXCHANGE
+*Jun  7 02:36:01.280: OSPF-2 ADJ   Et0/0: Exchange Done with 10.0.0.1
+*Jun  7 02:36:01.280: OSPF-2 ADJ   Et0/0: Send LS REQ to 10.0.0.1 length 36 LSA count 1
+*Jun  7 02:36:01.281: OSPF-2 ADJ   Et0/0: Rcv LS UPD from 10.0.0.1 length 64 LSA count 1
+*Jun  7 02:36:01.281: OSPF-2 ADJ   Et0/0: Synchronized with 10.0.0.1, state FULL
+</code></pre><p>Observe que agora não há mais um DR/BDR:</p>
+<ul>
+<li><strong>RT1</strong></li>
+</ul>
+<pre tabindex="0"><code class="language-cisco" data-lang="cisco">RT1#show ip ospf neighbor
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+10.0.0.2          0   FULL/  -        00:00:35    10.0.0.2        Ethernet0/0
+</code></pre><ul>
+<li><strong>RT2</strong></li>
+</ul>
+<pre tabindex="0"><code class="language-cisco" data-lang="cisco">RT2#show ip ospf neighbor
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+10.0.0.1          0   FULL/  -        00:00:38    10.0.0.1        Ethernet0/0
+</code></pre><h2 id="características-e-capacidades">Características e Capacidades<a hidden class="anchor" aria-hidden="true" href="#características-e-capacidades">#</a></h2>
+<ul>
+<li><strong>Áreas:</strong> a topologia se divide em áreas para isolar falhas e reduzir execuções de SPF. A área 0 é o <em>backbone</em>, as demais conectam-se a ela para conseguirem falar entre si (seja fisicamente ou via <em>virtual link</em>).</li>
+<li><strong>Router ID:</strong> identidade única de 32 bits por roteador (possui o mesmo formato de um endereço IPv4, mas não é um endereço utilizável para tráfego de usuário).</li>
+<li><strong>DR e BDR:</strong> em segmentos broadcast, o OSPF elege um <em>Designated Router</em> e um <em>Backup Designated Router</em> para evitar adjacências completas entre todos os roteadores. Os <em>DROTHERs</em> reportam mudanças ao DR, que replica a informação no segmento.</li>
+<li><strong>Sumarização:</strong> nos limites de área (ABRs) ou na redistribuição (ASBRs), condensando prefixos para estabilizar a LSDB. Vamos detalhar essas funções no próximo artigo da série.</li>
+<li><strong>Tipos de área (Stub, Totally Stubby, NSSA):</strong> áreas que não precisam de rotas externas completas, recebendo rota padrão e economizando CPU e memória. Lembra o <em>stub host</em> da loopback? Pois é, aqui o conceito é outro, estamos falando de um tipo de área OSPF, não de um host isolado.</li>
+<li><strong>Autenticação:</strong> <em>clear-text</em> ou criptografia (MD5, HMAC-SHA) para impedir roteadores não autorizados no domínio.</li>
+</ul>
+<h3 id="aplicando-a-segunda-camada-de-refinamento">Aplicando a segunda camada de refinamento<a hidden class="anchor" aria-hidden="true" href="#aplicando-a-segunda-camada-de-refinamento">#</a></h3>
+<p>Observamos ao longo desse material que, o Neighbor ID é o mesmo endereço da interface que o OSPF foi ativado. A verdade é que para o OSPF, pouco importa se o seu equipamento tem um hostname criativo ou não. O protocolo não entende nomes, ele identifica cada dispositivo através de um Router ID (RID), que é um identificador de 32 bits (com o mesmo formato de um endereço IP) e que tem de ser absolutamente único no domínio OSPF.
+Para assumir este identificador, o processo OSPF segue uma hierarquia de eleição bastante específica:</p>
+<ol>
+<li><strong>Configuração Manual</strong>: Se o administrador for à CLI e configurar o router-id, o protocolo obedece de imediato e ignora o resto.</li>
+<li><strong>Maior endereço IP de uma Interface Loopback</strong>: Na falta da configuração manual, o OSPF verifica todas as Loopbacks ativas e escolhe a que tiver o maior endereço IP.</li>
+<li><strong>Maior endereço IP de uma Interface Física</strong>: Se falharem as opções anteriores, ele procura a interface física ativa com o maior IP. Atenção: isto não é recomendado! Se essa interface cair, o processo torna-se instável.</li>
+</ol>
+<p>Configurar manualmente o RID previne dores de cabeça futuras e garante a estabilidade. A seguir seguem os comandos aplicados nos roteadores RT1 e RT2 para aplicar o Router-ID manualmente:</p>
+<pre tabindex="0"><code class="language-cisco" data-lang="cisco">RT1(config)# router ospf 1
+RT1(config-router)# router-id 1.1.1.1
+</code></pre><pre tabindex="0"><code class="language-cisco" data-lang="cisco">RT2(config)# router ospf 2
+RT2(config-router)# router-id 2.2.2.2
+</code></pre><h2 id="conclusão-o-fim-do-início">Conclusão: O Fim do Início<a hidden class="anchor" aria-hidden="true" href="#conclusão-o-fim-do-início">#</a></h2>
+<p>Finalmente chegamos ao fim desta primeira etapa. Como pudemos ver, o OSPF não é apenas um protocolo que sai anunciando rotas sem critério algum. Ele é metódico, exige um &ldquo;match&rdquo; (quase um <em>Tinder</em> dos roteadores) com os pacotes Hello e constrói um mapa completo de toda a rede antes de tomar qualquer decisão, usando o algoritmo de Dijkstra.</p>
+<p>É meio chato ser repetitivo e falar o que todo mundo fala, mas entender esses fundamentos teóricos, desde as regras para formar vizinhança, passando pela máquina de estados, até chegar ao cálculo do custo, é exatamente o que separa um mero &ldquo;digitador de comandos&rdquo; de um verdadeiro Engenheiro de Redes. Posso te afirmar, com base na minha experiência: quando algo der errado, é o conhecimento de base que vai te salvar!</p>
+<p>Nesta Parte 1 já colocamos a mão na massa com labs, capturas, <em>traceroute</em>, configs e aqueles logs deliciosos pipocando na tela até chegar em FULL. Mas convenhamos&hellip; Ainda dá para ir muito mais longe. Teoria e prática precisam andar juntas, como Buchecha e Claudinho, Piu-piu e Frajola&hellip;</p>
+<p>Na Parte 2 desta série, vamos subir o nível: pacotes Hello, tipos de LSA, topologias mais complexas para exemplificar os conceitos, áreas stub/NSSA, sumarização, troubleshooting de verdade e cenários que se aproximam mais do dia a dia. No material de troubleshooting, também vamos demonstrar na prática o ajuste do <em>auto-cost reference-bandwidth</em> para corrigir o problema do custo igual entre FastEthernet e GigabitEthernet, e o comportamento de precedência quando há conflito entre o <em>network statement</em> e o <em>ip ospf</em> configurado diretamente na interface. Espero que a base que construímos aqui, adjacência, custo, SPF, te ajude em um futuro próximo.</p>
+<p>Então, pode escolher o seu emulador favorito (Packet Tracer, GNS3, EVE-NG, PNETLab) e até o próximo artigo da série. Só para relembrar, eu utilizo o PNETLab, vale lembrar que o arquivo é totalmente compatível com o EVE-NG e que já vai estar com as interfaces pré-configuradas, hein!</p>
+<p>Vamos dominar juntos o OSPF e, como diriam por aí: VAAAAAAAAI!</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="http://localhost:1313/en/">Networking de Quebradinha</a></span> · 
+
+    
+    
+    <span>
+        Powered by
+        <a href="https://gohugo.io/?utm_source=papermod" rel="noopener" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var toplink = document.getElementById("top-link");
+    window.onscroll = function () {
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
+        } else {
+            toplink.classList.add("hidden");
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

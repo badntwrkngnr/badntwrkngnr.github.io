@@ -1,9 +1,9 @@
 ---
-title: "x"
-slug: "x" 
+title: "Overview of the Data-Link Layer: Theory and Practice (Part 1)"
+slug: "overview-of-the-data-link-layer-theory-and-practice-part-1" 
 date: 2026-05-23
-translationKey: "x"
-categories: ["nx"]
+translationKey: "overview-of-the-data-link-layer-theory-and-practice-part-1"
+categories: ["networking", "data-link layer"]
 math: true
 draft: true
 ---

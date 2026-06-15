@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Data-Link Layer on Networking de Quebradinha</title>
+    <link>//localhost:1313/pt/categories/data-link-layer/</link>
+    <description>Recent content in Data-Link Layer on Networking de Quebradinha</description>
+    <generator>Hugo</generator>
+    <language>pt</language>
+    <lastBuildDate>Sat, 23 May 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/pt/categories/data-link-layer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Visão Geral da Camada de Enlace: Teoria e Prática (Parte 1)</title>
+      <link>//localhost:1313/pt/posts/overview-of-the-data-link-layer-theory-and-practice-part-1/</link>
+      <pubDate>Sat, 23 May 2026 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/pt/posts/overview-of-the-data-link-layer-theory-and-practice-part-1/</guid>
+      <description>&lt;h2 id=&#34;introdução-e-base-teórica&#34;&gt;Introdução e Base Teórica&lt;/h2&gt;
+&lt;p&gt;Este artigo é baseado em anotações que fiz durante minha preparação para o exame CCNA (Cisco Certified Network Associate) 200-301, onde pude aprofundar meus conhecimentos sobre a camada de enlace de dados.&lt;/p&gt;
+&lt;p&gt;A &lt;strong&gt;camada de enlace de dados&lt;/strong&gt; é fundamental no modelo OSI e TCP/IP, sendo a segunda camada no processo de comunicação entre dispositivos em rede. Ela é responsável por garantir que as unidades de informação, chamadas &lt;strong&gt;quadros&lt;/strong&gt;, sejam transferidas de maneira confiável entre dispositivos fisicamente conectados por meio de um canal de comunicação, sejam eles guiados, como cabos de rede e fibras ópticas, ou não-guiados, como as redes sem fio.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

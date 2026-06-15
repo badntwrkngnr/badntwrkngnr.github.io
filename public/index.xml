@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Networking de Quebradinha</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content on Networking de Quebradinha</description>
+    <title>Street-Smart Networking</title>
+    <link>//localhost:1313/</link>
+    <description>Recent content on Street-Smart Networking</description>
     <generator>Hugo</generator>
-    <language>pt</language>
+    <language>en</language>
     <lastBuildDate>Sat, 23 May 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>OSPF Descomplicado - Parte 1</title>
-      <link>http://localhost:1313/posts/ospfv2-descomplicado-pt1/</link>
+      <title>OSPF Uncomplicated - Part 1</title>
+      <link>//localhost:1313/posts/ospfv2-uncomplicated-pt1/</link>
       <pubDate>Sat, 23 May 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/ospfv2-descomplicado-pt1/</guid>
-      <description>&lt;h2 id=&#34;introdução&#34;&gt;Introdução&lt;/h2&gt;
-&lt;p&gt;Olá, tudo bem contigo? Era para ser somente um artigo completo abordando um assunto do começo ao fim, mas acabou que, conforme eu ia escrevendo, o texto ia ficando cada vez mais extenso, isso acontece porque eu tenho uma dificuldade colossal de identificar o momento correto de encerrar alguns assuntos. No meio do caminho, achei melhor mudar a abordagem e separar em partes para não ficar cansativo demais. Para começar, escolhi este título por ser &lt;em&gt;fanboy&lt;/em&gt; da &lt;a href=&#34;https://linuxtips.io/&#34;&gt;&lt;em&gt;LinuxTips&lt;/em&gt;&lt;/a&gt; e, embora o artigo traga bastante conteúdo, aproveito para recomendar o curso &lt;a href=&#34;https://gustavokalau.com.br/&#34;&gt;&lt;em&gt;Descomplicando o OSPF&lt;/em&gt;&lt;/a&gt;, do professor Gustavo Kalau, para um aprofundamento um pouco maior.
-Antes de falarmos sobre o OSPF propriamente dito, vale recapitular o papel de um protocolo de roteamento dinâmico. São conceitos simples, mas que são fundamentais e vão preparar o terreno para o que vem a seguir.&lt;/p&gt;</description>
+      <guid>//localhost:1313/posts/ospfv2-uncomplicated-pt1/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Hey, how&amp;rsquo;s it going? This was supposed to be one single article covering a topic from start to finish. But as I kept writing, it just kept growing! I have a very hard time knowing when to stop. Halfway through, I decided to change my approach and split it into parts so it wouldn&amp;rsquo;t become a complete slog to get through. I chose this name because I&amp;rsquo;m a big fan of a Brazilian tech platform called &lt;a href=&#34;https://linuxtips.io/&#34;&gt;&lt;em&gt;LinuxTips&lt;/em&gt;&lt;/a&gt;, which uses this naming style for their courses. This article covers a lot of information, but I also highly recommend the course &lt;a href=&#34;https://gustavokalau.com.br/&#34;&gt;&lt;em&gt;Descomplicando o OSPF&lt;/em&gt;&lt;/a&gt; by Professor Gustavo Kalau (note: the course is in Portuguese!) if you want to learn even more.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
