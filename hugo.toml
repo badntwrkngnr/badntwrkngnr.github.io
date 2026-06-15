@@ -3,6 +3,10 @@ languageCode = "pt-br"
 title = "networking de quebradinha"
 theme = "PaperMod"
 
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.extensions]
