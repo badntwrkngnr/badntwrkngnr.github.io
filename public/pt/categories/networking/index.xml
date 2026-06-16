@@ -20,11 +20,29 @@ Antes de falarmos sobre o OSPF propriamente dito, vale recapitular o papel de um
     <item>
       <title>Visão Geral da Camada de Enlace: Teoria e Prática (Parte 1)</title>
       <link>//localhost:1313/pt/posts/overview-of-the-data-link-layer-theory-and-practice-part-1/</link>
-      <pubDate>Sat, 23 May 2026 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 27 Sep 2025 00:00:00 +0000</pubDate>
       <guid>//localhost:1313/pt/posts/overview-of-the-data-link-layer-theory-and-practice-part-1/</guid>
       <description>&lt;h2 id=&#34;introdução-e-base-teórica&#34;&gt;Introdução e Base Teórica&lt;/h2&gt;
 &lt;p&gt;Este artigo é baseado em anotações que fiz durante minha preparação para o exame CCNA (Cisco Certified Network Associate) 200-301, onde pude aprofundar meus conhecimentos sobre a camada de enlace de dados.&lt;/p&gt;
 &lt;p&gt;A &lt;strong&gt;camada de enlace de dados&lt;/strong&gt; é fundamental no modelo OSI e TCP/IP, sendo a segunda camada no processo de comunicação entre dispositivos em rede. Ela é responsável por garantir que as unidades de informação, chamadas &lt;strong&gt;quadros&lt;/strong&gt;, sejam transferidas de maneira confiável entre dispositivos fisicamente conectados por meio de um canal de comunicação, sejam eles guiados, como cabos de rede e fibras ópticas, ou não-guiados, como as redes sem fio.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Introdução ao Protocolo IPv4</title>
+      <link>//localhost:1313/pt/posts/ipv4-introduction/</link>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/pt/posts/ipv4-introduction/</guid>
+      <description>&lt;h2 id=&#34;introdução&#34;&gt;Introdução&lt;/h2&gt;
+&lt;p&gt;Nesse artigo exploraremos o protocolo IP, vamos observar parte do contexto histórico e entender a sua importância, apresentar uma visão geral das funcionalidades e posteriormente nos aprofundar nos detalhes.&lt;/p&gt;
+&lt;p&gt;Vamos começar pelo início de tudo, durante o período da Guerra Fria, que ocorreu entre os Estados Unidos da América e a União das Repúblicas Socialistas Soviéticas, mas não vamos nos aprofundar no conflito, somente no que aconteceu a partir dele para o desenvolvimento das redes de computadores como conhecemos atualmente.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Fundamentos de Redes de Computadores</title>
+      <link>//localhost:1313/pt/posts/networking-fundamentals/</link>
+      <pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/pt/posts/networking-fundamentals/</guid>
+      <description>&lt;h2 id=&#34;introdução&#34;&gt;Introdução&lt;/h2&gt;
+&lt;p&gt;Este artigo representa um dos trabalhos mais cansativos que já realizei. Foram diversas revisões e reestruturações, decidi refazer, quase que do zero, e abordar o tema de maneira simples, direta e acessível. Organizei o conteúdo em tópicos-chave, buscando criar um resumo prático e fácil de assimilar. Essa abordagem reflete a forma como eu gostaria de ter aprendido, e espero que ela seja útil para você também.&lt;/p&gt;
+&lt;p&gt;O conteúdo deste artigo está alinhado com o blueprint da certificação Cisco CCNA 200-301, fornecendo uma base sólida para quem deseja se aprofundar no estudo de redes de computadores.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

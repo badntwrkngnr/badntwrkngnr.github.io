@@ -1,7 +1,7 @@
 ---
 title: "Visão Geral da Camada de Enlace: Teoria e Prática (Parte 1)"
 slug: "overview-of-the-data-link-layer-theory-and-practice-part-1" 
-date: 2026-05-23
+date: 2025-09-27
 translationKey: "overview-of-the-data-link-layer-theory-and-practice-part-1"
 categories: ["networking", "data-link layer"]
 math: true
@@ -40,12 +40,13 @@ O endereço MAC possui **6 bytes (48 bits)** e é dividido em duas partes:
 1. **OUI (Organizationally Unique Identifier)**: 3 bytes (24 bits) - Identifica o fabricante do dispositivo
 2. **Vendor Assigned**: 3 bytes (24 bits) - Identificador único atribuído pelo fabricante
 
-<img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/26-mac-address-structure.png">
+![MAC address structure](/assets/images/networking/overview-of-the-data-link-layer-theory-and-practice/26-mac-address-structure.png)
 
 O endereço MAC é representado em formato hexadecimal, separado por dois pontos ou hífens. Por exemplo: `00:1A:2B:3C:4D:5E` ou `00-1A-2B-3C-4D-5E`. Apenas de curiosidade, o primeiro byte do OUI também contém informações importantes:
 
 - **Bit 0 (LSB)**: Indica se o endereço é unicast (0) ou multicast (1)
 - **Bit 1**: Indica se o endereço é globalmente administrado (0) ou localmente administrado (1)
+
 ### Serviços
 
 Os serviços da camada de enlace de dados variam de acordo com o protocolo, mas podemos categorizá-los em três tipos principais:
@@ -73,7 +74,7 @@ Existem várias estratégias de enquadramento, como:
 
 A Ethernet, por exemplo, utiliza um preâmbulo (sequência de bits de sincronização) seguido de um campo de comprimento para marcar o início e o final dos quadros.
 
-<img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/ETH-HEADER-TRAILER.png">
+![ETH header and trailer](/assets/images/networking/overview-of-the-data-link-layer-theory-and-practice/ETH-HEADER-TRAILER.png)
 
 Campos do Cabeçalho Ethernet e Trailer (IEEE 802.3)
 
@@ -98,9 +99,7 @@ Os protocolos da camada de enlace de dados empregam diferentes mecanismos para c
 ### Métodos de Encaminhamento de Quadros
 
 - Store-and-Forward: o switch recebe o quadro inteiro antes de encaminhá-lo, fornecendo maior confiabilidade e, consequentemente, maior latência.
-- Cut-Through: o switch começa a encaminhar o quadro assim que detecta o endereço MAC de destino, 6 bytes logo após o campo SFD, e não faz a verificação de erros, a latência tende a ser muito baixa, porém a chance de encaminhar quadros corrompidos é alta, sendo ideal para redes com baixa taxa de erros.
-  - Fast-Forward: é uma variação do Cut-Through, onde o switch introduz um pequeno atraso (delay) antes de encaminhar, reduzindo colisões. O switch aguarda os primeiros 64 bytes, tamanho mínimo de um quadro ethernet, antes de encaminhar, se o quadro for menor, é descartado (runt frame). É um método menos comum, é mais observado em switches mais antigos.
-  - Fragment-Free: é um híbrido entre o Cut-Through e o Store-and-Forward. O switch verifica os primeiros 64 bytes, onde ocorrem a maioria dos erros de transmissão, antes de encaminhar, se não houver erro, ele encaminha o restante do quadro sem fazer verificação de erros. Faz o balanceamento entre velocidade e confiabilidade mínima.
+- Cut-Through: o switch começa a encaminhar o quadro assim que detecta o endereço MAC de destino, 6 bytes logo após o campo SFD, e não faz a verificação de erros, a latência tende a ser muito baixa, porém a chance de encaminhar quadros corrompidos é alta, sendo ideal para redes com baixa taxa de erros. Fast-Forward: é uma variação do Cut-Through, onde o switch introduz um pequeno atraso (delay) antes de encaminhar, reduzindo colisões. O switch aguarda os primeiros 64 bytes, tamanho mínimo de um quadro ethernet, antes de encaminhar, se o quadro for menor, é descartado (runt frame). É um método menos comum, é mais observado em switches mais antigos. Fragment-Free: é um híbrido entre o Cut-Through e o Store-and-Forward. O switch verifica os primeiros 64 bytes, onde ocorrem a maioria dos erros de transmissão, antes de encaminhar, se não houver erro, ele encaminha o restante do quadro sem fazer verificação de erros. Faz o balanceamento entre velocidade e confiabilidade mínima.
 
 Abaixo segue uma tabela que faz uma comparação entre os modos de encaminhamento de quadros:
 
@@ -127,4 +126,3 @@ Nos próximos artigos desta série, aprofundaremos esses conceitos através de *
 - Otimização de desempenho baseada nos diferentes modos de encaminhamento
 
 O conhecimento teórico apresentado aqui servirá como alicerce para as práticas avançadas que virão, permitindo uma compreensão mais profunda dos mecanismos internos dos equipamentos de rede e suas aplicações no mundo real. **Para aqueles que, como eu, subestimaram inicialmente a importância da camada 2, este estudo representa um investimento valioso no desenvolvimento de uma visão mais completa e integrada das redes de computadores.**
-

@@ -116,7 +116,7 @@ A camada de enlace de dados é fundamental no modelo OSI e TCP/IP, sendo a segun
     </h1>
     <div class="post-meta">
 
-<span title='2026-05-23 00:00:00 +0000 UTC'>23 de maio de 2026</span>
+<span title='2025-09-27 00:00:00 +0000 UTC'>27 de setembro de 2025</span>
 
 </div>
   </header> 
@@ -142,7 +142,7 @@ A camada de enlace de dados é fundamental no modelo OSI e TCP/IP, sendo a segun
 <li><strong>OUI (Organizationally Unique Identifier)</strong>: 3 bytes (24 bits) - Identifica o fabricante do dispositivo</li>
 <li><strong>Vendor Assigned</strong>: 3 bytes (24 bits) - Identificador único atribuído pelo fabricante</li>
 </ol>
-<!-- raw HTML omitted -->
+<p><img alt="MAC address structure" loading="lazy" src="/assets/images/networking/overview-of-the-data-link-layer-theory-and-practice/26-mac-address-structure.png"></p>
 <p>O endereço MAC é representado em formato hexadecimal, separado por dois pontos ou hífens. Por exemplo: <code>00:1A:2B:3C:4D:5E</code> ou <code>00-1A-2B-3C-4D-5E</code>. Apenas de curiosidade, o primeiro byte do OUI também contém informações importantes:</p>
 <ul>
 <li><strong>Bit 0 (LSB)</strong>: Indica se o endereço é unicast (0) ou multicast (1)</li>
@@ -171,7 +171,7 @@ A camada de enlace de dados é fundamental no modelo OSI e TCP/IP, sendo a segun
 <li><strong>Violações de codificação da camada física</strong>: Utiliza violações propositalmente criadas nas regras de codificação da camada física para indicar o início e o fim dos quadros.</li>
 </ol>
 <p>A Ethernet, por exemplo, utiliza um preâmbulo (sequência de bits de sincronização) seguido de um campo de comprimento para marcar o início e o final dos quadros.</p>
-<!-- raw HTML omitted -->
+<p><img alt="ETH header and trailer" loading="lazy" src="/assets/images/networking/overview-of-the-data-link-layer-theory-and-practice/ETH-HEADER-TRAILER.png"></p>
 <p>Campos do Cabeçalho Ethernet e Trailer (IEEE 802.3)</p>
 <table>
 	<thead>
@@ -229,12 +229,7 @@ A camada de enlace de dados é fundamental no modelo OSI e TCP/IP, sendo a segun
 <h3 id="métodos-de-encaminhamento-de-quadros">Métodos de Encaminhamento de Quadros<a hidden class="anchor" aria-hidden="true" href="#métodos-de-encaminhamento-de-quadros">#</a></h3>
 <ul>
 <li>Store-and-Forward: o switch recebe o quadro inteiro antes de encaminhá-lo, fornecendo maior confiabilidade e, consequentemente, maior latência.</li>
-<li>Cut-Through: o switch começa a encaminhar o quadro assim que detecta o endereço MAC de destino, 6 bytes logo após o campo SFD, e não faz a verificação de erros, a latência tende a ser muito baixa, porém a chance de encaminhar quadros corrompidos é alta, sendo ideal para redes com baixa taxa de erros.
-<ul>
-<li>Fast-Forward: é uma variação do Cut-Through, onde o switch introduz um pequeno atraso (delay) antes de encaminhar, reduzindo colisões. O switch aguarda os primeiros 64 bytes, tamanho mínimo de um quadro ethernet, antes de encaminhar, se o quadro for menor, é descartado (runt frame). É um método menos comum, é mais observado em switches mais antigos.</li>
-<li>Fragment-Free: é um híbrido entre o Cut-Through e o Store-and-Forward. O switch verifica os primeiros 64 bytes, onde ocorrem a maioria dos erros de transmissão, antes de encaminhar, se não houver erro, ele encaminha o restante do quadro sem fazer verificação de erros. Faz o balanceamento entre velocidade e confiabilidade mínima.</li>
-</ul>
-</li>
+<li>Cut-Through: o switch começa a encaminhar o quadro assim que detecta o endereço MAC de destino, 6 bytes logo após o campo SFD, e não faz a verificação de erros, a latência tende a ser muito baixa, porém a chance de encaminhar quadros corrompidos é alta, sendo ideal para redes com baixa taxa de erros. Fast-Forward: é uma variação do Cut-Through, onde o switch introduz um pequeno atraso (delay) antes de encaminhar, reduzindo colisões. O switch aguarda os primeiros 64 bytes, tamanho mínimo de um quadro ethernet, antes de encaminhar, se o quadro for menor, é descartado (runt frame). É um método menos comum, é mais observado em switches mais antigos. Fragment-Free: é um híbrido entre o Cut-Through e o Store-and-Forward. O switch verifica os primeiros 64 bytes, onde ocorrem a maioria dos erros de transmissão, antes de encaminhar, se não houver erro, ele encaminha o restante do quadro sem fazer verificação de erros. Faz o balanceamento entre velocidade e confiabilidade mínima.</li>
 </ul>
 <p>Abaixo segue uma tabela que faz uma comparação entre os modos de encaminhamento de quadros:</p>
 <table>
