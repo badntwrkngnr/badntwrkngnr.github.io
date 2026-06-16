@@ -42,7 +42,7 @@ Com o mapa da rede (LSDB) em mãos, o OSPF traça o melhor caminho com o algorit
 
 **2. Métrica:** o critério de melhor caminho é o **custo**, inversamente proporcional à largura de banda do link, links mais rápidos, pedágio mais barato.
 
-![OSPF Cost Formula](/assets/images/networking/ospfv2-descomplicado/ospfv2-descomplicado-pt1-11.png)
+![OSPF Cost Formula](/assets/images/networking/ospfv2-uncomplicated/ospfv2-uncomplicated-pt1-11.png)
 
 O OSPF considera as condições do caminho, mas preste atenção em uma coisa extremamente importante: ele considera apenas a **largura de banda** como parâmetro para calcular a sua métrica. Outro detalhe importante: por padrão, a banda de referência é de 100 Mbps no Cisco IOS, o que faz portas FastEthernet e GigabitEthernet terem o mesmo custo **1**, isso pode ser um problema, para corrigir, utilize o comando **auto-cost reference-bandwidth** em todos os dispositivos do domínio OSPF para não distorcer o cálculo, no material de troubleshooting que será produzido, vamos demonstrar na prática. Apenas como curiosidade e para efeitos de comparação, o protocolo EIGRP pode considerar a largura de banda, atraso, carga e confiabilidade.
 
@@ -52,7 +52,7 @@ O OSPF considera as condições do caminho, mas preste atenção em uma coisa ex
 
 Para demonstrar o comportamento entre os dois tipos de algoritmos mencionados acima, vamos utilizar a topologia abaixo:
 
-![Topologia RIP e OSPF](/assets/images/networking/ospfv2-descomplicado/ospfv2-descomplicado-pt1.png)
+![Topologia RIP e OSPF](/assets/images/networking/ospfv2-uncomplicated/ospfv2-uncomplicated-pt1.png)
 
 Vamos exemplificar primeiramente o funcionamento de um protocolo que utiliza o algoritmo *Distance Vector*, o RIP:
 
@@ -61,11 +61,11 @@ Vamos exemplificar primeiramente o funcionamento de um protocolo que utiliza o a
 - Baseado na topologia que temos, o caminho mais curto seria RT2 > RT4 > RT7.
 - Com base na velocidade dos links, podemos dizer que o "melhor caminho" talvez não seja o mais eficiente (rápido) para chegar ao destino.
 
-![Caminho RIP na topologia](/assets/images/networking/ospfv2-descomplicado/ospfv2-descomplicado-pt1-1.png)
+![Caminho RIP na topologia](/assets/images/networking/ospfv2-uncomplicated/ospfv2-uncomplicated-pt1-1.png)
 
 Agora, vamos exemplificar o funcionamento básico do OSPF, que utiliza a lógica *link-state*. Com a fórmula de cálculo fornecida, podemos definir os custos conforme a topologia abaixo:
 
-![Custos OSPF na topologia](/assets/images/networking/ospfv2-descomplicado/ospfv2-descomplicado-pt1-2.png)
+![Custos OSPF na topologia](/assets/images/networking/ospfv2-uncomplicated/ospfv2-uncomplicated-pt1-2.png)
 
 Agora, com o valor do custo acumulado da origem até chegar no destino calculado pelo OSPF, vamos observar o comportamento do encaminhamento de pacotes na prática!
 A topologia já está com OSPF habilitado, explicaremos as duas formas de ativação na seção de adjacência. O arquivo dos labs está disponível para [*download*](https://drive.google.com/drive/folders/1PFSQtfXWONkJiUJ5dYLB7eKL-c4M5bcl?usp=drive_link), você pode baixar todos eles e praticar o quanto quiser, lembrando que utilizo o PNETLab, portanto o arquivo também é compatível com o EVE-NG!
@@ -117,7 +117,7 @@ O        10.1.75.0/24 [110/7] via 10.1.12.1, 00:00:06, Ethernet0/0
 
 Segue a representação gráfica do caminho percorrido pelos pacotes até o destino:
 
-![Caminho percorrido pelos pacotes até o destino](/assets/images/networking/ospfv2-descomplicado/ospfv2-descomplicado-pt1-4.png)
+![Caminho percorrido pelos pacotes até o destino](/assets/images/networking/ospfv2-uncomplicated/ospfv2-uncomplicated-pt1-4.png)
 
 Abaixo podemos observar, através do comando *traceroute*, o caminho que os pacotes percorrem até chegar à rede de destino:
 
@@ -157,7 +157,7 @@ Além destas, existem duas regras para garantir que o processo não trave mais a
 
 Para exemplificar melhor, foi criada a topologia abaixo:
 
-![Topologia de adjacência OSPF](/assets/images/networking/ospfv2-descomplicado/ospfv2-descomplicado-pt1-6.png)
+![Topologia de adjacência OSPF](/assets/images/networking/ospfv2-uncomplicated/ospfv2-uncomplicated-pt1-6.png)
 
 Com tudo isso previamente alinhado, para sincronizar a LSDB, os roteadores OSPF passam por uma máquina de estados de sete passos. A comunicação ocorre diretamente sobre IP (protocol ID 89), com cinco tipos de pacote, **Hello**, **DBD**, **LSR**, **LSU** e **LSAck**, que aparecem conforme o avanço dos estados:
 
@@ -218,11 +218,11 @@ Agora, vamos ver o processo de formação de vizinhança e adjacência funcionan
 
 - Ao configurarmos o OSPF, o roteador envia os pacotes Hello, como podemos observar nas capturas de pacotes realizadas com o WireShark conforme abaixo:
 
-![Captura de pacote Hello OSPF](/assets/images/networking/ospfv2-descomplicado/ospfv2-descomplicado-pt1-8.png)
+![Captura de pacote Hello OSPF](/assets/images/networking/ospfv2-uncomplicated/ospfv2-uncomplicated-pt1-8.png)
 
-![Detalhe do pacote Hello OSPF](/assets/images/networking/ospfv2-descomplicado/ospfv2-descomplicado-pt1-9.png)
+![Detalhe do pacote Hello OSPF](/assets/images/networking/ospfv2-uncomplicated/ospfv2-uncomplicated-pt1-9.png)
 
-![Pacote Hello OSPF na captura](/assets/images/networking/ospfv2-descomplicado/ospfv2-descomplicado-pt1-10.png)
+![Pacote Hello OSPF na captura](/assets/images/networking/ospfv2-uncomplicated/ospfv2-uncomplicated-pt1-10.png)
 
 Foi aplicado o comando abaixo para avaliar os protocolos de roteamento ativos no roteador *RT1*:
 

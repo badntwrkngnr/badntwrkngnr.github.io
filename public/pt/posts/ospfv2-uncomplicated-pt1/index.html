@@ -153,12 +153,12 @@ Antes de falarmos sobre o OSPF propriamente dito, vale recapitular o papel de um
 <p>Com o mapa da rede (LSDB) em mãos, o OSPF traça o melhor caminho com o algoritmo <strong>SPF (<em>Shortest Path First</em>)</strong>, de Edsger W. Dijkstra. O cálculo segue quatro passos:</p>
 <p><strong>1. Ponto de partida:</strong> cada roteador executa o SPF de forma independente, colocando <strong>a si mesmo</strong> como raiz da <em>Shortest Path Tree</em> (SPT), .</p>
 <p><strong>2. Métrica:</strong> o critério de melhor caminho é o <strong>custo</strong>, inversamente proporcional à largura de banda do link, links mais rápidos, pedágio mais barato.</p>
-<p><img alt="OSPF Cost Formula" loading="lazy" src="/assets/images/networking/ospfv2-descomplicado/ospfv2-descomplicado-pt1-11.png"></p>
+<p><img alt="OSPF Cost Formula" loading="lazy" src="/assets/images/networking/ospfv2-uncomplicated/ospfv2-uncomplicated-pt1-11.png"></p>
 <p>O OSPF considera as condições do caminho, mas preste atenção em uma coisa extremamente importante: ele considera apenas a <strong>largura de banda</strong> como parâmetro para calcular a sua métrica. Outro detalhe importante: por padrão, a banda de referência é de 100 Mbps no Cisco IOS, o que faz portas FastEthernet e GigabitEthernet terem o mesmo custo <strong>1</strong>, isso pode ser um problema, para corrigir, utilize o comando <strong>auto-cost reference-bandwidth</strong> em todos os dispositivos do domínio OSPF para não distorcer o cálculo, no material de troubleshooting que será produzido, vamos demonstrar na prática. Apenas como curiosidade e para efeitos de comparação, o protocolo EIGRP pode considerar a largura de banda, atraso, carga e confiabilidade.</p>
 <p><strong>3. Custo cumulativo:</strong> o roteador soma o custo de saída de cada interface ao longo do caminho até cada destino.</p>
 <p><strong>4. Instalação na RIB:</strong> para a mesma sub-rede, vence o menor custo cumulativo, o perdedor permanece só na LSDB. A rota vencedora vai para a <strong>RIB</strong>. Em caso de empate, o OSPF instala ambos os caminhos e faz balanceamento (ECMP, <em>Equal-Cost Multipathing</em>).</p>
 <p>Para demonstrar o comportamento entre os dois tipos de algoritmos mencionados acima, vamos utilizar a topologia abaixo:</p>
-<p><img alt="Topologia RIP e OSPF" loading="lazy" src="/assets/images/networking/ospfv2-descomplicado/ospfv2-descomplicado-pt1.png"></p>
+<p><img alt="Topologia RIP e OSPF" loading="lazy" src="/assets/images/networking/ospfv2-uncomplicated/ospfv2-uncomplicated-pt1.png"></p>
 <p>Vamos exemplificar primeiramente o funcionamento de um protocolo que utiliza o algoritmo <em>Distance Vector</em>, o RIP:</p>
 <ul>
 <li>Como ponto de partida, vamos dizer que as conexões em azul são <em>Links Ethernet</em> e as conexões em amarelo são <em>Links Seriais</em>.</li>
@@ -166,9 +166,9 @@ Antes de falarmos sobre o OSPF propriamente dito, vale recapitular o papel de um
 <li>Baseado na topologia que temos, o caminho mais curto seria RT2 &gt; RT4 &gt; RT7.</li>
 <li>Com base na velocidade dos links, podemos dizer que o &ldquo;melhor caminho&rdquo; talvez não seja o mais eficiente (rápido) para chegar ao destino.</li>
 </ul>
-<p><img alt="Caminho RIP na topologia" loading="lazy" src="/assets/images/networking/ospfv2-descomplicado/ospfv2-descomplicado-pt1-1.png"></p>
+<p><img alt="Caminho RIP na topologia" loading="lazy" src="/assets/images/networking/ospfv2-uncomplicated/ospfv2-uncomplicated-pt1-1.png"></p>
 <p>Agora, vamos exemplificar o funcionamento básico do OSPF, que utiliza a lógica <em>link-state</em>. Com a fórmula de cálculo fornecida, podemos definir os custos conforme a topologia abaixo:</p>
-<p><img alt="Custos OSPF na topologia" loading="lazy" src="/assets/images/networking/ospfv2-descomplicado/ospfv2-descomplicado-pt1-2.png"></p>
+<p><img alt="Custos OSPF na topologia" loading="lazy" src="/assets/images/networking/ospfv2-uncomplicated/ospfv2-uncomplicated-pt1-2.png"></p>
 <p>Agora, com o valor do custo acumulado da origem até chegar no destino calculado pelo OSPF, vamos observar o comportamento do encaminhamento de pacotes na prática!
 A topologia já está com OSPF habilitado, explicaremos as duas formas de ativação na seção de adjacência. O arquivo dos labs está disponível para <a href="https://drive.google.com/drive/folders/1PFSQtfXWONkJiUJ5dYLB7eKL-c4M5bcl?usp=drive_link"><em>download</em></a>, você pode baixar todos eles e praticar o quanto quiser, lembrando que utilizo o PNETLab, portanto o arquivo também é compatível com o EVE-NG!
 Ao examinarmos a tabela de roteamento, podemos ver que estamos recebendo a rota de destino da rede que está localizada no roteador RT7 com um custo de 8. Você pode estar se perguntando como, já que se somarmos os custos das interfaces de saída até o destino, o valor obtido é 7. Aqui reside um detalhe minúsculo que pode confundir a linha de raciocínio durante uma análise da tabela de roteamento. Conforme definido na RFC do OSPF e implementado pelo Cisco IOS, a interface loopback é tratada como <em>stub host</em> e sempre vai receber um custo fixo e automático de 1. Me vejo forçado a falar sobre o termo <em>stub</em> antes da hora, mas para o entendimento do conceito, preciso que você imagine que no contexto de redes é como se fosse o &ldquo;fim da linha&rdquo; ou podemos entender como um &ldquo;beco sem saída&rdquo;. É um dispositivo que o tráfego pode entrar e sair normalmente, porém nunca vai chegar diretamente a um terceiro destino porque tem um único caminho para o tráfego chegar e sair. Não confunda com <em>stub area</em>, que é outro conceito, com o natural aprofundamento do tema, falaremos disso nos próximos artigos.</p>
@@ -214,7 +214,7 @@ O        10.1.58.0/24 [110/6] via 10.1.12.1, 00:00:06, Ethernet0/0
 O        10.1.68.0/24 [110/5] via 10.1.12.1, 00:00:06, Ethernet0/0
 O        10.1.75.0/24 [110/7] via 10.1.12.1, 00:00:06, Ethernet0/0
 </code></pre><p>Segue a representação gráfica do caminho percorrido pelos pacotes até o destino:</p>
-<p><img alt="Caminho percorrido pelos pacotes até o destino" loading="lazy" src="/assets/images/networking/ospfv2-descomplicado/ospfv2-descomplicado-pt1-4.png"></p>
+<p><img alt="Caminho percorrido pelos pacotes até o destino" loading="lazy" src="/assets/images/networking/ospfv2-uncomplicated/ospfv2-uncomplicated-pt1-4.png"></p>
 <p>Abaixo podemos observar, através do comando <em>traceroute</em>, o caminho que os pacotes percorrem até chegar à rede de destino:</p>
 <pre tabindex="0"><code class="language-cisco" data-lang="cisco">RT2#traceroute 7.7.7.7
 Type escape sequence to abort.
@@ -247,7 +247,7 @@ RT2#
 <p>O número do processo OSPF não precisa ser idêntico entre roteadores para formar adjacência.</p>
 </blockquote>
 <p>Para exemplificar melhor, foi criada a topologia abaixo:</p>
-<p><img alt="Topologia de adjacência OSPF" loading="lazy" src="/assets/images/networking/ospfv2-descomplicado/ospfv2-descomplicado-pt1-6.png"></p>
+<p><img alt="Topologia de adjacência OSPF" loading="lazy" src="/assets/images/networking/ospfv2-uncomplicated/ospfv2-uncomplicated-pt1-6.png"></p>
 <p>Com tudo isso previamente alinhado, para sincronizar a LSDB, os roteadores OSPF passam por uma máquina de estados de sete passos. A comunicação ocorre diretamente sobre IP (protocol ID 89), com cinco tipos de pacote, <strong>Hello</strong>, <strong>DBD</strong>, <strong>LSR</strong>, <strong>LSU</strong> e <strong>LSAck</strong>, que aparecem conforme o avanço dos estados:</p>
 <ol>
 <li><strong>Down (inativo):</strong> estado inicial. O processo OSPF está ativo na interface, mas nenhum <em>Hello</em> foi recebido. O roteador envia <em>Hello</em> para o multicast <strong>224.0.0.5</strong> (<em>All OSPF Routers</em>) e aguarda resposta.</li>
@@ -291,9 +291,9 @@ RT2#
 <ul>
 <li>Ao configurarmos o OSPF, o roteador envia os pacotes Hello, como podemos observar nas capturas de pacotes realizadas com o WireShark conforme abaixo:</li>
 </ul>
-<p><img alt="Captura de pacote Hello OSPF" loading="lazy" src="/assets/images/networking/ospfv2-descomplicado/ospfv2-descomplicado-pt1-8.png"></p>
-<p><img alt="Detalhe do pacote Hello OSPF" loading="lazy" src="/assets/images/networking/ospfv2-descomplicado/ospfv2-descomplicado-pt1-9.png"></p>
-<p><img alt="Pacote Hello OSPF na captura" loading="lazy" src="/assets/images/networking/ospfv2-descomplicado/ospfv2-descomplicado-pt1-10.png"></p>
+<p><img alt="Captura de pacote Hello OSPF" loading="lazy" src="/assets/images/networking/ospfv2-uncomplicated/ospfv2-uncomplicated-pt1-8.png"></p>
+<p><img alt="Detalhe do pacote Hello OSPF" loading="lazy" src="/assets/images/networking/ospfv2-uncomplicated/ospfv2-uncomplicated-pt1-9.png"></p>
+<p><img alt="Pacote Hello OSPF na captura" loading="lazy" src="/assets/images/networking/ospfv2-uncomplicated/ospfv2-uncomplicated-pt1-10.png"></p>
 <p>Foi aplicado o comando abaixo para avaliar os protocolos de roteamento ativos no roteador <em>RT1</em>:</p>
 <pre tabindex="0"><code class="language-cisco" data-lang="cisco">RT1#show ip protocols
 *** IP Routing is NSF aware ***
