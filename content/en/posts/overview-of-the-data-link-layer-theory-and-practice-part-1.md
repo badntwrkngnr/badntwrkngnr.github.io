@@ -1,130 +1,130 @@
 ---
-title: "Overview of the Data-Link Layer: Theory and Practice (Part 1)"
+title: "Overview of the Data Link Layer: Theory and Practice (Part 1)"
 slug: "overview-of-the-data-link-layer-theory-and-practice-part-1" 
-date: 2026-05-23
+date: 2025-09-27
 translationKey: "overview-of-the-data-link-layer-theory-and-practice-part-1"
 categories: ["networking", "data-link layer"]
 math: true
-draft: true
+draft: false
 ---
 
-## Introdução e Base Teórica
+## Introduction and Theoretical Foundation
 
-Este artigo é baseado em anotações que fiz durante minha preparação para o exame CCNA (Cisco Certified Network Associate) 200-301, onde pude aprofundar meus conhecimentos sobre a camada de enlace de dados.
+This article is based on notes taken during preparation for the CCNA (Cisco Certified Network Associate) 200-301 exam, during which the opportunity arose to deepen the study of the data-link layer.
 
-A **camada de enlace de dados** é fundamental no modelo OSI e TCP/IP, sendo a segunda camada no processo de comunicação entre dispositivos em rede. Ela é responsável por garantir que as unidades de informação, chamadas **quadros**, sejam transferidas de maneira confiável entre dispositivos fisicamente conectados por meio de um canal de comunicação, sejam eles guiados, como cabos de rede e fibras ópticas, ou não-guiados, como as redes sem fio.
+The **data-link layer** is fundamental in the OSI and TCP/IP models; it is the second layer in the communication process between networked devices. It is responsible for ensuring that units of information called **frames** are transferred reliably between devices physically connected through a communication channel, whether guided, such as network cables and optical fibers, or unguided, such as wireless networks.
 
-## Uma Reflexão Pessoal sobre a Importância da Camada 2
+## A Personal Reflection on the Importance of Layer 2
 
-Durante minha preparação para o exame CCNA 200-301, confesso que **subestimei significativamente a importância da camada de enlace de dados**. Minha experiência profissional sempre esteve mais focada em protocolos de camada 3, trabalhando na maior parte do tempo com backbones e serviços de VPNs L2/L3 em ambientes de service providers. Essa bagagem me levou a acreditar que dominar a camada 2 seria extremamente simples.
+During preparation for the CCNA 200-301 exam, I must acknowledge that I significantly underestimated the importance of the data-link layer. My professional experience had been more focused on layer-3 protocols, working most of the time with backbones and L2/L3 VPN services in service-provider environments. This background led me to believe that mastering layer 2 would be extremely simple.
 
-**Admito que eu estava completamente enganado!** Devido ao CCNA ser focado em redes enterprise, percebi lacunas importantes no meu conhecimento sobre como switches realmente funcionam, como endereços MAC são utilizados, e como VLANs impactam diretamente a arquitetura de redes corporativas. A diferença entre o ambiente de service provider (onde a camada 2 é muitas vezes "transparente" para os serviços) e o ambiente enterprise (onde a camada 2 é o alicerce de tudo) é muito mais significativa do que eu imaginava.
+I must admit that I was completely mistaken. Because the CCNA focuses on enterprise networks, I became aware of important gaps in my knowledge of how switches actually work, how MAC addresses are used, and how VLANs directly impact corporate network architecture. The difference between a service-provider environment, where layer 2 is often transparent to the services, and an enterprise environment, where layer 2 is the foundation of everything, is much more significant than I had imagined.
 
-Esta experiência me ensinou que, independentemente do seu background em redes, **a camada de enlace de dados merece atenção especial e estudo dedicado**. Para profissionais que, como eu, têm mais experiência com protocolos de camada superior, entender profundamente como a camada 2 funciona é fundamental para uma preparação completa para certificações como o CCNA.
+This experience taught me that, regardless of a person's background in networking, **the data-link layer deserves special attention and dedicated study**. For professionals who, like me, have more experience with higher-layer protocols, understanding in depth how layer 2 works is essential for complete preparation for certifications such as the CCNA.
 
-Em todo lugar, você vai observar comentários dizendo que para profissionais de redes de computadores é necessário ter uma base sólida, por isso, uma das coisas fundamentais é conhecer a camada de enlace, pois ela é essencial para entender como switches, endereços MAC e VLANs funcionam na prática. Neste artigo, exploraremos alguns dos conceitos teóricos e depois, nos próximos artigos, aplicaremos esse conhecimento em cenários reais de configuração.
+Everywhere one looks, there are comments stating that networking professionals need a solid foundation. Therefore, one of the fundamental things is to know the data-link layer, because it is essential for understanding how switches, MAC addresses, and VLANs work in practice. This article explores some of the theoretical concepts, and in future articles this knowledge will be applied in real configuration scenarios.
 
-## Funções Básicas da Camada de Enlace de Dados
+## Basic Functions of the Data-Link Layer
 
-A camada de enlace de dados utiliza os serviços da camada física para a transmissão de bits, garantindo que os dados cheguem à máquina de destino. Entre as funções principais desta camada estão:
+The data-link layer uses the services of the physical layer for bit transmission, ensuring that data reaches the destination machine. The main functions of this layer are:
 
-1. **Interface de Serviço**: Proporcionar uma interface definida para a camada de rede, facilitando a comunicação entre camadas superiores e inferiores.
-2. **Enquadramento**: Organizar bytes em quadros para transmissão eficiente e integrada.
-3. **Controle de Erros**: Detectar e corrigir possíveis erros durante a transmissão de dados.
-4. **Controle de Fluxo**: Regular a taxa de transmissão de dados para evitar sobrecarregar receptores mais lentos.
+1. **Service Interface**: Provides a defined interface to the network layer, facilitating communication between upper and lower layers.
+2. **Framing**: Organizes bytes into frames for efficient and integrated transmission.
+3. **Error Control**: Detects and corrects possible errors during data transmission.
+4. **Flow Control**: Regulates the data transmission rate to avoid overwhelming slower receivers.
 
-Além das funções citadas, a camada de enlace também é responsável pelo **endereçamento físico**, utilizando endereços MAC (Media Access Control) para identificar dispositivos em uma rede local (LAN).
+In addition to the functions listed above, the data-link layer is also responsible for **physical addressing**, using MAC (Media Access Control) addresses to identify devices on a local area network (LAN).
 
-O endereço MAC possui **6 bytes (48 bits)** e é dividido em duas partes:
+The MAC address is **6 bytes (48 bits)** long and is divided into two parts:
 
-1. **OUI (Organizationally Unique Identifier)**: 3 bytes (24 bits) - Identifica o fabricante do dispositivo
-2. **Vendor Assigned**: 3 bytes (24 bits) - Identificador único atribuído pelo fabricante
+1. **OUI (Organizationally Unique Identifier)**: 3 bytes (24 bits) — identifies the device manufacturer.
+2. **Vendor Assigned**: 3 bytes (24 bits) — a unique identifier assigned by the manufacturer.
 
-<img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/26-mac-address-structure.png">
+![MAC address structure](/assets/images/networking/overview-of-the-data-link-layer-theory-and-practice/26-mac-address-structure.png)
 
-O endereço MAC é representado em formato hexadecimal, separado por dois pontos ou hífens. Por exemplo: `00:1A:2B:3C:4D:5E` ou `00-1A-2B-3C-4D-5E`. Apenas de curiosidade, o primeiro byte do OUI também contém informações importantes:
+The MAC address is represented in hexadecimal format, separated by colons or hyphens. For example: `00:1A:2B:3C:4D:5E` or `00-1A-2B-3C-4D-5E`. As a point of interest, the first byte of the OUI also contains important information:
 
-- **Bit 0 (LSB)**: Indica se o endereço é unicast (0) ou multicast (1)
-- **Bit 1**: Indica se o endereço é globalmente administrado (0) ou localmente administrado (1)
-### Serviços
+- **Bit 0 (LSB)**: Indicates whether the address is unicast (0) or multicast (1).
+- **Bit 1**: Indicates whether the address is globally administered (0) or locally administered (1).
 
-Os serviços da camada de enlace de dados variam de acordo com o protocolo, mas podemos categorizá-los em três tipos principais:
+### Services
 
-- **Serviço não orientado a conexões sem confirmação**: Os quadros são enviados sem qualquer confirmação de recebimento. A Ethernet é um exemplo clássico desse serviço, sendo usado em ambientes onde a taxa de erro é baixa e a recuperação de dados é feita por camadas superiores.
-- **Serviço não orientado a conexões com confirmação**: Cada quadro enviado é confirmado individualmente, o que permite a retransmissão de quadros perdidos. O padrão **802.11 (WiFi)** adota essa abordagem para garantir confiabilidade em redes sem fio.
-- **Serviço orientado a conexões com confirmação**: Neste serviço, uma conexão lógica é estabelecida entre as máquinas antes do envio dos dados. Cada quadro é numerado e a confirmação garante a entrega.
+Data-link layer services vary according to the protocol, but they can be categorized into three main types:
 
-Nas certificações de fabricantes de equipamentos, sobretudo o CCNA 200-301, o foco geralmente recai sobre o **Ethernet (IEEE 802.3)**, que utiliza um serviço não orientado a conexão sem confirmação. A título de curiosidade, podemos falar que o **WiFi (IEEE 802.11)** usa confirmações devido à natureza propensa a erros das redes sem fio, esse padrão também é cobrado no blueprint do CCNA 200-301, mas não será abordado nesse artigo.
+- **Connectionless unacknowledged service**: Frames are sent without any acknowledgment of receipt. Ethernet is a classic example of this service, used in environments where the error rate is low and data recovery is handled by upper layers.
+- **Connectionless acknowledged service**: Each frame sent is individually acknowledged, allowing lost frames to be retransmitted. The **802.11 (Wi-Fi)** standard adopts this approach to ensure reliability in wireless networks.
+- **Connection-oriented acknowledged service**: In this service, a logical connection is established between the machines before data is sent. Each frame is numbered, and acknowledgment ensures delivery.
 
-### Enquadramento
+In vendor-equipment certifications, especially the CCNA 200-301, the focus generally falls on **Ethernet (IEEE 802.3)**, which uses a connectionless unacknowledged service. As a matter of interest, it is worth noting that **Wi-Fi (IEEE 802.11)** uses acknowledgments because of the error-prone nature of wireless networks; this standard is also covered in the CCNA 200-301 blueprint, but it will not be addressed in this article.
 
-Para garantir que os quadros sejam transmitidos de forma correta, a camada de enlace de dados deve organizar o fluxo de bits brutos provenientes da camada física em quadros. Esse processo é chamado de **enquadramento** e envolve:
+### Framing
 
-- Dividir o fluxo contínuo de bits em quadros.
-- Adicionar um **checksum** (soma de verificação) a cada quadro para detectar erros.
-- Recalcular o checksum no destino e verificar se o valor corresponde ao valor transmitido.
+To ensure that frames are transmitted correctly, the data-link layer must organize the continuous flow of raw bits coming from the physical layer into frames. This process is called **framing** and involves:
 
-Existem várias estratégias de enquadramento, como:
+- Dividing the continuous bit stream into frames.
+- Adding a **checksum** to each frame to detect errors.
+- Recalculating the checksum at the destination and verifying that it matches the transmitted value.
 
-1. **Contagem de caracteres**: Um campo de contagem define o tamanho do quadro.
-2. **Bytes de flag com inserção de bytes**: Utiliza flags especiais para marcar o início e o fim dos quadros, inserindo bytes adicionais quando necessário.
-3. **Bits de flag com inserção de bits**: Semelhante ao método de bytes, mas opera a nível de bits.
-4. **Violações de codificação da camada física**: Utiliza violações propositalmente criadas nas regras de codificação da camada física para indicar o início e o fim dos quadros.
+There are several framing strategies:
 
-A Ethernet, por exemplo, utiliza um preâmbulo (sequência de bits de sincronização) seguido de um campo de comprimento para marcar o início e o final dos quadros.
+1. **Character count**: A count field defines the frame length.
+2. **Flag bytes with byte stuffing**: Special flags mark the beginning and end of frames, with extra bytes inserted when necessary.
+3. **Flag bits with bit stuffing**: Similar to byte stuffing, but operates at the bit level.
+4. **Physical-layer coding violations**: Deliberate violations of the physical-layer encoding rules are used to indicate the beginning and end of frames.
 
-<img src="/assets/images/networking/2025-06-22-visao-geral-da-camada-de-enlace-de-dados-teoria-e-pratica/ETH-HEADER-TRAILER.png">
+Ethernet, for example, uses a preamble (a synchronization bit sequence) followed by a length field to mark the beginning and end of frames.
 
-Campos do Cabeçalho Ethernet e Trailer (IEEE 802.3)
+![ETH header and trailer](/assets/images/networking/overview-of-the-data-link-layer-theory-and-practice/ETH-HEADER-TRAILER.png)
 
-| Campo                       | Bytes   | Descrição                                                                                                                                                                                              |
-| --------------------------- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Preâmbulo                   | 7       | Sincronização                                                                                                                                                                                          |
-| SFD (Start Frame Delimiter) | 1       | Sinaliza que o próximo byte inicia o campo de MAC Address de destino                                                                                                                                   |
-| Destino                     | 6       | Identifica o MAC Address de destino da mensagem                                                                                                                                                        |
-| Origem                      | 6       | Identifica o MAC Address de origem da mensagem                                                                                                                                                         |
-| Tipo                        | 2       | Identifica o tipo de protocolo que está dentro do quadro, os mais comuns são os protocolos IPv4 e IPv6                                                                                                 |
-| Dados e Preenchimento       | 46~1500 | Nesse campo estão os dados de camadas superiores, o L3PDU ou pacote. Caso os dados não atendam aos requerimentos mínimos de comprimento dos dados (46 bytes), a origem adiciona dados de preenchimento |
-| FCS (Frame Check Sequence)  | 4       | A NIC (Network Interface Card) de destino utiliza esse campo para saber se foram detectados erros na transmissão de dados                                                                          |
+#### Ethernet Header and Trailer Fields (IEEE 802.3)
 
-### Controle de Erros e de Fluxo
+| Field | Bytes | Description |
+| --- | --- | --- |
+| Preamble | 7 | Synchronization |
+| SFD (Start Frame Delimiter) | 1 | Signals that the next byte begins the destination MAC address field |
+| Destination | 6 | Identifies the destination MAC address of the message |
+| Source | 6 | Identifies the source MAC address of the message |
+| Type | 2 | Identifies the type of protocol inside the frame; the most common are IPv4 and IPv6 |
+| Data and Padding | 46–1500 | Contains upper-layer data, the L3 PDU or packet. If the data does not meet the minimum length requirement (46 bytes), the source adds padding |
+| FCS (Frame Check Sequence) | 4 | The destination NIC uses this field to determine whether errors were detected in the data transmission |
 
-Os protocolos da camada de enlace de dados empregam diferentes mecanismos para controlar erros e fluxo, garantindo a integridade e eficiência da transmissão de dados. Entre os principais mecanismos estão:
+### Error and Flow Control
 
-- **Detecção de Erros**: Métodos como o checksum e CRC (Cyclic Redundancy Check) são amplamente utilizados para identificar falhas na transmissão de quadros.
-- **Correção de Erros**: Em alguns casos, a camada de enlace pode corrigir automaticamente pequenos erros ou solicitar a retransmissão do quadro defeituoso.
-- **Controle de Fluxo**: Protocolos como o **Windowing** (controle de janela) e **ACK/NACK** (acknowledgement/negative acknowledgement) regulam o fluxo de dados entre dispositivos, evitando que um transmissor rápido sobrecarregue um receptor mais lento.
+Data-link layer protocols employ different mechanisms to control errors and flow, ensuring the integrity and efficiency of data transmission. The main mechanisms include:
 
-### Métodos de Encaminhamento de Quadros
+- **Error Detection**: Methods such as checksum and CRC (Cyclic Redundancy Check) are widely used to identify failures in frame transmission.
+- **Error Correction**: In some cases, the data-link layer can automatically correct small errors or request retransmission of a defective frame.
+- **Flow Control**: Protocols such as **Windowing** and **ACK/NACK** (acknowledgement/negative acknowledgement) regulate data flow between devices, preventing a fast transmitter from overwhelming a slower receiver.
 
-- Store-and-Forward: o switch recebe o quadro inteiro antes de encaminhá-lo, fornecendo maior confiabilidade e, consequentemente, maior latência.
-- Cut-Through: o switch começa a encaminhar o quadro assim que detecta o endereço MAC de destino, 6 bytes logo após o campo SFD, e não faz a verificação de erros, a latência tende a ser muito baixa, porém a chance de encaminhar quadros corrompidos é alta, sendo ideal para redes com baixa taxa de erros.
-  - Fast-Forward: é uma variação do Cut-Through, onde o switch introduz um pequeno atraso (delay) antes de encaminhar, reduzindo colisões. O switch aguarda os primeiros 64 bytes, tamanho mínimo de um quadro ethernet, antes de encaminhar, se o quadro for menor, é descartado (runt frame). É um método menos comum, é mais observado em switches mais antigos.
-  - Fragment-Free: é um híbrido entre o Cut-Through e o Store-and-Forward. O switch verifica os primeiros 64 bytes, onde ocorrem a maioria dos erros de transmissão, antes de encaminhar, se não houver erro, ele encaminha o restante do quadro sem fazer verificação de erros. Faz o balanceamento entre velocidade e confiabilidade mínima.
+### Frame Forwarding Methods
 
-Abaixo segue uma tabela que faz uma comparação entre os modos de encaminhamento de quadros:
+- **Store-and-Forward**: The switch receives the entire frame before forwarding it, providing greater reliability and, consequently, higher latency.
+- **Cut-Through**: The switch begins forwarding the frame as soon as it detects the destination MAC address, which is 6 bytes after the SFD field, and does not perform error checking. Latency tends to be very low, but the chance of forwarding corrupted frames is high, making it ideal for networks with low error rates.
+  - **Fast-Forward**: A variation of Cut-Through in which the switch introduces a small delay before forwarding, reducing collisions. The switch waits for the first 64 bytes, the minimum Ethernet frame size, before forwarding. If the frame is smaller, it is discarded (runt frame). This method is less common and is observed more often in older switches.
+  - **Fragment-Free**: A hybrid between Cut-Through and Store-and-Forward. The switch checks the first 64 bytes, where the majority of transmission errors occur, before forwarding. If no error is found, it forwards the rest of the frame without further error checking. It provides a balance between speed and minimum reliability.
 
-| Modo              | Latência | Verificação de Erros | Uso típico                      |
-| ----------------- | -------- | -------------------- | ------------------------------- |
-| Store-and-Forward | Alta     | Completa (CRC/FCS)   | Redes modernas                  |
-| Cut-Through       | Mínima   | Nenhuma              | Data Centers / Low-Latency      |
-| Fragment-Free     | Moderada | Primeiros 64 bytes   | Redes com histórico de colisões |
+The following table compares the frame forwarding modes:
 
-## Conclusão
+| Mode | Latency | Error Checking | Typical Use |
+| --- | --- | --- | --- |
+| Store-and-Forward | High | Full (CRC/FCS) | Modern networks |
+| Cut-Through | Minimal | None | Data centers / low-latency environments |
+| Fragment-Free | Moderate | First 64 bytes | Networks with a history of collisions |
 
-Neste primeiro artigo, exploramos os fundamentos teóricos da camada de enlace de dados, abordando suas funções essenciais, serviços, métodos de enquadramento e controle de erros e fluxo. Compreendemos como os diferentes modos de encaminhamento de quadros impactam o desempenho e a confiabilidade das redes.
+## Conclusion
 
-Esta base teórica sólida é fundamental para profissionais de redes, especialmente aqueles que buscam certificações como o CCNA 200-301, onde o conhecimento prático da camada de enlace é essencial para configurar switches, gerenciar VLANs e entender o funcionamento dos endereços MAC.
+In this first article, we explored the theoretical foundations of the data-link layer, addressing its essential functions, services, framing methods, and error and flow control. We also examined how the different frame forwarding modes impact network performance and reliability.
 
-**Para profissionais com background em service providers** (como eu), que estão acostumados a trabalhar com protocolos de camada superior como MPLS e VPNs, este estudo da camada 2 representa uma mudança significativa de perspectiva. O que antes era "transparente" nos serviços de telecomunicações, agora se torna o **alicerce fundamental** para entender como as redes enterprise realmente funcionam.
+This solid theoretical base is fundamental for networking professionals, especially those pursuing certifications such as the CCNA 200-301, where practical knowledge of the data-link layer is essential for configuring switches, managing VLANs, and understanding how MAC addresses operate.
 
-Nos próximos artigos desta série, aprofundaremos esses conceitos através de **configurações práticas em equipamentos reais**, onde implementaremos cenários de laboratório que demonstram:
+**For professionals with a service-provider background**, like me, who are accustomed to working with higher-layer protocols such as MPLS and VPNs, this study of layer 2 represents a significant shift in perspective. What was previously transparent in telecommunications services now becomes the **fundamental foundation** for understanding how enterprise networks actually work.
 
-- Configuração e gerenciamento de switches
-- Implementação e troubleshooting de VLANs
-- Análise de tráfego de rede com ferramentas de captura
-- Resolução de problemas comuns em redes locais
-- Otimização de desempenho baseada nos diferentes modos de encaminhamento
+In the next articles in this series, these concepts will be deepened through **practical configurations on real equipment**, where laboratory scenarios will be implemented to demonstrate:
 
-O conhecimento teórico apresentado aqui servirá como alicerce para as práticas avançadas que virão, permitindo uma compreensão mais profunda dos mecanismos internos dos equipamentos de rede e suas aplicações no mundo real. **Para aqueles que, como eu, subestimaram inicialmente a importância da camada 2, este estudo representa um investimento valioso no desenvolvimento de uma visão mais completa e integrada das redes de computadores.**
+- Switch configuration and management
+- VLAN implementation and troubleshooting
+- Network traffic analysis with capture tools
+- Resolution of common problems in local networks
+- Performance optimization based on the different forwarding modes
 
+The theoretical knowledge presented here will serve as the foundation for the advanced practices to come, enabling a deeper understanding of the internal mechanisms of network equipment and their applications in the real world. **For those who, like me, initially underestimated the importance of layer 2, this study represents a valuable investment in developing a more complete and integrated view of computer networks.**

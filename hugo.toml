@@ -1,6 +1,9 @@
 theme = "PaperMod"
 defaultContentLanguage = "en"
 
+[minify]
+  disableJSON = true
+
 [caches]
   [caches.images]
     dir = ':cacheDir/images'

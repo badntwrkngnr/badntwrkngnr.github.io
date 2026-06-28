@@ -1,58 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Posts on Networking de Quebradinha</title>
-    <link>//localhost:1313/pt/posts/</link>
-    <description>Recent content in Posts on Networking de Quebradinha</description>
-    <generator>Hugo</generator>
-    <language>pt</language>
-    <lastBuildDate>Sat, 23 May 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="//localhost:1313/pt/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>OSPF Descomplicado - Parte 1</title>
-      <link>//localhost:1313/pt/posts/ospfv2-uncomplicated-pt1/</link>
-      <pubDate>Sat, 23 May 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/pt/posts/ospfv2-uncomplicated-pt1/</guid>
-      <description>&lt;h2 id=&#34;introdução&#34;&gt;Introdução&lt;/h2&gt;
-&lt;p&gt;Olá, tudo bem contigo? Era para ser somente um artigo completo abordando um assunto do começo ao fim, mas acabou que, conforme eu ia escrevendo, o texto ia ficando cada vez mais extenso, isso acontece porque eu tenho uma dificuldade colossal de identificar o momento correto de encerrar alguns assuntos. No meio do caminho, achei melhor mudar a abordagem e separar em partes para não ficar cansativo demais. Para começar, escolhi este título por ser &lt;em&gt;fanboy&lt;/em&gt; da &lt;a href=&#34;https://linuxtips.io/&#34;&gt;&lt;em&gt;LinuxTips&lt;/em&gt;&lt;/a&gt; e, embora o artigo traga bastante conteúdo, aproveito para recomendar o curso &lt;a href=&#34;https://gustavokalau.com.br/&#34;&gt;&lt;em&gt;Descomplicando o OSPF&lt;/em&gt;&lt;/a&gt;, do professor Gustavo Kalau, para um aprofundamento um pouco maior.
-Antes de falarmos sobre o OSPF propriamente dito, vale recapitular o papel de um protocolo de roteamento dinâmico. São conceitos simples, mas que são fundamentais e vão preparar o terreno para o que vem a seguir.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Como foi tirar o CCNA em 18 anos?</title>
-      <link>//localhost:1313/pt/posts/getting-the-ccna-in-18-years/</link>
-      <pubDate>Mon, 20 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/pt/posts/getting-the-ccna-in-18-years/</guid>
-      <description>&lt;p&gt;&lt;img alt=&#34;header&#34; loading=&#34;lazy&#34; src=&#34;//localhost:1313/assets/images/thoughs/getting-the-ccna-in-18-years/getting-the-ccna-in-18-years.webp&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;introdução&#34;&gt;Introdução&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Posts on Networking de Quebradinha</title><link>/pt/posts/</link><description>Recent content in Posts on Networking de Quebradinha</description><generator>Hugo</generator><language>pt</language><lastBuildDate>Sat, 23 May 2026 00:00:00 +0000</lastBuildDate><atom:link href="/pt/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>OSPF Descomplicado - Parte 1</title><link>/pt/posts/ospfv2-uncomplicated-pt1/</link><pubDate>Sat, 23 May 2026 00:00:00 +0000</pubDate><guid>/pt/posts/ospfv2-uncomplicated-pt1/</guid><description>&lt;h2 id="introdução"&gt;Introdução&lt;/h2&gt;
+&lt;p&gt;Olá, tudo bem contigo? Era para ser somente um artigo completo abordando um assunto do começo ao fim, mas acabou que, conforme eu ia escrevendo, o texto ia ficando cada vez mais extenso, isso acontece porque eu tenho uma dificuldade colossal de identificar o momento correto de encerrar alguns assuntos. No meio do caminho, achei melhor mudar a abordagem e separar em partes para não ficar cansativo demais. Para começar, escolhi este título por ser &lt;em&gt;fanboy&lt;/em&gt; da &lt;a href="https://linuxtips.io/"&gt;&lt;em&gt;LinuxTips&lt;/em&gt;&lt;/a&gt; e, embora o artigo traga bastante conteúdo, aproveito para recomendar o curso &lt;a href="https://gustavokalau.com.br/"&gt;&lt;em&gt;Descomplicando o OSPF&lt;/em&gt;&lt;/a&gt;, do professor Gustavo Kalau, para um aprofundamento um pouco maior.
+Antes de falarmos sobre o OSPF propriamente dito, vale recapitular o papel de um protocolo de roteamento dinâmico. São conceitos simples, mas que são fundamentais e vão preparar o terreno para o que vem a seguir.&lt;/p&gt;</description></item><item><title>Como foi tirar o CCNA em 18 anos?</title><link>/pt/posts/getting-the-ccna-in-18-years/</link><pubDate>Mon, 20 Apr 2026 00:00:00 +0000</pubDate><guid>/pt/posts/getting-the-ccna-in-18-years/</guid><description>&lt;p&gt;&lt;img alt="header" loading="lazy" src="/assets/images/thoughs/getting-the-ccna-in-18-years/getting-the-ccna-in-18-years.webp"&gt;&lt;/p&gt;
+&lt;h2 id="introdução"&gt;Introdução&lt;/h2&gt;
 &lt;p&gt;Olá, eu gostaria de começar dizendo que recentemente eu enfrentei um dos meus maiores medos em toda a minha carreira, que era a possibilidade de falhar no exame do CCNA.
-De onde vinha esse medo? Bem, acredito que ele tenha várias origens, uma delas foi a validação, trabalho com redes de diversos portes e finalidades já tem algum tempo, para ser mais preciso 18 anos, isso mesmo, 18 anos! É muito tempo, não? Outra razão forte, é a econômica, afinal 300 dólares não caem do céu, ainda mais no meu caso que sou o provedor da minha família, eu não tinha a menor chance de errar, imagina só, falhar no exame depois de tanto investimento em livros e cursos, sem contar o tempo de trabalho, também incluo nessa equação o tempo que deixei de passar com a minha família, falhar estava fora de cogitação. Com isso em mente, a pressão era gigantesca.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Visão Geral da Camada de Enlace: Teoria e Prática (Parte 1)</title>
-      <link>//localhost:1313/pt/posts/overview-of-the-data-link-layer-theory-and-practice-part-1/</link>
-      <pubDate>Sat, 27 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/pt/posts/overview-of-the-data-link-layer-theory-and-practice-part-1/</guid>
-      <description>&lt;h2 id=&#34;introdução-e-base-teórica&#34;&gt;Introdução e Base Teórica&lt;/h2&gt;
+De onde vinha esse medo? Bem, acredito que ele tenha várias origens, uma delas foi a validação, trabalho com redes de diversos portes e finalidades já tem algum tempo, para ser mais preciso 18 anos, isso mesmo, 18 anos! É muito tempo, não? Outra razão forte, é a econômica, afinal 300 dólares não caem do céu, ainda mais no meu caso que sou o provedor da minha família, eu não tinha a menor chance de errar, imagina só, falhar no exame depois de tanto investimento em livros e cursos, sem contar o tempo de trabalho, também incluo nessa equação o tempo que deixei de passar com a minha família, falhar estava fora de cogitação. Com isso em mente, a pressão era gigantesca.&lt;/p&gt;</description></item><item><title>Visão Geral da Camada de Enlace: Teoria e Prática (Parte 1)</title><link>/pt/posts/overview-of-the-data-link-layer-theory-and-practice-part-1/</link><pubDate>Sat, 27 Sep 2025 00:00:00 +0000</pubDate><guid>/pt/posts/overview-of-the-data-link-layer-theory-and-practice-part-1/</guid><description>&lt;h2 id="introdução-e-base-teórica"&gt;Introdução e Base Teórica&lt;/h2&gt;
 &lt;p&gt;Este artigo é baseado em anotações que fiz durante minha preparação para o exame CCNA (Cisco Certified Network Associate) 200-301, onde pude aprofundar meus conhecimentos sobre a camada de enlace de dados.&lt;/p&gt;
-&lt;p&gt;A &lt;strong&gt;camada de enlace de dados&lt;/strong&gt; é fundamental no modelo OSI e TCP/IP, sendo a segunda camada no processo de comunicação entre dispositivos em rede. Ela é responsável por garantir que as unidades de informação, chamadas &lt;strong&gt;quadros&lt;/strong&gt;, sejam transferidas de maneira confiável entre dispositivos fisicamente conectados por meio de um canal de comunicação, sejam eles guiados, como cabos de rede e fibras ópticas, ou não-guiados, como as redes sem fio.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Introdução ao Protocolo IPv4</title>
-      <link>//localhost:1313/pt/posts/ipv4-introduction/</link>
-      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/pt/posts/ipv4-introduction/</guid>
-      <description>&lt;h2 id=&#34;introdução&#34;&gt;Introdução&lt;/h2&gt;
+&lt;p&gt;A &lt;strong&gt;camada de enlace de dados&lt;/strong&gt; é fundamental no modelo OSI e TCP/IP, sendo a segunda camada no processo de comunicação entre dispositivos em rede. Ela é responsável por garantir que as unidades de informação, chamadas &lt;strong&gt;quadros&lt;/strong&gt;, sejam transferidas de maneira confiável entre dispositivos fisicamente conectados por meio de um canal de comunicação, sejam eles guiados, como cabos de rede e fibras ópticas, ou não-guiados, como as redes sem fio.&lt;/p&gt;</description></item><item><title>Introdução ao Protocolo IPv4</title><link>/pt/posts/ipv4-introduction/</link><pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate><guid>/pt/posts/ipv4-introduction/</guid><description>&lt;h2 id="introdução"&gt;Introdução&lt;/h2&gt;
 &lt;p&gt;Nesse artigo exploraremos o protocolo IP, vamos observar parte do contexto histórico e entender a sua importância, apresentar uma visão geral das funcionalidades e posteriormente nos aprofundar nos detalhes.&lt;/p&gt;
-&lt;p&gt;Vamos começar pelo início de tudo, durante o período da Guerra Fria, que ocorreu entre os Estados Unidos da América e a União das Repúblicas Socialistas Soviéticas, mas não vamos nos aprofundar no conflito, somente no que aconteceu a partir dele para o desenvolvimento das redes de computadores como conhecemos atualmente.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Fundamentos de Redes de Computadores</title>
-      <link>//localhost:1313/pt/posts/networking-fundamentals/</link>
-      <pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/pt/posts/networking-fundamentals/</guid>
-      <description>&lt;h2 id=&#34;introdução&#34;&gt;Introdução&lt;/h2&gt;
+&lt;p&gt;Vamos começar pelo início de tudo, durante o período da Guerra Fria, que ocorreu entre os Estados Unidos da América e a União das Repúblicas Socialistas Soviéticas, mas não vamos nos aprofundar no conflito, somente no que aconteceu a partir dele para o desenvolvimento das redes de computadores como conhecemos atualmente.&lt;/p&gt;</description></item><item><title>Fundamentos de Redes de Computadores</title><link>/pt/posts/networking-fundamentals/</link><pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate><guid>/pt/posts/networking-fundamentals/</guid><description>&lt;h2 id="introdução"&gt;Introdução&lt;/h2&gt;
 &lt;p&gt;Este artigo representa um dos trabalhos mais cansativos que já realizei. Foram diversas revisões e reestruturações, decidi refazer, quase que do zero, e abordar o tema de maneira simples, direta e acessível. Organizei o conteúdo em tópicos-chave, buscando criar um resumo prático e fácil de assimilar. Essa abordagem reflete a forma como eu gostaria de ter aprendido, e espero que ela seja útil para você também.&lt;/p&gt;
-&lt;p&gt;O conteúdo deste artigo está alinhado com o blueprint da certificação Cisco CCNA 200-301, fornecendo uma base sólida para quem deseja se aprofundar no estudo de redes de computadores.&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;p&gt;O conteúdo deste artigo está alinhado com o blueprint da certificação Cisco CCNA 200-301, fornecendo uma base sólida para quem deseja se aprofundar no estudo de redes de computadores.&lt;/p&gt;</description></item></channel></rss>

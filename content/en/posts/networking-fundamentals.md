@@ -1,174 +1,180 @@
 ---
-title: "x"
-slug: "x" 
-date: 2026-05-23
-translationKey: "x"
-categories: ["nx"]
+title: "Networking Fundamentals"
+slug: "networking-fundamentals" 
+date: 2025-01-12
+translationKey: "networking-fundamentals"
+categories: ["networking"]
 math: true
-draft: true
+draft: false
 ---
 
-## Introdução
+## Introduction
 
-Este artigo representa um dos trabalhos mais cansativos que já realizei. Foram diversas revisões e reestruturações, decidi refazer, quase que do zero, e abordar o tema de maneira simples, direta e acessível. Organizei o conteúdo em tópicos-chave, buscando criar um resumo prático e fácil de assimilar. Essa abordagem reflete a forma como eu gostaria de ter aprendido, e espero que ela seja útil para você também.
+This article is the result of extensive revision and restructuring. The objective was to present the subject in a clear, direct, and accessible manner. The content is organized into key topics that form a practical and easy-to-assimilate summary. This approach reflects the way the material was intended to be learned, and it is hoped that it will be useful to the reader as well.
 
-O conteúdo deste artigo está alinhado com o blueprint da certificação Cisco CCNA 200-301, fornecendo uma base sólida para quem deseja se aprofundar no estudo de redes de computadores.
+The material in this article is aligned with the blueprint for the Cisco CCNA 200-301 certification, providing a solid foundation for those who wish to deepen their study of computer networks.
 
-## Objetivos e Arquitetura de Redes
+## Objectives and Network Architecture
 
-### Por que criamos redes?
+### Why do we build networks?
 
-- **Acesso a dados e serviços**: Permitir que usuários e aplicações acessem informações e serviços, independentemente de onde estejam.
-- **Compartilhamento de recursos**: Utilizar de forma conjunta impressoras, scanners, armazenamento e outros periféricos.
-- **Administração centralizada**: Facilitar o gerenciamento, a atualização e a segurança dos dispositivos e serviços.
+- **Data and service access**: Enable users and applications to access information and services regardless of location.
+- **Resource sharing**: Allow shared use of printers, scanners, storage, and other peripherals.
+- **Centralized administration**: Facilitate the management, updating, and security of devices and services.
 
-### Pilares da Arquitetura de Redes
+### Pillars of Network Architecture
 
-Existem quatro características básicas que os arquitetos de rede devem considerar para atender às expectativas dos usuários:
+There are four basic characteristics that network architects must consider in order to meet user expectations:
 
-1.  **Tolerância a Falhas**: Uma rede deve ser resiliente, continuando a operar mesmo com falhas parciais através de redundância de componentes e caminhos.
-2.  **Escalabilidade**: A capacidade de crescer (adicionar usuários e serviços) sem perder desempenho, planejando para expansões futuras.
-3.  **Qualidade de Serviço (QoS)**: A habilidade de priorizar o tráfego crítico (como voz e vídeo), garantindo a banda, a latência e o controle de jitter necessários para cada aplicação.
-4.  **Segurança**: Proteger a rede e os dados contra acessos não autorizados (confidencialidade), garantir que a informação não foi alterada (integridade) e que os serviços estejam sempre acessíveis (disponibilidade).
+1. **Fault tolerance**: A network must be resilient, continuing to operate even in the event of partial failures through the use of redundant components and paths.
+2. **Scalability**: The ability to grow by adding users and services without performance degradation, while planning for future expansion.
+3. **Quality of Service (QoS)**: The ability to prioritize critical traffic, such as voice and video, ensuring the bandwidth, latency, and jitter control required by each application.
+4. **Security**: Protect the network and data against unauthorized access (confidentiality), ensure that information has not been altered (integrity), and guarantee that services are always available (availability).
 
-## Componentes Fundamentais de Rede
+## Fundamental Network Components
 
-### Dispositivos
+### Devices
 
-- **Finais (Hosts)**: Onde a comunicação se origina ou termina (computadores, servidores, smartphones, IoT).
-- **Intermediários**: Conectam os dispositivos finais e outras redes (switches, roteadores, access points). Suas funções incluem regenerar sinais, gerenciar rotas, aplicar políticas de segurança e QoS.
+- **End devices (hosts)**: Where communication originates or terminates, such as computers, servers, smartphones, and IoT devices.
+- **Intermediate devices**: Connect end devices and other networks, including switches, routers, and access points. Their functions include regenerating signals, managing routes, applying security policies, and enforcing QoS.
 
-### Meios de Transmissão
+### Transmission Media
 
-- **Metálico (cabo de par trançado)**: Usa pulsos elétricos.
-- **Fibra Óptica**: Usa pulsos de luz. Imune a interferências, ideal para alta velocidade e longas distâncias.
-- **Wireless (Sem Fio)**: Usa ondas de rádio, oferecendo mobilidade.
+- **Metallic (twisted-pair cable)**: Uses electrical pulses.
+- **Optical fiber**: Uses light pulses. It is immune to interference and is ideal for high-speed and long-distance links.
+- **Wireless**: Uses radio waves, offering mobility.
 
-## Modelos de Referência: Uma Visão Detalhada
+## Reference Models: A Detailed View
 
-Para organizar a complexidade da comunicação, foram criados modelos de referência. Eles dividem as funções de rede em **camadas**, onde cada uma oferece um serviço à camada superior e consome serviços da camada inferior.
+To organize the complexity of communication, reference models were created. They divide network functions into **layers**, where each layer provides a service to the layer above and consumes services from the layer below.
 
-A comunicação ocorre de duas formas:
-- **Interação de Camadas Adjacentes (Vertical)**: No mesmo dispositivo, uma camada superior solicita um serviço da camada inferior.
-- **Interação de Mesmas Camadas (Horizontal)**: Entre dispositivos diferentes, camadas iguais se comunicam usando cabeçalhos de protocolo.
+Communication occurs in two ways:
 
-| Conceito | Descrição |
-|---|---|
-| Interação na mesma camada | Computadores usam um protocolo para se comunicar com a mesma camada em outro dispositivo. O protocolo define um cabeçalho para comunicar o que cada computador quer fazer. |
-| Interação entre camadas adjacentes | Em um único computador, uma camada inferior fornece um serviço para a camada superior. O software/hardware da camada superior solicita que a camada inferior execute a função necessária. |
+- **Adjacent-layer interaction (vertical)**: On the same device, an upper layer requests a service from the layer below it.
+- **Same-layer interaction (horizontal)**: Between different devices, peer layers communicate using protocol headers.
 
-### Camada de Aplicação
+| Concept | Description |
+| --- | --- |
+| Same-layer interaction | Devices use a protocol to communicate with the same layer on another device. The protocol defines a header that indicates what each device wants to do. |
+| Adjacent-layer interaction | On a single device, a lower layer provides a service to the upper layer. The upper-layer software or hardware requests that the lower layer perform the required function. |
 
-É a camada mais próxima do usuário. Ela não define a aplicação em si, mas os **serviços e protocolos** que as aplicações precisam para interagir com a rede (HTTP para web, SMTP para e-mail, FTP para arquivos). Ela atua como a interface entre o software e a pilha de rede.
+### Application Layer
 
-### Camada de Transporte
+This is the layer closest to the user. It does not define the application itself, but rather the **services and protocols** that applications need in order to interact with the network (HTTP for web, SMTP for e-mail, FTP for file transfer). It acts as the interface between software and the network stack.
 
-Esta camada é responsável pela comunicação lógica fim a fim entre aplicações. Seus dois principais protocolos são TCP e UDP.
+### Transport Layer
 
-#### Multiplexação e Sockets
+This layer is responsible for logical end-to-end communication between applications. Its two main protocols are TCP and UDP.
 
-Para que múltiplas aplicações em um mesmo host possam se comunicar simultaneamente, a camada de transporte utiliza o conceito de **portas**. A combinação de um endereço IP e um número de porta forma um **Socket**, que identifica de forma única uma sessão de comunicação.
+#### Multiplexing and Sockets
 
-- **Portas Bem-Conhecidas (0-1023)**: Reservadas para serviços padrão (80/HTTP, 443/HTTPS, 22/SSH).
-- **Portas Efêmeras (1024-65535)**: Usadas dinamicamente pelos clientes para iniciar conexões.
+So that multiple applications on the same host can communicate simultaneously, the transport layer uses the concept of **ports**. The combination of an IP address and a port number forms a **socket**, which uniquely identifies a communication session.
+
+- **Well-known ports (0-1023)**: Reserved for standard services (80/HTTP, 443/HTTPS, 22/SSH).
+- **Ephemeral ports (1024-65535)**: Used dynamically by clients to initiate connections.
 
 #### TCP (Transmission Control Protocol)
 
-O TCP é um protocolo **confiável e orientado à conexão**. Ele oferece uma abstração de um canal de comunicação perfeito, mesmo sobre uma rede não confiável como a Internet.
+TCP is a **reliable, connection-oriented** protocol. It offers the abstraction of a perfect communication channel, even over an unreliable network such as the Internet.
 
-<img src="/assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/M1-P2-TCP-HEADER.png" />
+![TCP Header](/assets/images/networking/networking-fundamentals/M1-P2-TCP-HEADER.png)
 
-Suas principais características são:
-- **Entrega Ordenada e Confiável**: Garante que os dados cheguem na ordem correta e sem perdas, usando números de sequência e confirmações (acknowledgments - ACKs).
-- **Controle de Fluxo**: Através da **Janela de Recebimento (rwnd)**, o receptor informa ao emissor quanto espaço de buffer ele tem disponível, evitando que o emissor envie mais dados do que o receptor consegue processar. O RFC 1323 introduziu o "escalonamento de janela" para permitir janelas maiores que 65.535 bytes.
-- **Controle de Congestionamento**: Mecanismos como o **Slow Start** evitam sobrecarregar a rede. Ele utiliza uma **Janela de Congestionamento (cwnd)** para limitar a quantidade de dados em trânsito antes de receber um ACK.
-- **TCP Fast Open**: Reduz a latência em novas conexões reutilizando informações da conexão anterior.
+Its main characteristics are:
+
+- **Ordered and reliable delivery**: Ensures that data arrives in the correct order and without loss, using sequence numbers and acknowledgments (ACKs).
+- **Flow control**: Through the **receive window (rwnd)**, the receiver informs the sender of the available buffer space, preventing the sender from transmitting more data than the receiver can process. RFC 1323 introduced window scaling to allow windows larger than 65,535 bytes.
+- **Congestion control**: Mechanisms such as **slow start** prevent the network from being overloaded. A **congestion window (cwnd)** limits the amount of data in transit before an ACK is received.
+- **TCP Fast Open**: Reduces latency in new connections by reusing information from a previous connection.
 
 #### UDP (User Datagram Protocol)
 
-O UDP é um protocolo **simples, rápido e não orientado à conexão**. Sua principal vantagem é a ausência de sobrecarga.
+UDP is a **simple, fast, connectionless** protocol. Its main advantage is the absence of overhead.
 
-<img src="/assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/M1-P3-UDP-HEADER.png" />
+![UDP Header](/assets/images/networking/networking-fundamentals/M1-P3-UDP-HEADER.png)
 
-- **Sem Garantias**: Não há garantia de entrega, ordem ou controle de fluxo. É um serviço "best-effort".
-- **Ideal para**: Aplicações em tempo real como streaming, jogos online e VoIP, onde a velocidade é mais crítica que a confiabilidade.
+- **No guarantees**: There is no guarantee of delivery, ordering, or flow control. It is a best-effort service.
+- **Ideal for**: Real-time applications such as streaming, online gaming, and VoIP, where speed is more critical than reliability.
 
-<img src="/assets/images/networking/2025-01-12-fundamentos-de-redes-de-computadores/M1-P3-TCP-VS-UDP-HEADER.png" />
+![TCP vs UDP](/assets/images/networking/networking-fundamentals/M1-P3-TCP-VS-UDP-HEADER.png)
 
-### Camada de Rede (ou Internet)
+### Network Layer (or Internet Layer)
 
-Esta camada é responsável pelo endereçamento lógico (IP) e pelo roteamento dos pacotes da origem ao destino final, através de múltiplas redes.
+This layer is responsible for logical addressing (IP) and for routing packets from source to final destination across multiple networks.
 
-O roteamento IP é um processo colaborativo entre os hosts e os roteadores. O sistema operacional do host decide para onde enviar o pacote (geralmente para um roteador próximo, o *default gateway*), e os roteadores subsequentes tomam decisões de encaminhamento baseadas em suas tabelas de roteamento.
+IP routing is a collaborative process between hosts and routers. The operating system of the host decides where to send the packet, usually to a nearby router, the default gateway, and subsequent routers make forwarding decisions based on their routing tables.
 
-**Processo de Roteamento em um Roteador:**
-1.  O roteador recebe um quadro (frame) de dados.
-2.  Verifica se houve erros usando o campo FCS (Frame Check Sequence) do trailer. Se houver, descarta o quadro.
-3.  Descarta o cabeçalho e o trailer da camada de enlace, revelando o pacote IP.
-4.  Consulta sua tabela de roteamento para encontrar a melhor rota para o endereço IP de destino.
-5.  Encapsula o pacote IP em um novo cabeçalho e trailer de enlace, apropriado para a interface de saída.
-6.  Encaminha o novo quadro.
+**Routing Process in a Router:**
 
-### Camadas de Enlace e Física (Acesso à Rede)
+1. The router receives a data frame.
+2. It checks for errors using the Frame Check Sequence (FCS) field in the trailer. If an error is found, the frame is discarded.
+3. It removes the data-link header and trailer, revealing the IP packet.
+4. It consults its routing table to find the best route to the destination IP address.
+5. It encapsulates the IP packet in a new data-link header and trailer appropriate for the outgoing interface.
+6. It forwards the new frame.
 
-Estas camadas definem como os dados são transmitidos através de um meio físico específico (cabo, fibra, ar). Elas cuidam do endereçamento físico (endereço MAC) e da detecção de erros em um link local.
+### Data Link and Physical Layers (Network Access)
+
+These layers define how data is transmitted over a specific physical medium, such as cable, fiber, or air. They handle physical addressing (MAC address) and error detection on a local link.
 
 #### Ethernet
 
-É a tecnologia de LAN mais popular do mundo. Ela define:
-- **Endereçamento Físico (MAC Address)**: Um endereço único de 48 bits gravado na placa de rede.
-- **Detecção de Erros (FCS)**: O campo *Frame Check Sequence* no trailer do quadro permite ao receptor verificar se ocorreram erros de transmissão. Se um erro for detectado, o quadro é descartado. A Ethernet detecta erros, mas não os corrige; essa é uma responsabilidade de camadas superiores (como o TCP).
-- **Auto-MDIX**: Um recurso que detecta automaticamente o tipo de cabo (crossover ou direto) e ajusta a pinagem para que a conexão funcione.
-- **Modos de Operação**:
-    - **Half-duplex**: Não pode enviar e receber ao mesmo tempo.
-    - **Full-duplex**: Pode enviar e receber simultaneamente.
+Ethernet is the most popular LAN technology in the world. It defines:
 
-A Ethernet também evoluiu para ser uma tecnologia de **WAN**, com padrões de fibra ótica que suportam dezenas de quilômetros, permitindo a criação de serviços como a **Ethernet Line Service (E-Line)**.
+- **Physical addressing (MAC address)**: A unique 48-bit address burned into the network interface card.
+- **Error detection (FCS)**: The Frame Check Sequence field in the frame trailer allows the receiver to verify whether transmission errors occurred. If an error is detected, the frame is discarded. Ethernet detects errors but does not correct them; that responsibility belongs to higher layers, such as TCP.
+- **Auto-MDIX**: A feature that automatically detects the cable type, crossover or straight-through, and adjusts the pinout so that the connection works.
+- **Operating modes**: **Half-duplex** — cannot transmit and receive at the same time. **Full-duplex** — can transmit and receive simultaneously.
 
-## Tipos de Redes e Topologias
+Ethernet has also evolved into a **WAN** technology, with fiber standards that support tens of kilometers, enabling services such as **Ethernet Line Service (E-Line)**.
 
-### Abrangência
+## Network Types and Topologies
 
-- **LAN (Local Area Network)**: Rede em uma área geográfica limitada (escritório, prédio).
-- **WAN (Wide Area Network)**: Conecta LANs em locais geograficamente distantes. A Internet é a maior WAN de todas.
-- **Intranet**: Uma rede privada de uma organização.
-- **Extranet**: Permite acesso controlado de parceiros externos a partes da intranet.
+### Scope
 
-### Topologias Físicas
+- **LAN (Local Area Network)**: A network within a limited geographic area, such as an office or building.
+- **WAN (Wide Area Network)**: Connects LANs in geographically distant locations. The Internet is the largest WAN of all.
+- **Intranet**: A private network belonging to an organization.
+- **Extranet**: Allows controlled access by external partners to parts of the intranet.
 
-Descrevem como os dispositivos são fisicamente conectados.
-- **Estrela**: Mais comum em LANs, com um dispositivo central (switch).
-- **Mesh (Malha)**: Alta redundância, comum em WANs.
-- **Barramento/Anel**: Topologias legadas.
-## Modelos de Comunicação de Dados
+### Physical Topologies
 
-### Cliente/Servidor vs. Peer-to-Peer
+These describe how devices are physically connected:
 
-- **Cliente/Servidor**: Um servidor centralizado oferece serviços aos clientes. Modelo mais comum.
-- **Peer-to-Peer (P2P)**: Todos os dispositivos são pares e podem atuar como cliente e servidor.
-### Comutação de Circuitos vs. Pacotes
+- **Star**: The most common LAN topology, with a central device, usually a switch.
+- **Mesh**: Highly redundant topology, common in WANs.
+- **Bus/Ring**: Legacy topologies.
 
-- **Comutação de Circuitos**: Um caminho dedicado é estabelecido antes da comunicação (ex: telefonia antiga). Ineficiente, pois o canal fica alocado mesmo em silêncio.
-- **Comutação de Pacotes**: Os dados são divididos em **pacotes** (ou **datagramas**), que são enviados de forma independente pela rede e podem seguir rotas diferentes. É o modelo da Internet, mais eficiente e resiliente.
-## Conclusão
+## Data Communication Models
 
-Neste artigo, exploramos os fundamentos essenciais das redes de computadores. Como pudemos observar, uma rede moderna é um sistema complexo que depende da interação harmoniosa entre diversos componentes:
+### Client/Server vs. Peer-to-Peer
 
-1. **Infraestrutura Física**: Dispositivos, meios e topologias.
-2. **Arquitetura Lógica**: Modelos em camadas, protocolos e serviços.
-3. **Princípios de Design**: Tolerância a falhas, escalabilidade, QoS e segurança.
+- **Client/Server**: A centralized server provides services to clients. This is the most common model.
+- **Peer-to-Peer (P2P)**: All devices are peers and can act as both client and server.
 
-A evolução das redes continua em ritmo acelerado, com novas tecnologias emergindo constantemente. Conceitos como SDN (Software-Defined Networking) e NFV (Network Functions Virtualization) estão redefinindo como as redes são projetadas e gerenciadas.
+### Circuit Switching vs. Packet Switching
 
-Para quem deseja se aprofundar no estudo de redes, especialmente visando a certificação CCNA, assim como eu, os próximos passos incluem:
+- **Circuit switching**: A dedicated path is established before communication begins, as in traditional telephony. It is inefficient because the channel remains allocated even during silence.
+- **Packet switching**: Data is divided into **packets** (or **datagrams**), which are sent independently across the network and may take different paths. This is the model used by the Internet and is more efficient and resilient.
 
-- **Switching e VLANs**: Entender a segmentação de redes locais e os protocolos derivados do STP
-- **Roteamento**: Conhecer a base teórica dos protocolos de roteamento dinâmico
-- **Segurança**: Entender o conceito de firewalls, VPNs e listas de controle de acesso
-- **Automação**: Entender o conceito das ferramentas de automação e programabilidade
+## Conclusion
 
-Lembre-se: uma rede bem projetada é aquela que os usuários nem percebem que existe - ela simplesmente funciona, permitindo que as pessoas se concentrem em suas atividades sem se preocupar com a infraestrutura.
+This article covered the essential fundamentals of computer networks. As observed, a modern network is a complex system that depends on the harmonious interaction of several components:
 
-> "A complexidade é seu inimigo. Qualquer tolo pode fazer algo complicado. O difícil é fazer algo simples." - Richard Branson
+1. **Physical infrastructure**: Devices, media, and topologies.
+2. **Logical architecture**: Layered models, protocols, and services.
+3. **Design principles**: Fault tolerance, scalability, QoS, and security.
 
-Nos próximos artigos, exploraremos cada um dos tópicos da certificação, vamos construir juntos uma base teórica e prática. Até lá, o desafio é manter a disciplina, a curiosidade e continuar estudando.
+Networks continue to evolve rapidly, with new technologies constantly emerging. Concepts such as SDN (Software-Defined Networking) and NFV (Network Functions Virtualization) are redefining how networks are designed and managed.
+
+For those who wish to deepen their study of networks, especially in preparation for the CCNA certification, the next topics include:
+
+- **Switching and VLANs**: Understanding local network segmentation and protocols derived from STP.
+- **Routing**: Learning the theoretical foundations of dynamic routing protocols.
+- **Security**: Understanding firewalls, VPNs, and access control lists.
+- **Automation**: Understanding the concepts of automation and programmability tools.
+
+A well-designed network is one that users barely notice; it simply works, allowing people to focus on their activities without concern for the underlying infrastructure.
+
+> "Complexity is your enemy. Any fool can make something complicated. It is hard to make something simple." — Richard Branson
+
+The next articles will explore each of the certification topics in greater depth, building both theoretical and practical knowledge together. Until then, the challenge is to maintain discipline, curiosity, and continued study.
