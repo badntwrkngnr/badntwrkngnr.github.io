@@ -12,7 +12,7 @@ defaultContentLanguage = "en"
   [languages.pt]
     languageName = "Português"
     weight = 1
-    title = "Networking de Quebradinha"
+    title = "Vinícius da Silva | Null Networking"
     contentDir = "content/pt"
     [languages.pt.params]
       description = "Eu sou só um cara que já tentou quase tudo e hoje paga as contas graças aos modelos OSI e TCP/IP"
@@ -20,7 +20,7 @@ defaultContentLanguage = "en"
   [languages.en]
     languageName = "English"
     weight = 2
-    title = "Street-Smart Networking"
+    title = "Vinícius da Silva | Null Networking"
     contentDir = "content/en"
     [languages.en.params]
       description = "I've tried almost everything, and today I'm paying the bills thanks to the OSI and TCP/IP models."
